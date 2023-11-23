@@ -2,9 +2,20 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-components.html(
-    """
-     <head>
+full_width_style = """
+<style>
+    .full-width {
+        width: 100%;
+    }
+</style>
+"""
+
+# Apply the custom CSS
+st.markdown(full_width_style, unsafe_allow_html=True)
+
+st.markdown(
+   """ 
+   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -35,13 +46,14 @@ components.html(
 </head>
 <body>
 
-<div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#page1">Page 1</a>
-    <a href="#page2">Page 2</a>
-    <!-- Add more links as needed -->
-</div>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#page1">Page 1</a>
+        <a href="#page2">Page 2</a>
+        <!-- Add more links as needed -->
+    </div>
+</body>
     """
-)
+, unsafe_allow_html=True)
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
