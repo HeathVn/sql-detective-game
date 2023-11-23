@@ -4,6 +4,34 @@ import streamlit.components.v1 as components
 
 import hydralit as hy
 
+import matplotlib.animation as animation
+
+# Function to update the text position in the animation
+def update(frame):
+    x, y = text.get_position()
+    text.set_position((x + 0.1, y))
+    return text,
+
+# Create a figure and axis
+fig, ax = plt.subplots()
+
+# Set initial text position
+x0, y0 = 0, 0
+text = ax.text(x0, y0, 'Hello, Python!', fontsize=12)
+
+# Set the axis limits
+ax.set_xlim(-1, 5)
+ax.set_ylim(-1, 1)
+
+# Create the animation
+ani = animation.FuncAnimation(fig, update, frames=range(100), interval=50, blit=True)
+
+# Show the animation
+plt.show()
+
+
+
+
 app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
