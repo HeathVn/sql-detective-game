@@ -8,11 +8,17 @@ full_width_style = """
         background-color: #FFFFFF;
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
     }
 
     .navbar a:hover {
             background-color: #ddd;
-            color: black;
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
      }
 </style>
 """
