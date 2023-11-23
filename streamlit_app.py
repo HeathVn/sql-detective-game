@@ -25,8 +25,9 @@ components.html(
 
         .navbar {
             overflow: hidden;
-            background-color: #333;
+            background-color: lightblue;
             width:100vw;
+            margin:0;
         }
 
         .navbar a {
