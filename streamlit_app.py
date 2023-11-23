@@ -16,10 +16,11 @@ components.html(
         .navbar {
             overflow: hidden;
             background-color: #333;
+            width:100vw;
         }
 
         .navbar a {
-            float: left;
+            
             display: block;
             color: white;
             text-align: center;
@@ -43,6 +44,6 @@ components.html(
 </body>
 
 """
-,width=1000)
+)
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
