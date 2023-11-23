@@ -12,16 +12,14 @@ def typewriter(text: str, speed: int):
         container.markdown(curr_full_text)
         time.sleep(1 / speed)
 
-speed = 10
-typewriter(text='Hello! Welcome to Murder Mystery Detectives!', speed=speed)
-
 
 
 app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
 def my_home():
-   
+    typewriter(text='Hello! Welcome to Murder Mystery Detectives!', speed=8)
+
     hy.info('Hello from Home!')
 
 @app.addapp()
