@@ -21,6 +21,6 @@ full_width_style = """
 # Apply the custom CSS
 st.markdown(full_width_style, unsafe_allow_html=True)
 
-st.markdown("<div class="navbar"><a href="#home">Home</a><a href="#page1">Page 1</a><a href="#page2">Page 2</a></div>", unsafe_allow_html=True)
+st.markdown("<div class='navbar'><a href='#home'>Home</a><a href='#page1'>Page 1</a><a href='#page2'>Page 2</a></div>", unsafe_allow_html=True)
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
