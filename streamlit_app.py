@@ -33,6 +33,7 @@ def app3():
 #Run the whole lot, we get navbar, state management and app isolation, all with this tiny amount of work.
 app.run()
 
+'''
 #
 components.html(
 """
@@ -83,6 +84,6 @@ components.html(
 </body>
 
 """)
-
+'''
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
