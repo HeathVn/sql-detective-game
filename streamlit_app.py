@@ -1,7 +1,7 @@
 
 import streamlit as st
 import streamlit.components.v1 as components
-import time as time
+import time
 import hydralit as hy
 
 
