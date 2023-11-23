@@ -3,7 +3,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 import time
 import hydralit as hy
-from streamlit_lottie import st_lottie
+#from streamlit_lottie import st_lottie
 
 def typewriter(text: str, speed: int):
     tokens = text.split()
@@ -25,8 +25,8 @@ def load_lottieurl(url: str):
     return r.json()
     
 
-lottie_coding = load_lottiefile("lottiefile.json")  # replace link to local lottie file
-lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_M9p23l.json")
+#lottie_coding = load_lottiefile("lottiefile.json")  # replace link to local lottie file
+#lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_M9p23l.json")
 
 app = hy.HydraApp(title='Simple Multi-Page App')
 
