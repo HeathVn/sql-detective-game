@@ -18,7 +18,7 @@ app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
 def my_home():
-    typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=25)
+    typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=50)
 
     hy.info('Hello from Home!')
 
