@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 
 custom_html = """
-<div style="width: 100vw; height: 300px; background-color: lightblue;">
+<div style="margin:0;width: 100vw; height: 300px; background-color: lightblue;">
     This is a custom HTML component with full screen width.
 </div>
 """
