@@ -2,16 +2,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-
-custom_html = """
-<div style="margin:0;width: 100vw; height: 300px; background-color: lightblue;">
-    This is a custom HTML component with full screen width.
-</div>
-"""
-
-# Display the HTML using components.html
-st.components.v1.html(custom_html, height=350)
-
 components.html(
 """
 <head>
@@ -43,6 +33,10 @@ components.html(
             background-color: #ddd;
             color: black;
         }
+        
+        .streamlit-container {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +49,6 @@ components.html(
 </body>
 
 """
-,width='100vw')
+,width=100)
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
