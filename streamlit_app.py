@@ -5,10 +5,6 @@ import time as time
 import hydralit as hy
 
 
-
-# Inject custom CSS
-st.markdown(custom_css, unsafe_allow_html=True)
-
 def typewriter(text: str, speed: int):
     tokens = text.split()
     container = st.empty()
