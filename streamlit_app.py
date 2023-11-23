@@ -12,10 +12,8 @@ def typewriter(text: str, speed: int):
         container.markdown(curr_full_text)
         time.sleep(1 / speed)
 
-#Sample Example
-text = "This is an example of streamlit text with typewriter effect :)"
 speed = 10
-typewriter(text=Hello! Welcome to Murder Mystery Detectives!, speed=speed)
+typewriter(text='Hello! Welcome to Murder Mystery Detectives!', speed=speed)
 
 
 
