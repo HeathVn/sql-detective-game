@@ -9,8 +9,8 @@ packages = ["matplotlib"]
 install_command = ["pip", "install"] + packages
 subprocess.call(install_command)
 
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+import matplotlib as mt
+
 
 """
 # Welcome to Streamlit!
