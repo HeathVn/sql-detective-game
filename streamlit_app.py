@@ -33,7 +33,7 @@ def update(frame):
 # Create the animation
 ani = animation.FuncAnimation(fig, update, frames=10, init_func=init, blit=True, interval=500)
 
-plt.show()
+st.show()
 
 
 
