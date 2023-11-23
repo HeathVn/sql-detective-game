@@ -21,7 +21,7 @@ components.html(
 
         .navbar a {
             
-            display: block;
+            display: inline;
             color: white;
             text-align: center;
             padding: 14px 16px;
