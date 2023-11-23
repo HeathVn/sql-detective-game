@@ -3,37 +3,19 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 import hydralit as hy
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
 
-# Create a figure and axis
-fig, ax = plt.subplots()
+def typewriter(text: str, speed: int):
+    tokens = text.split()
+    container = st.empty()
+    for index in range(len(tokens) + 1):
+        curr_full_text = " ".join(tokens[:index])
+        container.markdown(curr_full_text)
+        time.sleep(1 / speed)
 
-# Set initial text position
-x0, y0 = 0, 0
-text = ax.text(x0, y0, 'Hello, Python!', fontsize=12)
-
-# Set the axis limits
-ax.set_xlim(-1, 5)
-ax.set_ylim(-1, 1)
-
-# Create a text element with white color
-text = ax.text(0.5, 0.5, 'Animated Text', color='white', ha='center', va='center', fontsize=20)
-
-# Set the initial state of the text
-def init():
-    text.set_text('')
-    return text,
-
-# Update the text in each frame
-def update(frame):
-    text.set_text('Frame {}'.format(frame))
-    return text,
-
-# Create the animation
-ani = animation.FuncAnimation(fig, update, frames=10, init_func=init, blit=True, interval=500)
-
-st.show()
+#Sample Example
+text = "This is an example of streamlit text with typewriter effect :)"
+speed = 10
+typewriter(text=Hello! Welcome to Murder Mystery Detectives!, speed=speed)
 
 
 
