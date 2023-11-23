@@ -55,6 +55,6 @@ components.html(
 </body>
 
 """
-)
+,width='100vw')
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
