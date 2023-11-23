@@ -2,6 +2,8 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 """
 # Welcome to Streamlit!
@@ -13,28 +15,25 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
-num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
-num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
+# Function to update the text position in the animation
+def update(frame):
+    x, y = text.get_position()
+    text.set_position((x + 0.1, y))
+    return text,
 
-indices = np.linspace(0, 1, num_points)
-theta = 2 * np.pi * num_turns * indices
-radius = indices
+# Create a figure and axis
+fig, ax = plt.subplots()
 
-x = radius * np.cos(theta)
-y = radius * np.sin(theta)
+# Set initial text position
+x0, y0 = 0, 0
+text = ax.text(x0, y0, 'Hello! welcome to Murder Mystery Detectives!', fontsize=12)
 
-df = pd.DataFrame({
-    "x": x,
-    "y": y,
-    "idx": indices,
-    "rand": np.random.randn(num_points),
-})
+# Set the axis limits
+ax.set_xlim(-1, 5)
+ax.set_ylim(-1, 1)
 
-st.altair_chart(alt.Chart(df, height=700, width=700)
-    .mark_point(filled=True)
-    .encode(
-        x=alt.X("x", axis=None),
-        y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
-        size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
+# Create the animation
+ani = animation.FuncAnimation(fig, update, frames=range(100), interval=50, blit=True)
+
+# Show the animation
+plt.show()
