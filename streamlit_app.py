@@ -38,7 +38,7 @@ def my_home():
     # Show the animation
     plt.show()
     
-     hy.info('Hello from Home!')
+    hy.info('Hello from Home!')
 
 @app.addapp()
 def app2():
