@@ -48,7 +48,6 @@ components.html(
     </div>
 </body>
 
-"""
-,width=100)
+""")
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
