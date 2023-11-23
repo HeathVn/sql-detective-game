@@ -5,27 +5,6 @@ import time as time
 import hydralit as hy
 
 
-custom_css = """
-<style>
-    body {
-        background-color: #f0f0f0; /* Light gray background color */
-    }
-
-    .my-text {
-        color: blue;
-        font-size: 18px;
-    }
-
-    .navbar {
-            overflow: hidden;
-            background-color: lightblue;
-            width:100vw;
-            height: 80px;
-            margin:0;
-            
-    }
-</style>
-"""
 
 # Inject custom CSS
 st.markdown(custom_css, unsafe_allow_html=True)
