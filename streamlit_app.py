@@ -14,15 +14,12 @@ def typewriter(text: str, speed: int):
         time.sleep(1/speed)
 
 
-
+typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=3)
 app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
 def my_home():
-    hy.info(
-    typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=3)
-
-    )
+    hy.info()
 
 @app.addapp(title='Start Game',icon="🎮")
 def app2():
