@@ -2,8 +2,12 @@ import altair as alt
 import numpy as np
 import pandas as pd
 import streamlit as st
+import subprocess
 
-!pip install matplotlib
+
+packages = ["matplotlib"]
+install_command = ["pip", "install"] + packages
+subprocess.call(install_command)
 
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
