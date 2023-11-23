@@ -37,7 +37,7 @@ components.html(
             overflow: hidden;
             background-color: lightblue;
             width:100vw;
-            height: 40px;
+            height: 80px;
             margin:0;
         }
 
@@ -46,7 +46,7 @@ components.html(
             display: inline;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 24px 24px;
             text-decoration: none;
         }
 
