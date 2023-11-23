@@ -2,5 +2,4 @@ altair
 pandas
 streamlit
 hydralit
-matplotlib.pyplot
-matplotlib.animation
+matplotlib
