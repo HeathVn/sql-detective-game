@@ -37,6 +37,7 @@ components.html(
             overflow: hidden;
             background-color: lightblue;
             width:100vw;
+            height: 40px;
             margin:0;
         }
 
