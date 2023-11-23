@@ -11,7 +11,7 @@ full_width_style = """
         box-sizing: border-box;
     }
 
-    .navbar a:hover {
+    .navbar a{
             background-color: #ddd;
             float: left;
             display: block;
