@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 full_width_style = """
 <style>
     .navbar {
-        background-color: #333;
+        background-color: #FFFFFF;
         width: 100%;
         text-align: center;
     }
