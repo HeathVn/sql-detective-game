@@ -20,6 +20,10 @@ full_width_style = """
             padding: 14px 16px;
             text-decoration: none;
      }
+
+     .block-container{
+        width: 100%;
+     }
 </style>
 """
 
