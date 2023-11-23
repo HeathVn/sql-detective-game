@@ -3,7 +3,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 import hydralit as hy
-
+import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Function to update the text position in the animation
