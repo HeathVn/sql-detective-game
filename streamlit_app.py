@@ -1,12 +1,8 @@
 
 import streamlit as st
 import streamlit.components.v1 as components
-
-components.html(
-"""
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+st.markdown(
+    """
     <style>
         body {
             margin: 0;
@@ -16,12 +12,11 @@ components.html(
         .navbar {
             overflow: hidden;
             background-color: lightblue;
-            width:100vw;
-            margin:0;
+            width: 100%;
+            margin: 0;
         }
 
         .navbar a {
-            
             display: inline;
             color: white;
             text-align: center;
@@ -33,21 +28,16 @@ components.html(
             background-color: #ddd;
             color: black;
         }
-        
+
         .streamlit-container {
             max-width: 100%;
         }
     </style>
-</head>
-<body>
+    """,
+    unsafe_allow_html=True,
+)
 
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#page1">Page 1</a>
-        <a href="#page2">Page 2</a>
-    </div>
-</body>
-
-""")
+# Your Streamlit app content
+st.markdown("<div class='navbar'>Navbar content here</div>", unsafe_allow_html=True)
 
 st.write("Hello! Welcome to Murder Mystery Detectives! ")
