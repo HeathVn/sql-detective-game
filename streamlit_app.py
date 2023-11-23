@@ -22,11 +22,11 @@ def my_home():
 
     hy.info('Hello from Home!')
 
-@app.addapp()
+@app.addapp(title='Start Game',icon="🎮")
 def app2():
  hy.info('Hello from app 2')
 
-@app.addapp(title='The Best', icon="🥰")
+@app.addapp(title='Developers', icon="</>")
 def app3():
  hy.info('Hello from app 3, A.K.A, The Best 🥰')
 
