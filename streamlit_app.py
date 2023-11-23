@@ -47,6 +47,7 @@ components.html(
             color: white;
             text-align: center;
             padding: 24px 24px;
+            position:relative;
             text-decoration: none;
         }
 
