@@ -97,14 +97,13 @@ with col5 :
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
+col1, col2, col3,col4,col5 = st.columns(3)
 
 with col1:
     pass
-with col2 and col3:
+with col2:
     st.markdown('### Get Started')
-with col4 :
-    pass
-with col5 :
+with col3 :
     pass
 
 card(
