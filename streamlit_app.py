@@ -53,31 +53,6 @@ st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>"
 #st_lottie(lottie_coding, width=500, height=500)
 typewriter(text="<h1 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
 
-"""
-app = hy.HydraApp(title='Simple Multi-Page App')
 
-@app.addapp(is_home=True)
-def my_home():
-
-    st.markdown(
-    f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>""",unsafe_allow_html=True)
-    
-    #st_lottie(lottie_coding, width=500, height=500)
-    typewriter(text="<h1 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
-   
- 
-
-@app.addapp(title='Start Game',icon="🎮")
-def app2():
- hy.info('Hello from app 2')
-
-@app.addapp(title='Developers', icon="</>")
-def app3():
- hy.info('Hello from app 3, A.K.A, The Best 🥰')
-
-#Run the whole lot, we get navbar, state management and app isolation, all with this tiny amount of work.
-app.run()
-
-"""
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
