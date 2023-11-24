@@ -33,7 +33,7 @@ button_style = """
 
 spacing_style = """
     width:100px;
-    height:400px;
+    height:800px;
     position:relative;
     
 """
@@ -91,7 +91,7 @@ with col1:
 with col2:
     pass
 with col3 :
-    st.markdown(f''' <a target='_self' href='#get-started'><button style='{button_style}'>Start Game</button> </a>''', unsafe_allow_html=True)
+    st.markdown(f""" <a target='_self' href='#get-started'><button style='{button_style}'>Start Game</button> </a>""", unsafe_allow_html=True)
 with col4 :
     pass
 with col5 :
@@ -100,7 +100,7 @@ with col5 :
 # Use st.markdown to display the HTML content
 #st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
-st.markdown(f''' <div style='{spacing_style}'></div>''', unsafe_allow_html=True)
+st.markdown(f""" <div style='{spacing_style}'></div>""", unsafe_allow_html=True)
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
