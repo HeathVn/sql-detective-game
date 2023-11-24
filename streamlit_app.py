@@ -76,7 +76,7 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 # Display the centered Lottie animation using st.markdown
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
-st.markdown('# Section 1')
+st.markdown('# SQL - Mellon City Mysteria')
 
 st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
     
