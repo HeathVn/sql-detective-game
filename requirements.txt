@@ -3,4 +3,6 @@ pandas
 streamlit
 hydralit
 matplotlib
+json
+requests
 streamlit_lottie
