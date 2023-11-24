@@ -57,7 +57,7 @@ custom_html = f"""
         }}
     </style>
     <div class='custom-lottie-container'>
-        <lottie-player src='{lottie_hello}' background='transparent' speed='1' style='width: 500px; height: 500px;' loop autoplay></lottie-player>
+        <lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 500px; height: 500px;' loop autoplay></lottie-player>
     </div>
 """
 
