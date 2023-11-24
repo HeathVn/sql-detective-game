@@ -96,7 +96,7 @@ if center_button:
 card(
     title="Game Instructions",
     text="This is a test card",
-    image="detective-2.png",
+    image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
     styles={
         "card": {
             "width": "500px",
