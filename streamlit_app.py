@@ -71,9 +71,18 @@ st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lot
 typewriter(text=["<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>","<h2 style='text-align:center;'>Your journey begins here</h1>","<h2 style='text-align:center;'>Press the button below to start your game</h1>"], speed=2.5)
 
 
+col1, col2, col3 = st.beta_columns(3)
+
+with col1:
+    pass
+with col2:
+    center_button = st.button(label="Start Game",key="button1")
+with col3 :
+    pass
+
 
 # Use st.markdown to display the HTML content
-st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
+#st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
 
 
