@@ -27,7 +27,6 @@ button_style = """
     color: white;
     padding: 15px 32px;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
 """
 
