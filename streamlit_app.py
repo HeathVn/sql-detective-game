@@ -1,7 +1,7 @@
 
 import streamlit as st
 import streamlit.components.v1 as components
-#import time
+import time
 import hydralit as hy
 import json
 import requests
@@ -13,7 +13,7 @@ def typewriter(text: str, speed: int):
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
-        #time.sleep(1/speed)
+        time.sleep(1/speed)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -28,7 +28,7 @@ def load_lottieurl(url: str):
     
 
 lottie_coding = load_lottiefile("detective.json")  # replace link to local lottie file
-lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_M9p23l.json")
+lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f54fbb63/cEi3XEcPWT.json")
 
 app = hy.HydraApp(title='Simple Multi-Page App')
 
