@@ -23,8 +23,8 @@ container_style = """
 button_style = """
     width:300px;
     height:300px;
-    background-color: #fff;
-
+    background-color: transparent;
+    color:white;
 """
 
 
