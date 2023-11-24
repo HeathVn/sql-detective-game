@@ -15,7 +15,10 @@ container_style = """
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    position:relative;
+    width:fit-content;
+    margin-left:auto;
+    margin-right:auto;
 """
 
 
