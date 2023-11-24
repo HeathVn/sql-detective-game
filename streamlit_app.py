@@ -32,6 +32,7 @@ def typewriter(text: str,text2:str, speed: int):
 
     container = st.empty()
     curr_full_text = ""
+    container.markdown('', unsafe_allow_html=True)
     for index in range(len(tokens2) + 1):
         curr_full_text = " ".join(tokens2[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
