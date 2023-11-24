@@ -98,7 +98,7 @@ with col5 :
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
 
-col1, col2, col3 = st.columns([2,2,1])
+col1, col2, col3 = st.columns([1.8,2,1])
 
 with col1:
     pass
