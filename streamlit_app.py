@@ -3,6 +3,8 @@ import streamlit as st
 import streamlit.components.v1 as components
 #import time
 import hydralit as hy
+import json
+import requests
 from streamlit_lottie import st_lottie
 
 def typewriter(text: str, speed: int):
