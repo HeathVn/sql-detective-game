@@ -12,7 +12,7 @@ from streamlit.components.v1 import html
 lottie_url = "https://assets5.lottiefiles.com/packages/lf20_abcdef.json"
 
 # Custom HTML to embed the Lottie animation
-lottie_html = """
+lottie_html = "
     <div style="width: 300px; height: 300px;">
         <lottie-player 
             src="{lottie_url}" 
@@ -23,7 +23,7 @@ lottie_html = """
             autoplay
         ></lottie-player>
     </div>
-"""
+"
 
 #Display the Lottie animation using components.v1.html
 html(lottie_html, width=300, height=300)
