@@ -23,11 +23,11 @@ container_style = """
 
 def typewriter(text: [str,str], speed: int):
     
-
+    container = st.empty()
     for i in text:
         tokens = i.split()
         
-        container = st.empty()
+        
 
         for index in range(len(tokens) + 1):
             curr_full_text = " ".join(tokens[:index])
