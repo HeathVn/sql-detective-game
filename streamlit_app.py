@@ -21,8 +21,9 @@ container_style = """
 """
 
 button_style = """
-    background-color: #04AA6D; /* Green */
-    border: none;
+    background-color: transparent; 
+    border: 2px solid white;
+    border-radius: 15px;
     color: white;
     padding: 15px 32px;
     text-align: center;
