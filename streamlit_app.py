@@ -25,7 +25,7 @@ def load_lottieurl(url: str):
     return r.json()
     
 
-lottie_coding = load_lottiefile("lottiefile.json")  # replace link to local lottie file
+#lottie_coding = load_lottiefile("lottiefile.json")  # replace link to local lottie file
 lottie_hello = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_M9p23l.json")
 
 app = hy.HydraApp(title='Simple Multi-Page App')
