@@ -25,7 +25,7 @@ def typewriter(text: str, speed: int):
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
-        #time.sleep(1/speed)
+        time.sleep(1/speed)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -46,23 +46,6 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 
 # Display the centered Lottie animation using st.markdown
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
-
-custom_html = f"""
-    <style>
-        .custom-lottie-container {{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-        }}
-    </style>
-    <div class='custom-lottie-container'>
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/ac5034c6-5691-46cc-aeac-61b9e4b782f5/06O6dL2hsu.json" background="##FFFFFF" speed="1" style="width: 300px; height: 300px" loop controls autoplay direction="1" mode="normal"></lottie-player>
-    </div>
-"""
-
-# Display the HTML with the embedded Lottie animation
-st.markdown(custom_html, unsafe_allow_html=True)
 
 
 app = hy.HydraApp(title='Simple Multi-Page App')
