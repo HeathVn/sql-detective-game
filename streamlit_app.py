@@ -34,7 +34,11 @@ def typewriter(text: [str,str], speed: int):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(1/speed)
 
-    
+    button_clicked = st.button("Click me!")
+
+    # Check if the button is clicked
+    if button_clicked:
+        st.write("Button clicked!") 
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
