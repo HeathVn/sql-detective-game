@@ -11,7 +11,12 @@ from streamlit.components.v1 import html
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation
 lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
 
-
+container_style = """
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+"""
 
 
 def typewriter(text: str, speed: int):
@@ -48,7 +53,11 @@ app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
 def my_home():
-    st_lottie(lottie_coding, width=500, height=500)
+
+    st.markdown(
+    f"""<div style='{container_style}'>{st_lottie(lottie_coding, width=500, height=500)}</div>""",unsafe_allow_html=True)
+    
+    #st_lottie(lottie_coding, width=500, height=500)
     typewriter(text="<h1 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
    
  
