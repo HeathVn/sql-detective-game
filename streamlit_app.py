@@ -20,7 +20,7 @@ def typewriter(text: str, speed: int):
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
-        time.sleep(1/speed)
+        #time.sleep(1/speed)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
