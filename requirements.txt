@@ -3,5 +3,4 @@ pandas
 streamlit
 hydralit
 matplotlib
-time
 streamlit_lottie
