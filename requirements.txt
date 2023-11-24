@@ -3,5 +3,4 @@ pandas
 streamlit
 hydralit
 matplotlib
-st_lottie
 streamlit_lottie
