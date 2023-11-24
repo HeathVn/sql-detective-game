@@ -12,6 +12,7 @@ from streamlit.components.v1 import html
 lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
 
 container_style = """
+    width:50%;
     position:relative;
     margin-left:auto;
     margin-right:auto;
@@ -25,7 +26,7 @@ def typewriter(text: str, speed: int):
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
-        time.sleep(1/speed)
+        #time.sleep(1/speed)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
