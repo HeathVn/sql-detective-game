@@ -96,18 +96,16 @@ if center_button:
 card(
     title="Streamlit Card",
     text="This is a test card",
-    image="https://placekitten.com/500/500",
+    image="",
     styles={
         "card": {
             "width": "500px",
             "height": "500px",
             "border-radius": "60px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-            ...
         },
         "text": {
             "font-family": "serif",
-            ...
         }
     }
 )
