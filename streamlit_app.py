@@ -17,15 +17,7 @@ container_style = """
     margin-right:auto;
 """
 
-custom_html = f"""
-    <style>
-        st_lottie {{
-            position:relative;
-            margin-left:auto;
-            margin-right:auto;
-        }}
-    </style>
-"""
+
 
 def typewriter(text: str, speed: int):
     tokens = text.split()
@@ -55,6 +47,22 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 # Display the centered Lottie animation using st.markdown
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
+custom_html = f"""
+    <style>
+        .custom-lottie-container {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+        }}
+    </style>
+    <div class='custom-lottie-container'>
+        <lottie-player src='{lottie_hello}' background='transparent' speed='1' style='width: 500px; height: 500px;' loop autoplay></lottie-player>
+    </div>
+"""
+
+# Display the HTML with the embedded Lottie animation
+st.markdown(custom_html, unsafe_allow_html=True)
 
 
 app = hy.HydraApp(title='Simple Multi-Page App')
