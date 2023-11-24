@@ -109,21 +109,5 @@ card(
             "font-family": "serif",
         }
     },
-    on_click={ card(
-    title="Game Instructions",
-    text="Steps:",
-    image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
-    styles={
-        "card": {
-            "width": "500px",
-            "height": "500px",
-            "border-radius": "60px",
-            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-            "background-color": "#000",
-        },
-        "text": {
-            "font-family": "serif",
-        }
-    }
-) }
+   
 )
