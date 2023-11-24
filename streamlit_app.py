@@ -37,7 +37,14 @@ def load_lottieurl(url: str):
 lottie_coding = load_lottiefile("detective.json")  # replace link to local lottie file
 lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f54fbb63/cEi3XEcPWT.json")
 
-html( "<div style='width: 300px; height: 300px;'><lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 100%; height: 100%;' loop autoplay></lottie-player></div>" ,width=300, height=300)
+#html( "<div style='width: 300px; height: 300px;'><lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 100%; height: 100%;' loop autoplay></lottie-player></div>" ,width=300, height=300)
+
+html_content = """
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json" background="##ffffff" speed="1" style="width: 300px; height: 300px" loop controls autoplay direction="1" mode="normal"></lottie-player>
+"""
+
+# Embed HTML content using st.markdown
+st.markdown(html_content, unsafe_allow_html=True)
 
 app = hy.HydraApp(title='Simple Multi-Page App')
 
