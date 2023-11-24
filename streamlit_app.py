@@ -54,7 +54,7 @@ app = hy.HydraApp(title='Simple Multi-Page App')
 def my_home():
 
     st.markdown(
-    f"""<div style='{container_style}'>{st_lottie(lottie_coding, width=500, height=500)}</div>""",unsafe_allow_html=True)
+    f"""<div style='{container_style}'>{st_lottie(lottie_coding, width=500, height=500, style='position:relative;margin-left:auto;margin-right:auto;')}</div>""",unsafe_allow_html=True)
     
     #st_lottie(lottie_coding, width=500, height=500)
     typewriter(text="<h1 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
