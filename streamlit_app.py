@@ -21,22 +21,20 @@ container_style = """
 
 
 
-def typewriter(text: str,text2:str, speed: int):
-    tokens = text.split()
-    tokens2 = text2.split()
-    container = st.empty()
-    for index in range(len(tokens) + 1):
-        curr_full_text = " ".join(tokens[:index])
-        container.markdown(curr_full_text, unsafe_allow_html=True)
-        time.sleep(1/speed)
+def typewriter(text: [str,str],text2:str, speed: int):
+    
 
-    container = st.empty()
-    curr_full_text = ""
-    container.markdown('', unsafe_allow_html=True)
-    for index in range(len(tokens2) + 1):
-        curr_full_text = " ".join(tokens2[:index])
-        container.markdown(curr_full_text, unsafe_allow_html=True)
-        time.sleep(1/speed)
+    for i in text:
+        tokens = i.split()
+        
+        container = st.empty()
+
+        for index in range(len(tokens) + 1):
+            curr_full_text = " ".join(tokens[:index])
+            container.markdown(curr_full_text, unsafe_allow_html=True)
+            time.sleep(1/speed)
+
+    
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
