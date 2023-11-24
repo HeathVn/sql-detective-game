@@ -16,7 +16,7 @@ container_style = """
     justify-content: center;
     align-items: center;
     position:relative;
-    width:fit-content;
+    width:100%;
     margin-left:auto;
     margin-right:auto;
 """
