@@ -7,6 +7,7 @@ import json
 import requests
 from streamlit_lottie import st_lottie
 from streamlit.components.v1 import html
+from streamlit_card import card
 
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation
 lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
@@ -92,4 +93,21 @@ if center_button:
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
-st.markdown(f"""<div style='{button_style}'> </div>""", unsafe_allow_html=True)
+card(
+    title="Streamlit Card",
+    text="This is a test card",
+    image="https://placekitten.com/500/500",
+    styles={
+        "card": {
+            "width": "500px",
+            "height": "500px",
+            "border-radius": "60px",
+            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
+            ...
+        },
+        "text": {
+            "font-family": "serif",
+            ...
+        }
+    }
+)
