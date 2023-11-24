@@ -133,6 +133,7 @@ card(
             "border-radius": "60px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
             "background-color": "#fff",
+            "border": "2px solid white"
         },
         "text": {
             "font-family": "serif",
