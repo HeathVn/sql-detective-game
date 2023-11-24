@@ -88,6 +88,6 @@ with col5 :
 #st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
 if center_button:
-    st.text('Game Started')
+    st.write('Game Started')
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
