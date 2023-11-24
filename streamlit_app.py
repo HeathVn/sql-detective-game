@@ -94,7 +94,7 @@ if center_button:
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
 card(
-    title="Streamlit Card",
+    title="Game Instructions",
     text="This is a test card",
     image="",
     styles={
@@ -103,6 +103,7 @@ card(
             "height": "500px",
             "border-radius": "60px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
+            "background-color": "#000",
         },
         "text": {
             "font-family": "serif",
