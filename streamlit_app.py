@@ -19,6 +19,12 @@ container_style = """
     margin-right:auto;
 """
 
+button_style = """
+    width:300px;
+    height:300px;
+
+
+"""
 
 
 def typewriter(text: [str,str], speed: int):
@@ -37,7 +43,7 @@ def typewriter(text: [str,str], speed: int):
     button_clicked = st.button("Start Game")
 
     # Use st.markdown to display the HTML content
-    st.markdown(f"<div style='{container_style}'>{button_clicked}</div>", unsafe_allow_html=True)
+    st.markdown(f"<div style='{button_style}'>{button_clicked}</div>", unsafe_allow_html=True)
     
 
     # Check if the button is clicked
