@@ -97,7 +97,7 @@ with col5 :
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
-st.markdown(f'''<h2 style='text-align:center;'>{st.markdown('### Get Started')}</h1>""")
+st.markdown(f'''<h2 style='text-align:center;'>{st.markdown('### Get Started')}</h1>''', unsafe_allow_html=True)
 
 
 
