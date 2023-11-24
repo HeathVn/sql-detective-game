@@ -97,9 +97,15 @@ with col5 :
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
-st.markdown(f'''<h2 style='text-align:center;'>{st.markdown('### Get Started')}</h1>''', unsafe_allow_html=True)
 
+col1, col2, col3,col4,col5 = st.columns([1,3,1])
 
+with col1:
+    pass
+with col2:
+    st.markdown('### Get Started')
+with col3 :
+    pass
 
 card(
     title="Game Instructions",
