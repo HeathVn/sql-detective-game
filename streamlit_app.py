@@ -34,7 +34,10 @@ def typewriter(text: [str,str], speed: int):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(1/speed)
 
-    st.markdown(f"""<div style='{container_style}'>{st.button("Start Game") }</div>""",unsafe_allow_html=True)
+    button_clicked = st.button("Start Game")
+
+    # Use st.markdown to display the HTML content
+    st.markdown(f"<div style='{container_style}'>{button_clicked}</div>", unsafe_allow_html=True)
     
 
     # Check if the button is clicked
