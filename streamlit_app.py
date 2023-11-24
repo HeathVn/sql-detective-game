@@ -75,6 +75,6 @@ typewriter(text=["<h2 style='text-align:center;'>Hello! Welcome to Murder Myster
 button_clicked = st.button("Start Game")
 
 # Use st.markdown to display the HTML content
-st.markdown(f"""<div style='{button_style}'>{button_clicked}</div>""", unsafe_allow_html=True)
+#st.markdown(f"""<div style='{button_style}'>{button_clicked}</div>""", unsafe_allow_html=True)
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
