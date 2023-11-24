@@ -73,7 +73,7 @@ typewriter(text=["<h2 style='text-align:center;'>Hello! Welcome to Murder Myster
 button_clicked = st.button("Start Game")
 
 # Use st.markdown to display the HTML content
-st.markdown(f"""<div style='{button_style}'>{button_clicked = st.button("Start Game")}</div>""", unsafe_allow_html=True)
+st.markdown(f"""<div style='{button_style}'>{st.button("Start Game")}</div>""", unsafe_allow_html=True)
  
 # Check if the button is clicked
 if button_clicked:
