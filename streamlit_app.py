@@ -11,22 +11,10 @@ from streamlit.components.v1 import html
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation
 lottie_url = "https://assets5.lottiefiles.com/packages/lf20_abcdef.json"
 
-# Custom HTML to embed the Lottie animation
-lottie_html = "
-    <div style="width: 300px; height: 300px;">
-        <lottie-player 
-            src="{lottie_url}" 
-            background="transparent" 
-            speed="1" 
-            style="width: 100%; height: 100%;" 
-            loop 
-            autoplay
-        ></lottie-player>
-    </div>
-"
+
 
 #Display the Lottie animation using components.v1.html
-html(lottie_html, width=300, height=300)
+html( "<div style='width: 300px; height: 300px;'><lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 100%; height: 100%;' loop autoplay></lottie-player></div>" ,width=300, height=300)
 
 def typewriter(text: str, speed: int):
     tokens = text.split()
