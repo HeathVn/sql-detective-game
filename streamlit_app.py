@@ -99,7 +99,7 @@ card(
     image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
     styles={
         "card": {
-            "width": "650px",
+            "width": "600px",
             "height": "500px",
             "border-radius": "60px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
