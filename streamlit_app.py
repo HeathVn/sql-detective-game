@@ -21,10 +21,9 @@ container_style = """
 """
 
 button_style = """
-    width:300px;
-    height:300px;
-    background-color: transparent;
-    color:white;
+    background-color: white;
+    color: black;
+    border: 2px solid #04AA6D;
 """
 
 
