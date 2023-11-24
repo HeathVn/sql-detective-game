@@ -123,8 +123,8 @@ with col3 :
     pass
 
 card(
-    title="Game Instructions",
-    text="This is a test card",
+    title="Game Instructions:",
+    text=["1. Start by entering your name below", "2. Each question will provide small hints. You will be required to find the information "]
     image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
     styles={
         "card": {
