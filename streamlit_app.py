@@ -30,14 +30,9 @@ def load_lottieurl(url: str):
 lottie_coding = load_lottiefile("detective.json")  # replace link to local lottie file
 lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f54fbb63/cEi3XEcPWT.json")
 
-app = hy.HydraApp(title='Simple Multi-Page App')
 
-@app.addapp(is_home=True)
-def my_home():
-    typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=3)
-
-    st_lottie(
-    lottie_coding,
+st_lottie(
+    lottie_hello,
     speed=1,
     reverse=False,
     loop=True,
@@ -47,6 +42,13 @@ def my_home():
     width=None,
     key=None,
 )
+
+app = hy.HydraApp(title='Simple Multi-Page App')
+
+@app.addapp(is_home=True)
+def my_home():
+    typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=3)
+
     hy.info('')
 
 @app.addapp(title='Start Game',icon="🎮")
