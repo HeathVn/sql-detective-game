@@ -27,7 +27,7 @@ def typewriter(text: str, speed: int):
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
-        #time.sleep(1/speed)
+        time.sleep(1/speed)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -52,7 +52,7 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>""",unsafe_allow_html=True)
     
 #st_lottie(lottie_coding, width=500, height=500)
-typewriter(text="<h1 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
+typewriter(text="<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=3)
 
 
 
