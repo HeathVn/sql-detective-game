@@ -119,8 +119,4 @@ card(
 st.markdown('Lorem ipsum')
 
 # As an html button (needs styling added)
-st.markdown(''' <a target="_self" href="#section-1">
-                    <button>
-                        Back to Top
-                    </button>
-                </a>''', unsafe_allow_html=True)
+st.markdown(f''' <a target='_self' href='#section-1'><button>Back to Top</button> </a>''', unsafe_allow_html=True)
