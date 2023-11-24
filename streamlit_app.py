@@ -44,7 +44,7 @@ html_content = """
 """
 
 # Embed HTML content using st.markdown
-st.markdown(html_content, unsafe_allow_html=True)
+st.markdown("<script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></script><lottie-player src='https://lottie.host/ac5034c6-5691-46cc-aeac-61b9e4b782f5/06O6dL2hsu.json' background='##FFFFFF' speed='1' style='width: 300px; height: 300px' loop controls autoplay direction='1' mode='normal'></lottie-player>", unsafe_allow_html=True)
 
 app = hy.HydraApp(title='Simple Multi-Page App')
 
