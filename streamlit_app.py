@@ -12,7 +12,8 @@ from streamlit.components.v1 import html
 lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
 
 container_style = """
-    width:400px;
+    width:100px;
+    height:100px;
     position:relative;
     margin-left:auto;
     margin-right:auto;
