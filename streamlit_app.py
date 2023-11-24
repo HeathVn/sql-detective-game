@@ -31,6 +31,12 @@ button_style = """
     font-size: 16px;
 """
 
+spacing_style = """
+    width:100px;
+    height:400px;
+    position:relative;
+    
+"""
 
 def typewriter(text: [str,str], speed: int):
     
@@ -94,6 +100,7 @@ with col5 :
 # Use st.markdown to display the HTML content
 #st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
+st.markdown(f''' <div style='{spacing_style}'></div>''', unsafe_allow_html=True)
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
