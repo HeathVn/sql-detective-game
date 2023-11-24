@@ -86,7 +86,7 @@ with col1:
 with col2:
     pass
 with col3 :
-    center_button = st.button(label="Start Game",key="button1")
+    st.markdown(f''' <a target='_self' href='#section-1'><button style='{button_style}'>Start Game</button> </a>''', unsafe_allow_html=True)
 with col4 :
     pass
 with col5 :
@@ -95,8 +95,6 @@ with col5 :
 # Use st.markdown to display the HTML content
 #st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
-if center_button:
-    st.write('Game Started')
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
@@ -121,4 +119,3 @@ card(
 
 
 
-st.markdown(f''' <a target='_self' href='#section-1'><button style='{button_style}'>Back to Top</button> </a>''', unsafe_allow_html=True)
