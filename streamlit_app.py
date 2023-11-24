@@ -43,7 +43,7 @@ app = hy.HydraApp(title='Simple Multi-Page App')
 
 @app.addapp(is_home=True)
 def my_home():
-    st_lottie(lottie_coding, width=500, height=500,align='center')
+    st_lottie(lottie_coding)
     typewriter(text='<h1>Hello! Welcome to Murder Mystery Detectives!</h1>', speed=3)
    
  
