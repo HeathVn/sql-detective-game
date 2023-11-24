@@ -96,7 +96,19 @@ with col5 :
  
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
-st.markdown('# Get Started')
+
+
+with col1:
+    pass
+with col2:
+    pass
+with col3 :
+    st.markdown('### Get Started')
+with col4 :
+    pass
+with col5 :
+    pass
+
 card(
     title="Game Instructions",
     text="This is a test card",
