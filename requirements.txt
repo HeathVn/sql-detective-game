@@ -4,4 +4,4 @@ streamlit
 hydralit
 matplotlib
 streamlit_lottie
-streamlit_card
+streamlit-card
