@@ -77,7 +77,7 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
 
-col1, col2, col3 = st.columns([1,5,1])
+col1, col2, col3 = st.columns([1,6,1])
 
 with col1:
     pass
