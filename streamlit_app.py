@@ -37,7 +37,7 @@ def load_lottieurl(url: str):
 lottie_coding = load_lottiefile("detective.json")  # replace link to local lottie file
 lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f54fbb63/cEi3XEcPWT.json")
 
-centered_lottie_html = f""" <div style='display: flex; justify-content: center; align-items: center; height: 300px;'><lottie-player src='detective.json' background='transparent' speed='1' style='width: 300px; height: 300px;' loop autoplay ></lottie-player></div>"""
+centered_lottie_html = f""" <div style='display: flex; justify-content: center; align-items: center; height: 300px;'><lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 300px; height: 300px;' loop autoplay ></lottie-player></div>"""
 
 # Display the centered Lottie animation using st.markdown
 st.markdown(centered_lottie_html, unsafe_allow_html=True)
