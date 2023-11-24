@@ -25,7 +25,8 @@ button_style = """
     border: 2px solid white;
     border-radius: 15px;
     color: white;
-    padding: 15px 32px;
+    padding-left: 10px;
+    padding-right:10px;
     text-decoration: none;
     font-size: 16px;
 """
