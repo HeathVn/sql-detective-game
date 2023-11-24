@@ -100,9 +100,7 @@ with col5 :
 
 with col1:
     pass
-with col2:
-    pass
-with col3 :
+with col2 and col3:
     st.markdown('### Get Started')
 with col4 :
     pass
