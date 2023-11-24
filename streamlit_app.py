@@ -79,7 +79,7 @@ with col2:
     pass
 with col3 :
     center_button = st.button(label="Start Game",key="button1")
-with col3 :
+with col4 :
     pass
 
 # Use st.markdown to display the HTML content
