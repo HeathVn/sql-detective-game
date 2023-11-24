@@ -85,7 +85,7 @@ with col1:
 with col2:
     pass
 with col3 :
-    st.markdown(f''' <a target='_self' href='#section-1'><button style='{button_style}'>Start Game</button> </a>''', unsafe_allow_html=True)
+    st.markdown(f''' <a target='_self' href='#get-started'><button style='{button_style}'>Start Game</button> </a>''', unsafe_allow_html=True)
 with col4 :
     pass
 with col5 :
@@ -96,7 +96,7 @@ with col5 :
  
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
-
+st.markdown('# Get Started')
 card(
     title="Game Instructions",
     text="This is a test card",
