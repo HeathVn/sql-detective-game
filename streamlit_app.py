@@ -65,7 +65,7 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 # Display the centered Lottie animation using st.markdown
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
-st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>""",unsafe_allow_html=True)
+st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
     
 #st_lottie(lottie_coding, width=500, height=500)
 typewriter(text=["<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>","<h2 style='text-align:center;'>Your journey begins here</h1>","<h2 style='text-align:center;'>Press the button below to start your game</h1>"], speed=2.5)
