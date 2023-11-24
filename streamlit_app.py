@@ -22,7 +22,7 @@ container_style = """
 button_style = """
     width:300px;
     height:300px;
-
+    background-color: #fff;
 
 """
 
@@ -91,3 +91,5 @@ if center_button:
     st.write('Game Started')
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
+
+st.markdown(f"""<div style='{button_style}'> </div>""", unsafe_allow_html=True)
