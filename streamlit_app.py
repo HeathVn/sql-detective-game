@@ -57,7 +57,7 @@ custom_html = f"""
         }}
     </style>
     <div class='custom-lottie-container'>
-        <lottie-player src='{lottie_url}' background='transparent' speed='1' style='width: 500px; height: 500px;' loop autoplay></lottie-player>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/ac5034c6-5691-46cc-aeac-61b9e4b782f5/06O6dL2hsu.json" background="##FFFFFF" speed="1" style="width: 300px; height: 300px" loop controls autoplay direction="1" mode="normal"></lottie-player>
     </div>
 """
 
