@@ -9,7 +9,7 @@ from streamlit_lottie import st_lottie
 from streamlit.components.v1 import html
 
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation
-lottie_url = "https://lottie.host/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
+lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
 
 
 
