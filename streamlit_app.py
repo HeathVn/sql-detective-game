@@ -70,14 +70,11 @@ st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>"
 #st_lottie(lottie_coding, width=500, height=500)
 typewriter(text=["<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>","<h2 style='text-align:center;'>Your journey begins here</h1>","<h2 style='text-align:center;'>Press the button below to start your game</h1>"], speed=2.5)
 
-button_clicked = st.button("Start Game")
+
 
 # Use st.markdown to display the HTML content
 st.markdown(f"""<div style='{button_style}'>{st.button("Start Game")}</div>""", unsafe_allow_html=True)
  
-# Check if the button is clicked
-if button_clicked:
-    st.write("Button clicked!") 
 
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
