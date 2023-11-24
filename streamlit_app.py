@@ -21,11 +21,19 @@ container_style = """
 
 
 
-def typewriter(text: str, speed: int):
+def typewriter(text: str,text2:str, speed: int):
     tokens = text.split()
+    tokens2 = text2.split()
     container = st.empty()
     for index in range(len(tokens) + 1):
         curr_full_text = " ".join(tokens[:index])
+        container.markdown(curr_full_text, unsafe_allow_html=True)
+        time.sleep(1/speed)
+
+    container = st.empty()
+    curr_full_text = ""
+    for index in range(len(tokens2) + 1):
+        curr_full_text = " ".join(tokens2[:index])
         container.markdown(curr_full_text, unsafe_allow_html=True)
         time.sleep(1/speed)
 
@@ -52,7 +60,7 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding)}</div>""",unsafe_allow_html=True)
     
 #st_lottie(lottie_coding, width=500, height=500)
-typewriter(text="<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>", speed=5)
+typewriter(text="<h2 style='text-align:center;'>Hello! Welcome to Murder Mystery Detectives!</h1>",text2="<h2 style='text-align:center;'>Your journey begins here</h1>", speed=5)
 
 
 
