@@ -14,6 +14,8 @@ import sqlite3
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
+st.write('''Welcome! Please nter your name to begin.''')
+player_name = st.text_input('Player Name:')
 
 st.write('''Let's view the crime scene report we have received for this''')
 
@@ -37,20 +39,26 @@ else:
     st.warning('No results found.')
 
 
+user_guess1 = st.text_input((''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
-player_name = st.text_input('Player Name:')
 
-split_data = player_name.split(',')
+user_W1address = user_guess1.strip()
 
-st.write(split_data[1])
+cursor.execute('''
+    SELECT * 
+    FROM person
+    WHERE LOWER(address_street_name) = ?
+    ORDER BY name DESC
+''', (user_W1address.lower(),))  # Using a placeholder and passing the variable as a parameter
 
-name1 = split_data[0]
-name2 = split_data[1]
+rows = cursor.fetchall()
 
-data = [ name1,name2 ]
+if rows:
+    df = pd.DataFrame(data=rows, columns=column_names)
+    st.table(df)
+else:
+    print ('No results found. Try again!')
 
-st.write(data)
 
-df = pd.DataFrame( data , columns=['Name1'])
 
-st.dataframe(df)
+
