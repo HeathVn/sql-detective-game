@@ -124,7 +124,8 @@ with st.sidebar:
                 "border-radius": "60px",
                 "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
                 "background-color": "#fffff",
-                
+                "padding-left": "10px",
+                "padding-right": "10px",
             },
             "text": {
                 "font-family": "serif",
