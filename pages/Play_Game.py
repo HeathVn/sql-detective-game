@@ -13,3 +13,4 @@ from streamlit_card import card
 
 player_name = st.text_input('Player Name:')
 
+st.write(player_name)
