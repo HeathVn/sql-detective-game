@@ -18,13 +18,13 @@ split_data = player_name.split(',')
 
 st.write(split_data[0])
 
-name1 = split_data[0]"0"
-name2 = split_data[1]"1"
+#name1 = split_data[0]"0"
+#name2 = split_data[1]"1"
 
-data = [ name1, name2 ]
+#data = [ name1, name2 ]
 
-st.write(data)
+#st.write(data)
 
-df = pd.DataFrame( data , columns=['Name1'])
+#df = pd.DataFrame( data , columns=['Name1'])
 
 #st.dataframe(df)
