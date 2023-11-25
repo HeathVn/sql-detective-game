@@ -115,7 +115,7 @@ st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></di
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
     
-    st.text('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
+    st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
     st.text('')
     st.text('Devlopers: Srinidhi Manikantan')
     st.text('           Heathvonn Styles')
