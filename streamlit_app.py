@@ -138,6 +138,7 @@ with st.sidebar:
     st.text('Total Games Played:')
     st.text('Total Players:')
 
+st.divider()
 
 col1, col2, col3 = st.columns([1.8,2,1])
 
