@@ -116,7 +116,7 @@ with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
     
     card(
-        title="Game Details:",
+        title="",
         text=["SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students."," ","Devlopers: Srinidhi Manikantan, Heathvonn Styles", "Developed: Nov 2023"],
         image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
         styles={
@@ -133,6 +133,8 @@ with st.sidebar:
         },
    
     )
+
+    st.title('Game Details')
 
 
 col1, col2, col3 = st.columns([1.8,2,1])
