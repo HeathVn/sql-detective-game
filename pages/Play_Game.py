@@ -16,8 +16,9 @@ player_name = st.text_input('Player Name:')
 
 split_data = player_name.split(',')
 
-data = [ split_data[0], split_data[1] ]
+st.write(split_data[0])
+#data = [ split_data[0], split_data[1] ]
 
-df = pd.DataFrame(data, columns=['Name1'])
+#df = pd.DataFrame(data, columns=['Name1'])
 
-st.dataframe(df)
+#st.dataframe(df)
