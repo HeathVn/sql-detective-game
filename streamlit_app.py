@@ -99,7 +99,7 @@ with col1:
 with col2:
     pass
 with col3 :
-    st.markdown(f""" <a target='_self' href='#get-started'><button style='{button_style}'>Start Game</button> </a>""", unsafe_allow_html=True)
+    st.markdown(f""" <a target='_self' href='https://detectivegame.streamlit.app/Play_Game'><button style='{button_style}'>Start Game</button> </a>""", unsafe_allow_html=True)
 with col4 :
     pass
 with col5 :
