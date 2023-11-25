@@ -14,6 +14,10 @@ import pandas as pd
 
 player_name = st.text_input('Player Name:')
 
+split_data = player_name.split(',')
 
-data = []
-st.write(player_name.split(',') )
+data = [ split_data[0], split_data[1] ]
+
+df = pd.DataFrame(data, columns=['Name1', 'Name2'])
+
+st.dataframe(df)
