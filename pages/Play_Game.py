@@ -27,12 +27,16 @@ cursor.execute('''
 rows = cursor.fetchall()
 
 column_names = [description[0] for description in cursor.description]
+
+
 if rows:
-    st.table(data=rows, header=column_names)
+    df = pd.DataFrame(data=rows, columns=column_names)
+    st.table(df)
+
 else:
     st.warning('No results found.')
 
-    
+
 
 player_name = st.text_input('Player Name:')
 
