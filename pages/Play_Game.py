@@ -14,7 +14,7 @@ import sqlite3
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
-st.write('''Welcome! Please nter your name to begin.''')
+st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
 
 if player_name:
