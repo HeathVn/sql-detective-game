@@ -29,11 +29,11 @@ if player_name:
 
     rows = cursor.fetchall()
 
-    column_names = [description[0] for description in cursor.description]
+    column_names = [description[0].capitalize() for description in cursor.description]
 
 
     if rows and column_names:
-        df = pd.DataFrame(data=rows, columns=column_names.capitalize())
+        df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
     else:
         st.warning('No results found.')
