@@ -114,26 +114,9 @@ st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></di
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
-
-    card(
-        title="Game Instructions:",
-        text=["SQl - Mellon City Mysteria is an SQL based probelem solver game developed by two Carnegie Mellon Graduate students."],
-        image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
-        styles={
-            "card": {
-                "width": "600px",
-                "height": "500px",
-                "border-radius": "60px",
-                "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-                "background-color": "#fffff",
-                "border": "2px solid white"
-            },
-            "text": {
-                "font-family": "serif",
-            }
-        },
-   
-    )
+    
+    st.text('SQl - Mellon City Mysteria is an SQL based probelem solver game developed by two Carnegie Mellon Graduate students.')
+    
 
 
 col1, col2, col3 = st.columns([1.8,2,1])
