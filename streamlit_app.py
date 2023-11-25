@@ -112,12 +112,13 @@ st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></di
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
+with st.sidebar:
+        st.title('Test')
 
 col1, col2, col3 = st.columns([1.8,2,1])
 
 with col1:
-    with st.sidebar:
-        st.title('Test')
+    pass
 with col2:
     st.markdown('### Get Started')
 with col3 :
