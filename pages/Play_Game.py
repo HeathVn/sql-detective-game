@@ -8,9 +8,12 @@ import requests
 from streamlit_lottie import st_lottie
 from streamlit.components.v1 import html
 from streamlit_card import card
+import pandas as pd 
 
 
 
 player_name = st.text_input('Player Name:')
 
-st.write(player_name)
+
+data = []
+st.write(player_name.split(',') )

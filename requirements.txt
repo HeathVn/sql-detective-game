@@ -5,3 +5,4 @@ hydralit
 matplotlib
 streamlit_lottie
 streamlit-card
+pandas
