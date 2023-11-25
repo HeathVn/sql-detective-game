@@ -16,7 +16,7 @@ player_name = st.text_input('Player Name:')
 
 split_data = player_name.split(',')
 
-st.write(split_data[0])
+st.write(split_data[1])
 
 #name1 = split_data[0]"0"
 #name2 = split_data[1]"1"
