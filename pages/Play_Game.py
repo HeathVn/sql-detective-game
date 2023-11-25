@@ -39,7 +39,7 @@ else:
     st.warning('No results found.')
 
 
-user_guess = st.text_input((''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
+user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
 if user_guess:
     user_guess = user_guess.strip()
