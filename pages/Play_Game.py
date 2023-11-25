@@ -31,7 +31,7 @@ rows = cursor.fetchall()
 column_names = [description[0] for description in cursor.description]
 
 
-if rows and column_names:
+if player_name and rows and column_names:
     df = pd.DataFrame(data=rows, columns=column_names.capitalize())
     st.table(df)
 
