@@ -18,6 +18,6 @@ split_data = player_name.split(',')
 
 data = [ split_data[0], split_data[1] ]
 
-df = pd.DataFrame(data, columns=['Name1', 'Name2'])
+df = pd.DataFrame(data, columns=['Name1'])
 
 st.dataframe(df)
