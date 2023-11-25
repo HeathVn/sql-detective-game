@@ -18,8 +18,8 @@ split_data = player_name.split(',')
 
 st.write(split_data[1])
 
-#name1 = split_data[0]"0"
-#name2 = split_data[1]"1"
+name1 = split_data[0]
+name2 = split_data[1]
 
 #data = [ name1, name2 ]
 
