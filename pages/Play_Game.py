@@ -32,7 +32,7 @@ column_names = [description[0] for description in cursor.description]
 
 
 if rows:
-    df = pd.DataFrame(data=rows, columns=column_names)
+    df = pd.DataFrame(data=rows, columns=column_names.capitalize())
     st.table(df)
 
 else:
