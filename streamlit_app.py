@@ -134,7 +134,9 @@ with st.sidebar:
    
     )
 
-    st.title('Game Details')
+    st.title('Game Statistics')
+    st.text('Total Games Played:')
+    st.text('Total Players:')
 
 
 col1, col2, col3 = st.columns([1.8,2,1])
