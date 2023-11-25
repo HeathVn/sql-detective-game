@@ -42,14 +42,14 @@ else:
 user_guess1 = st.text_input((''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
 
-user_W1address = user_guess1.strip()
+user_guess1 = user_guess1.strip()
 
 cursor.execute('''
     SELECT * 
     FROM person
     WHERE LOWER(address_street_name) = ?
     ORDER BY name DESC
-''', (user_W1address.lower(),))  # Using a placeholder and passing the variable as a parameter
+''', (user_guess1.lower(),))  # Using a placeholder and passing the variable as a parameter
 
 rows = cursor.fetchall()
 
