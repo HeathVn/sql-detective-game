@@ -116,6 +116,7 @@ with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
 
     card(
+        title="Game Instructions:",
         text=["SQl - Mellon City Mysteria is an SQL based probelem solver game developed by two Carnegie Mellon Graduate students."],
         image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
         styles={
