@@ -115,24 +115,13 @@ st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></di
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
     
-    card(
-        title="",
-        text=["SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students."," ","Devlopers: Srinidhi Manikantan, Heathvonn Styles", "Developed: Nov 2023"],
-        image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
-        styles={
-            "card": {
-                "border-radius": "60px",
-                "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-                "background-color": "#fffff",
-                "padding-left": "10px",
-                "padding-right": "10px",
-            },
-            "text": {
-                "font-family": "serif",
-            }
-        },
-   
-    )
+    st.text('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
+    st.text('')
+    st.text('Devlopers: Srinidhi Manikantan')
+    st.text('           Heathvonn Styles')
+    st.text('Developed: Nov 2023')
+
+    st.divider()
 
     st.title('Game Statistics')
     st.text('Total Games Played:')
