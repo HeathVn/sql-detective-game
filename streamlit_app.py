@@ -117,7 +117,7 @@ with st.sidebar:
     
     card(
         title="Game Details:",
-        text=["SQL - Mellon City Mysteria is an SQL based probelem solver game developed by two Carnegie Mellon Graduate students."],
+        text=["SQL - Mellon City Mysteria is an SQL based probelem solver game developed by two Carnegie Mellon Graduate students.","Devlopers: Srinidhi Manikantan, Heathvonn Styles", "Developed: Nov 2023"],
         image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
         styles={
             "card": {
