@@ -14,6 +14,17 @@ import sqlite3
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
+button_style = """
+    background-color: transparent; 
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    padding-left: 10px;
+    padding-right:10px;
+    text-decoration: none;
+    font-size: 16px;
+"""
+
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
 
@@ -35,31 +46,46 @@ if player_name:
     if rows and column_names:
         df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
-    else:
-        st.warning('No results found.')
 
- 
-    user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
+        col1, col2, col3,col4,col5 = st.columns(5)
 
-    if user_guess:
-        user_guess = user_guess.strip()
-
-        cursor.execute('''
-            SELECT * 
-            FROM person
-            WHERE LOWER(address_street_name) = ?
-            ORDER BY name DESC
-        ''', (user_guess.lower(),))  # Using a placeholder and passing the variable as a parameter
+        with col1:
+            pass
+        with col2:
+            pass
+        with col3 :
+            finished = st.button("""Press Button if finished reading""")
+        with col4 :
+            pass
+        with col5 :
+            pass
+            else:
+                st.warning('No results found.')
 
     
-        rows = cursor.fetchall()
-        column_names = [description[0] for description in cursor.description]
+    if finished:
+ 
+        user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
-        if rows:
-            df = pd.DataFrame(data=rows, columns=column_names)
-            st.table(df)
-        else:
-            st.warning('No results found. Try again!')
+        if user_guess:
+            user_guess = user_guess.strip()
+
+            cursor.execute('''
+                SELECT * 
+                FROM person
+                WHERE LOWER(address_street_name) = ?
+                ORDER BY name DESC
+            ''', (user_guess.lower(),))  # Using a placeholder and passing the variable as a parameter
+
+        
+            rows = cursor.fetchall()
+            column_names = [description[0] for description in cursor.description]
+
+            if rows:
+                df = pd.DataFrame(data=rows, columns=column_names)
+                st.table(df)
+            else:
+                st.warning('No results found. Try again!')
 
 
 
