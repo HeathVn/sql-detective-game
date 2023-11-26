@@ -56,7 +56,6 @@ if player_name:
 
         with col1:
             finished = st.button("""Press Button if finished reading""", on_click = clicked)
-            clicked = finished
         with col2 :
             pass 
     else:
