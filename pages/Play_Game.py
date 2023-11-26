@@ -47,18 +47,15 @@ if player_name:
         df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
 
-        col1, col2, col3,col4,col5 = st.columns(5)
+        col1, col2, col3 = st.columns([1,6,1])
 
         with col1:
             pass
         with col2:
-            pass
-        with col3 :
             finished = st.button("""Press Button if finished reading""")
-        with col4 :
-            pass
-        with col5 :
-            pass
+        with col3 :
+            pass 
+
     else:
         st.warning('No results found.')
 
