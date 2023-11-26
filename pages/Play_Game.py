@@ -59,8 +59,8 @@ if player_name:
             pass
         with col5 :
             pass
-            else:
-                st.warning('No results found.')
+    else:
+        st.warning('No results found.')
 
     
     if finished:
