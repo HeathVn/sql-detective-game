@@ -209,22 +209,24 @@ if player_name:
                     user_W2id = user_W2id.strip()
                     
                     
-                    typewriter(text=["<h2 style='text-align:center;'>Witness 2 submitted a photo to the case file</h1>","<h2 style='text-align:center;'>Access the photo by clicking the button below.</h1>","<h2 style='text-align:center;'>Press the button below to start your game</h1>"], speed=2.5)
-                    #st.write('Witness 2 submitted a photo to the case file')
+                    
 
-                    #add button
-                    col1,col2 = st.columns([6,1])
+                    if user_W1id and user_W2id:
 
-                    with col1:
-                        finished = st.button("""View Photo""", on_click = on_button_click2 )
-                    with col2 :
-                        pass 
+                        typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
+                        #st.write('Witness 2 submitted a photo to the case file')
+
+                        #add button
+                        col1,col2 = st.columns([6,1])
+
+                        with col1:
+                            finished = st.button("""View Photo""", on_click = on_button_click2 )
+                        with col2 :
+                            pass 
 
                     #add picture
                     if click2:
                         st.image('red testla car.png')
-
-                    if user_W1id and user_W2id:
                         cursor.execute('''
                             SELECT *
                             FROM interview
