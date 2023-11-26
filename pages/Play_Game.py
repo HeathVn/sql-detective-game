@@ -10,6 +10,8 @@ from streamlit.components.v1 import html
 from streamlit_card import card
 import pandas as pd 
 import sqlite3
+from streamlit.report_thread import get_report_ctx
+from streamlit.server.server import Server
 
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
