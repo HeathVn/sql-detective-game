@@ -159,7 +159,7 @@ if player_name:
                     st.table(df)
                 
 
-                image = Image.open('spooky-house2.jpeg')
+                image = Image.open('spooky-house2.png')
 
                 st.image(image, caption='Crime Scene')
 
