@@ -57,7 +57,7 @@ def typewriter(text: [str,str], speed: int, container):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(1/speed)
 
-container = st.empty()
+#container = st.empty()
 
 lottie_coding = load_lottiefile("riddle1.json")
 
@@ -78,6 +78,7 @@ col1,col2 = st.columns([1,8])
 with col1 :
     st.image('detective-profile.png')
 with col2 :
+    container = st.empty()
     typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3, container)
 
 player_name = st.text_input('Player Name:')
@@ -133,7 +134,8 @@ if player_name:
         st.image('detective-profile.png')
     with col2 :
        st.write(f'''Welcome aboard, Detective {player_name}!''')
-       typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3, container)
+       container2 = st.empty()
+       typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3, container2)
 
     cursor.execute('''
         SELECT * 
@@ -156,7 +158,8 @@ if player_name:
         with col1 :
             st.image('detective-profile.png')
         with col2 :
-            typewriter([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3, container)
+            container3 = st.empty()
+            typewriter([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3, container3)
         
         col1,col2 = st.columns([6,1])
 
