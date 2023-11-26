@@ -434,6 +434,9 @@ if player_name:
                                     with col2 :
                                         typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
                                     
+                                    time.sleep(1)
+                                    st.balloons()
+                                    
                                     col1,col2 = st.columns([1,8])
 
                                     with col1 :
@@ -446,8 +449,7 @@ if player_name:
                                     #st.divider()
 
                                     #st.write(f''' Total Time: {total_time} ''')
-                                    time.sleep(1)
-                                    st.balloons()
+                                    
                                 else:
                                     st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
 
