@@ -94,7 +94,7 @@ with col2 :
 with col3 :
     pass  
 
-st.cache_resource.clear()
+#st.cache_resource.clear()
 
 col1,col2 = st.columns([1,8])
 
