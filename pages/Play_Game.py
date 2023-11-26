@@ -221,6 +221,38 @@ if player_name:
                             if rows:
                                 df = pd.DataFrame(data=rows, columns=column_names)
                                 st.table(df)
+
+                            user_murderer = st.text_input('Who are you accusing of murder?')
+                            user_murderer = user_murderer.strip()
+
+                            cursor.execute('''
+                                SELECT p.name
+                                FROM drivers_license dl
+                                INNER JOIN person p 
+                                ON dl.id = p.license_id 
+                                INNER JOIN get_fit_now_member as gym
+                                ON p.id = gym.person_id
+                                INNER JOIN get_fit_now_check_in as checkin
+                                ON gym.id = checkin.membership_id
+                                WHERE plate_number LIKE '%H42W%' 
+                                AND membership_status = 'gold'
+                                AND check_in_date = '20180109' 
+                            ''')
+
+                            rows = cursor.fetchall()
+                            
+                            column_names = [description[0] for description in cursor.description]
+
+                            if rows:
+                                df = pd.DataFrame(data=rows, columns=column_names)
+                                st.table(df)
+
+                            if user_murderer.lower() in ['jeremy', 'jeremy bowers', 'bowers', 'jeremybowers']:
+                                st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
+    
+                            else:
+                                st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!')
+
                         else:
                             st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
 
