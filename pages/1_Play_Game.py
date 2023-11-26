@@ -47,7 +47,6 @@ def load_lottieurl(url: str):
 
 def typewriter(text: [str,str], speed: int, container):
     
-    container = st.empty()
     for i in text:
         tokens = i.split()
         
