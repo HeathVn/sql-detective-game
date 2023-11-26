@@ -87,6 +87,16 @@ if 'click2' not in st.session_state:
 def on_button_click2():
     st.session_state.click2 = not st.session_state.click2
 
+def time_difference(start_time, end_time):
+    # Calculate the time difference in seconds
+    time_diff_seconds = end_time - start_time
+
+    # Extract hours, minutes, and seconds from the time difference
+    hours, remainder = divmod(time_diff_seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+
+    return f'''{int(hours)}: {int(minutes)}: {int(seconds)}'''
+
 #click = False
 
 
@@ -95,9 +105,10 @@ def on_button_click2():
     #click = True
 
 
-
+total_time = 0
 
 if player_name:
+    start_time = time.time
     st.write(f'''Hi {player_name}, let's view the crime scene report we have received for this incident''')
 
     cursor.execute('''
@@ -292,6 +303,13 @@ if player_name:
                                     df = pd.DataFrame(data=rows, columns=column_names)
                                     st.table(df)
                                     st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
+                                    
+                                    end_time = time.time
+
+                                    total_time = time_difference(start_time,end_time)
+                                    st.divider()
+
+                                    st.write(f''' You took: {total_time} ''')
                                     time.sleep(1)
                                     st.balloons()
                                 else:
@@ -313,6 +331,7 @@ if player_name:
             
             else:
                 st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+
         
         
 
