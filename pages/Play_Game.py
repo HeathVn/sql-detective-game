@@ -85,7 +85,7 @@ if 'click2' not in st.session_state:
     st.session_state.click = False
 
 def on_button_click2():
-    st.session_state.click2 = !st.session_state.click2
+    st.session_state.click2 = not st.session_state.click2
 
 #click = False
 
