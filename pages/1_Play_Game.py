@@ -56,6 +56,8 @@ def typewriter(text: [str,str], speed: int):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(0.1)
 
+cached_data = typewriter()
+
 def typewriter2(text: [str, str], speed: int):
     st.markdown("""
     <div id="typewriter-container"></div>
@@ -94,7 +96,7 @@ with col2 :
 with col3 :
     pass  
 
-
+cache_data.clear()
 
 col1,col2 = st.columns([1,8])
 
@@ -102,8 +104,8 @@ with col1 :
     st.image('detective-profile.png')
 with col2 :
     typ = typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
-    typ.clear()
     
+
 player_name = st.text_input('Player Name:')
 
 
