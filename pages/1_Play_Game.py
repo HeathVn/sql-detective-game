@@ -67,13 +67,19 @@ with col1 :
     pass
 with col2 :
     #st.markdown(f"""<div style="width: 50%; height: 50%;">{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
-    st.image('detective-case.jpeg')
+    #st.image('detective-case.jpeg')
+    pass
 with col3 :
     pass  
 
 
+col1,col2 = st.columns([1,8])
 
-st.write('''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.''')
+with col1 :
+    st.image('detective-profile.png')
+with col2 :
+    st.write('''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.''')
+    
 player_name = st.text_input('Player Name:')
 
 
