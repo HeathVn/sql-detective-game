@@ -108,7 +108,7 @@ def time_difference(start_time, end_time):
 total_time = 0
 
 if player_name:
-    start_time = time.time
+    start_time = time.time()
     st.write(f'''Hi {player_name}, let's view the crime scene report we have received for this incident''')
 
     cursor.execute('''
@@ -304,7 +304,7 @@ if player_name:
                                     st.table(df)
                                     st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
                                     
-                                    end_time = time.time
+                                    end_time = time.time()
 
                                     total_time = time_difference(start_time,end_time)
                                     st.divider()
