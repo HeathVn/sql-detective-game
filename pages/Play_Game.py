@@ -183,6 +183,30 @@ if player_name:
                         df = pd.DataFrame(data=rows, columns=column_names)
                         st.table(df)
 
+                    user_W1id = st.text_input("What is the ID number of Witness 1?")
+                    user_W1id = user_W1id.strip()
+
+                    user_W2id = st.text_input("What is the ID number of Witness 2?")
+                    user_W2id = user_W2id.strip()
+                    
+                    if user_W1id and user_W2id:
+                        cursor.execute('''
+                            SELECT *
+                            FROM interview
+                            WHERE person_id IN (?, ?)
+                        ''', (user_W1id, user_W2id))
+
+                        rows = cursor.fetchall()
+                        column_names = [description[0] for description in cursor.description]
+
+                        if rows:
+                            df = pd.DataFrame(data=rows, columns=column_names)
+                            st.table(df)
+                        else:
+                            st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
+                    else:
+                        st.warning('Make sure that the ids for both Witness1 and Witness 2 are entered')
+
                 elif user_W2name.lower() == 'nan':
                     st.warning('No results found. Try again! Maybe you can try switching the order?')
                         
