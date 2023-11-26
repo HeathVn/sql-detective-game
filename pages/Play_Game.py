@@ -44,6 +44,19 @@ def load_lottieurl(url: str):
     if r.status_code != 200:
         return None
     return r.json()
+
+def typewriter(text: [str,str], speed: int):
+    
+    container = st.empty()
+    for i in text:
+        tokens = i.split()
+        
+        
+
+        for index in range(len(tokens) + 1):
+            curr_full_text = " ".join(tokens[:index])
+            container.markdown(curr_full_text, unsafe_allow_html=True)
+            time.sleep(1/speed)
     
 
 lottie_coding = load_lottiefile("riddle1.json")
@@ -66,6 +79,13 @@ if 'click' not in st.session_state:
 
 def on_button_click():
     st.session_state.click = True
+
+
+if 'click2' not in st.session_state:
+    st.session_state.click = False
+
+def on_button_click2():
+    st.session_state.click2 = !True
 
 #click = False
 
@@ -188,6 +208,22 @@ if player_name:
                     user_W2id = st.text_input("What is the ID number of Witness 2?")
                     user_W2id = user_W2id.strip()
                     
+                    
+                    typewriter(text=["<h2 style='text-align:center;'>Witness 2 submitted a photo to the case file</h1>","<h2 style='text-align:center;'>Access the photo by clicking the button below.</h1>","<h2 style='text-align:center;'>Press the button below to start your game</h1>"], speed=2.5)
+                    #st.write('Witness 2 submitted a photo to the case file')
+
+                    #add button
+                    col1,col2 = st.columns([6,1])
+
+                    with col1:
+                        finished = st.button("""View Photo""", on_click = on_button_click2 )
+                    with col2 :
+                        pass 
+
+                    #add picture
+                    if click2:
+                        st.image('red testla car.png')
+
                     if user_W1id and user_W2id:
                         cursor.execute('''
                             SELECT *
