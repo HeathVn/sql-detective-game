@@ -87,6 +87,14 @@ if 'click2' not in st.session_state:
 def on_button_click2():
     st.session_state.click2 = not st.session_state.click2
 
+
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = 0
+
+if 'end_time' not in st.session_state:
+    st.session_state.end_time = 0
+
+
 def time_difference(start_time, end_time):
     # Calculate the time difference in seconds
     time_diff_seconds = end_time - start_time
@@ -108,7 +116,7 @@ def time_difference(start_time, end_time):
 total_time = 0
 
 if player_name:
-    start_time = time.time()
+    st.session_state.start_time = time.time()
     st.write(f'''Hi {player_name}, let's view the crime scene report we have received for this incident''')
 
     cursor.execute('''
@@ -304,12 +312,12 @@ if player_name:
                                     st.table(df)
                                     st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
                                     
-                                    end_time = time.time()
+                                    st.session_state.end_time = time.time()
 
-                                    total_time = time_difference(start_time,end_time)
+                                    total_time = time_difference(st.session_state.start_time,st.session_state.end_time)
                                     #st.divider()
 
-                                    st.write(f''' You took: {total_time} ''')
+                                    st.write(f''' Total Time: {total_time} ''')
                                     time.sleep(1)
                                     st.balloons()
                                 else:
