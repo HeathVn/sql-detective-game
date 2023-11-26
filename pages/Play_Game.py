@@ -28,6 +28,8 @@ button_style = """
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
 
+clicked =False
+
 if player_name:
     st.write('''Let's view the crime scene report we have received for this''')
 
@@ -51,13 +53,14 @@ if player_name:
 
         with col1:
             finished = st.button("""Press Button if finished reading""")
+            clicked = finished
         with col2 :
             pass 
     else:
         st.warning('No results found.')
 
     
-    if finished:
+    if clicked:
  
         user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
