@@ -45,17 +45,15 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
-def typewriter(text: [str,str], speed: int, container):
-    
+def typewriter(text: [str,str], speed: int):
+    container = st.empty()
     for i in text:
         tokens = i.split()
-        
-        
 
         for index in range(len(tokens) + 1):
             curr_full_text = " ".join(tokens[:index])
             container.markdown(curr_full_text, unsafe_allow_html=True)
-            #time.sleep(1/speed)
+            time.sleep(1)
 
 def typewriter2(text: [str, str], speed: int):
     st.markdown("""
@@ -102,7 +100,7 @@ with col1 :
     st.image('detective-profile.png')
 with col2 :
     container = st.empty()
-    typewriter2(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
+    typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
 
 player_name = st.text_input('Player Name:')
 
@@ -158,7 +156,7 @@ if player_name:
     with col2 :
        st.write(f'''Welcome aboard, Detective {player_name}!''')
        container2 = st.empty()
-       typewriter2(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3)
+       typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3)
 
     cursor.execute('''
         SELECT * 
@@ -182,7 +180,7 @@ if player_name:
             st.image('detective-profile.png')
         with col2 :
             container3 = st.empty()
-            #typewriter2([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
+            typewriter([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
         
         col1,col2 = st.columns([6,1])
 
