@@ -57,6 +57,17 @@ def typewriter(text: [str,str], speed: int):
             curr_full_text = " ".join(tokens[:index])
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(1/speed)
+
+def typewriter2(text: str, speed: int):
+    
+    container = st.empty()
+   
+    tokens = text.split() 
+
+    for index in range(len(tokens) + 1):
+        curr_full_text = " ".join(tokens[:index])
+        container.markdown(curr_full_text, unsafe_allow_html=True)
+        time.sleep(1/speed)
     
 
 lottie_coding = load_lottiefile("riddle1.json")
@@ -156,7 +167,7 @@ if player_name:
         with col1 :
             st.image('detective-profile.png')
         with col2 :
-            st.write([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
+            typewriter([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
         
         col1,col2 = st.columns([6,1])
 
