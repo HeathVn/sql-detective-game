@@ -47,7 +47,7 @@ if player_name:
         df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
 
-        col1, col2, col3 = st.columns([0.5,6,1])
+        col1, col2, col3 = st.columns([0.2,6,1])
 
         with col1:
             pass
