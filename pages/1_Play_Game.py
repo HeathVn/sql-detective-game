@@ -53,7 +53,7 @@ def typewriter(text: [str,str], speed: int):
         for index in range(len(tokens) + 1):
             curr_full_text = " ".join(tokens[:index])
             container.markdown(curr_full_text, unsafe_allow_html=True)
-            time.sleep(1)
+            time.sleep(0.1)
 
 def typewriter2(text: [str, str], speed: int):
     st.markdown("""
