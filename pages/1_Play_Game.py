@@ -95,7 +95,7 @@ def time_difference(start_time, end_time):
     hours, remainder = divmod(time_diff_seconds, 3600)
     minutes, seconds = divmod(remainder, 60)
 
-    return f'''{int(hours)}: {int(minutes)}: {int(seconds)}'''
+    return f'''{int(hours)}: {int(minutes)}: {float(seconds)}'''
 
 #click = False
 
