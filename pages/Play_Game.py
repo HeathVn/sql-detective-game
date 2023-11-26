@@ -78,7 +78,7 @@ def on_button_click():
 
 
 if player_name:
-    st.write('''Let's view the crime scene report we have received for this''')
+    st.write(f'''Hi {player_name}, let's view the crime scene report we have received for this incident''')
 
     cursor.execute('''
         SELECT * 
@@ -108,8 +108,13 @@ if player_name:
     #st.write(st.session_state.click)
 
     if st.session_state.click:
- 
-        user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
+        st.write('''Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!  ''')
+        
+        image = Image.open('spooky-house.jpg')
+
+        st.image(image, caption='Crime Scene') 
+        
+        user_guess = st.text_input('''Enter the secret code that you have found in the image above: ''')
 
         if user_guess:
             user_guess = user_guess.strip()
