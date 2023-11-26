@@ -136,6 +136,30 @@ if player_name:
             else:
                 st.warning('No results found. Try again!')
 
+            
+            user_W1name = st.text_input('''Who is Witness 1? Write the name here:''')
+            user_W1name = user_W1name.strip()
+
+            if user_W1name.lower() in ['morty schapiro', 'morty', 'schapiro']:
+
+            cursor.execute('''
+                SELECT * 
+                FROM person
+                WHERE LOWER(address_street_name) = 'northwestern dr' 
+                ORDER BY address_number DESC
+                LIMIT 1
+            ''')
+
+            rows = cursor.fetchall()
+
+            column_names = [description[0] for description in cursor.description]
+
+            if rows:
+                df = pd.DataFrame(data=rows, columns=column_names)
+                st.table(df)
+            else:
+                st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+            
 
 
 
