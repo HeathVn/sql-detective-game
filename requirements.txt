@@ -6,3 +6,5 @@ matplotlib
 streamlit_lottie
 streamlit-card
 pandas
+streamlit.report_thread
+streamlit.server.server
