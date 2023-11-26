@@ -249,12 +249,12 @@ if player_name:
                                     df = pd.DataFrame(data=rows, columns=column_names)
                                     st.table(df)
                                     st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
-        
+                                    st.snow()
                                 else:
                                     st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
 
-                            
-                            
+                                
+
                         else:
                             st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
 
