@@ -110,7 +110,7 @@ if player_name:
     if st.session_state.click:
         st.write('''Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!  ''')
         
-        image = Image.open('spooky-house.jpg')
+        image = Image.open('spooky-house.jpeg')
 
         st.image(image, caption='Crime Scene') 
         
