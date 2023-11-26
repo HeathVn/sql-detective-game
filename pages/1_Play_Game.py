@@ -203,8 +203,20 @@ if player_name:
     #st.write(st.session_state.click)
 
     if st.session_state.click:
-        st.write(f'''Uh-oh! Detective {player_name}, we've hit a snag. An elusive culprit has meddled with the crime scene reports, leaving us with a puzzle to solve. The city's faith in your investigative skills has never been more crucial. Decode wisely!''')
-        st.write('''Now, onto the task at hand. Your first mission is to unravel the secret code and expose the address of Witness 1. Utilize the encryption provided below to crack the mystery code. Are you up for the challenge, Detective? The city awaits your sleuthing expertise.''')
+
+        col1,col2 = st.columns([1,8])
+
+        with col1 :
+            st.image('detective-profile.png')
+        with col2 :
+            typewriter([f'''Uh-oh! Detective {player_name}, we've hit a snag. An elusive culprit has meddled with the crime scene reports, leaving us with a puzzle to solve. The city's faith in your investigative skills has never been more crucial. Decode wisely!'''],3)
+        
+        col1,col2 = st.columns([1,8])
+
+        with col1 :
+            st.image('detective-profile.png')
+        with col2 :
+            typewriter(['''Now, onto the task at hand. Your first mission is to unravel the secret code and expose the address of Witness 1. Utilize the encryption provided below to crack the mystery code. Are you up for the challenge, Detective? The city awaits your sleuthing expertise.'''],3)
 
         image = Image.open('secretcode_sqlmystery.png')
 
@@ -233,7 +245,13 @@ if player_name:
             else:
                 st.warning('No results found. Try again!')
             
-            st.write('''Based on the clues found in the crime scene report, can you deduce the identity of Witness 1? Kindly enter the name below.''')
+            col1,col2 = st.columns([1,8])
+
+            with col1 :
+                st.image('detective-profile.png')
+            with col2 :
+                typewriter(['''Based on the clues found in the crime scene report, can you deduce the identity of Witness 1? Kindly enter the name below.'''],3)
+
             user_W1name = st.text_input('''Who is Witness 1? Write the name here:''')
             user_W1name = user_W1name.strip()
 
@@ -255,10 +273,19 @@ if player_name:
                     df = pd.DataFrame(data=rows, columns=column_names)
                     st.table(df)
                 
-                st.write('''Excellent work, Detective! Morty Shapiro is indeed Witness 1.
- ''')
-                st.write('''Now, onto the next challenge. It seems the culprit has tampered with the identification of Witness 2. Three letters crucial to the witness's name are concealed behind the image. Can you unveil these hidden letters and reveal the identity of Witness 2? Your keen observation skills are key to solving this puzzle. Good luck!
- ''')
+                col1,col2 = st.columns([1,8])
+
+                with col1 :
+                    st.image('detective-profile.png')
+                with col2 :
+                    typewriter(['''Excellent work, Detective! Morty Shapiro is indeed Witness 1.'''],3)
+
+                col1,col2 = st.columns([1,8])
+
+                with col1 :
+                    st.image('detective-profile.png')
+                with col2 :
+                    typewriter(['''Now, onto the next challenge. It seems the culprit has tampered with the identification of Witness 2. Three letters crucial to the witness's name are concealed behind the image. Can you unveil these hidden letters and reveal the identity of Witness 2? Your keen observation skills are key to solving this puzzle. Good luck!'''],3)
 
                 image = Image.open('spooky-house2.png')
 
@@ -269,8 +296,13 @@ if player_name:
 
                 if user_W2name.lower() in ['ann', 'nna']:
                     
-                    st.write('''Fantastic job, Detective! Your sharp eyes have unveiled the hidden letters, pointing us to Annabel Miller as Witness 2. Good going! ''')
+                    col1,col2 = st.columns([1,8])
 
+                    with col1 :
+                        st.image('detective-profile.png')
+                    with col2 :
+                        typewriter(['''Fantastic job, Detective! Your sharp eyes have unveiled the hidden letters, pointing us to Annabel Miller as Witness 2. Good going!'''],3)
+                
                     cursor.execute('''
                         SELECT * 
                         FROM person
@@ -285,7 +317,13 @@ if player_name:
                         df = pd.DataFrame(data=rows, columns=column_names)
                         st.table(df)
 
-                    st.write('''Building on your exceptional work, we have now gathered details from the witnesses, obtaining intriguing statements about the suspect. To proceed further, kindly input the ID numbers of both witnesses below to unlock access to their statements. We're on the verge of cracking this case wide open, Detective! ''')
+                    col1,col2 = st.columns([1,8])
+
+                    with col1 :
+                        st.image('detective-profile.png')
+                    with col2 :
+                        typewriter(['''Building on your exceptional work, we have now gathered details from the witnesses, obtaining intriguing statements about the suspect. To proceed further, kindly input the ID numbers of both witnesses below to unlock access to their statements. We're on the verge of cracking this case wide open, Detective! '''],3)
+                    
                     user_W1id = st.text_input("What is the ID number of Witness 1?")
                     user_W1id = user_W1id.strip()
 
@@ -311,8 +349,15 @@ if player_name:
                             df = pd.DataFrame(data=rows, columns=column_names)
                             st.table(df)
 
+                            col1,col2 = st.columns([1,8])
+
+                            with col1 :
+                                st.image('detective-profile.png')
+                            with col2 :
+                                typewriter(['''Witness 2 has submitted a photo to the case file. To view the image, please click the button below.'''],3)
+
                             #typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
-                            st.write('''Witness 2 has submitted a photo to the case file. To view the image, please click the button below.''')
+                            
                             #st.write('Access the photo by clicking the button below.')
 
                             #add button
@@ -328,9 +373,13 @@ if player_name:
                                 image = Image.open('red-tesla-car.png')
 
                                 st.image(image, caption='Car photo submitted to case file')
-                                
 
-                            st.write('''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!''')
+                            col1,col2 = st.columns([1,8])
+
+                            with col1 :
+                                st.image('detective-profile.png')
+                            with col2 :
+                                typewriter(['''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!'''],3)
 
                             cursor.execute('''
                                 SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
@@ -375,8 +424,20 @@ if player_name:
                                 if rows:
                                     df = pd.DataFrame(data=rows, columns=column_names)
                                     st.table(df)
-                                    st.write(f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.''')
-                                    st.write('''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. ''')
+
+                                    col1,col2 = st.columns([1,8])
+
+                                    with col1 :
+                                        st.image('detective-profile.png')
+                                    with col2 :
+                                        typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
+                                    
+                                    col1,col2 = st.columns([1,8])
+
+                                    with col1 :
+                                        st.image('detective-profile.png')
+                                    with col2 :
+                                        typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
                                     #st.session_state.end_time = time.time()
 
                                     #total_time = time_difference(st.session_state.start_time,st.session_state.end_time)
