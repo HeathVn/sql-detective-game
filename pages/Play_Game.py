@@ -31,6 +31,7 @@ player_name = st.text_input('Player Name:')
 click =False
 
 def clicked():
+    global click
     click =True
 
 if player_name:
@@ -61,7 +62,7 @@ if player_name:
     else:
         st.warning('No results found.')
 
-    st.write(clicked)
+    st.write(click)
 
     if click:
  
