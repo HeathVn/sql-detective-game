@@ -61,8 +61,8 @@ def typewriter2(text: [str, str], speed: int):
     st.markdown("""
     <div id="typewriter-container"></div>
     <script>
-        const text = [f'''{text}'''];
-        const speed = {speed};
+        const text = ["{}"];
+        const speed = {};
         const container = document.getElementById('typewriter-container');
         
         async function typewriterEffect() {
