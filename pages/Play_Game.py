@@ -61,25 +61,25 @@ if player_name:
  
         user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
-        if user_guess:
-            user_guess = user_guess.strip()
+    if user_guess:
+        user_guess = user_guess.strip()
 
-            cursor.execute('''
-                SELECT * 
-                FROM person
-                WHERE LOWER(address_street_name) = ?
-                ORDER BY name DESC
-            ''', (user_guess.lower(),))  # Using a placeholder and passing the variable as a parameter
+        cursor.execute('''
+            SELECT * 
+            FROM person
+            WHERE LOWER(address_street_name) = ?
+            ORDER BY name DESC
+        ''', (user_guess.lower(),))  # Using a placeholder and passing the variable as a parameter
 
         
-            rows = cursor.fetchall()
-            column_names = [description[0] for description in cursor.description]
+        rows = cursor.fetchall()
+        column_names = [description[0] for description in cursor.description]
 
-            if rows:
-                df = pd.DataFrame(data=rows, columns=column_names)
-                st.table(df)
-            else:
-                st.warning('No results found. Try again!')
+        if rows:
+            df = pd.DataFrame(data=rows, columns=column_names)
+            st.table(df)
+        else:
+            st.warning('No results found. Try again!')
 
 
 
