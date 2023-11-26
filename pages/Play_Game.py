@@ -241,7 +241,7 @@ if player_name:
 
                             #add picture
                             if st.session_state.click2:
-                                image = Image.open('red-testla-car.png')
+                                image = Image.open('red-tesla-car.png')
 
                                 st.image(image, caption='Car photo submitted to case file')
                                 
