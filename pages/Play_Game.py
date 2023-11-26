@@ -47,7 +47,7 @@ if player_name:
         df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
 
-        col1, col2 = st.columns([6,1])
+        col1,col2 = st.columns([6,1])
 
         with col1:
             finished = st.button("""Press Button if finished reading""")
