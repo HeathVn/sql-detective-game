@@ -64,7 +64,7 @@ if player_name:
 
     st.write(click)
 
-    if click:
+    if click == True:
  
         user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
