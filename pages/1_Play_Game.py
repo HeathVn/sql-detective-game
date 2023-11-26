@@ -141,9 +141,9 @@ if player_name:
     if st.session_state.click:
         st.write('''Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!  ''')
         
-        image = Image.open('spooky-house.jpeg')
+        image = Image.open('secret code_sqlmystery.png')
 
-        st.image(image, caption='Crime Scene') 
+        st.image(image) 
         
         user_guess = st.text_input('''Enter the secret code that you have found in the image above: ''')
 
