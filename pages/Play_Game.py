@@ -70,7 +70,7 @@ if player_name:
     else:
         st.warning('No results found.')
 
-    st.write(click)
+    st.write(st.session_state.click)
 
     if st.session_state.click:
  
