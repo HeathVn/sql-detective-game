@@ -241,7 +241,10 @@ if player_name:
 
                             #add picture
                             if st.session_state.click2:
-                                st.image('red testla car.png')
+                                image = Image.open('red-testla-car.png')
+
+                                st.image(image, caption='Car photo submitted to case file')
+                                
 
                             st.write('Here is a list of suspects and the information collected from them. Based on the witness reports, are you able to guess the murderer?')
 
