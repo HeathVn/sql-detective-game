@@ -56,7 +56,7 @@ def typewriter(text: [str,str], speed: int):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(0.1)
 
-cached_data = typewriter()
+
 
 def typewriter2(text: [str, str], speed: int):
     st.markdown("""
@@ -96,7 +96,7 @@ with col2 :
 with col3 :
     pass  
 
-cache_data.clear()
+st.cache_data.clear()
 
 col1,col2 = st.columns([1,8])
 
