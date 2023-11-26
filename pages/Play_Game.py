@@ -47,7 +47,7 @@ def load_lottieurl(url: str):
     
 
 lottie_coding = load_lottiefile("riddle1.json")
-st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
+st.markdown(f"""<div style="width: 50%; height: 50%;">{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
 
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
