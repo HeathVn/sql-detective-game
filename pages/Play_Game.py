@@ -133,8 +133,7 @@ if player_name:
             if rows:
                 df = pd.DataFrame(data=rows, columns=column_names)
                 st.table(df)
-            else:
-                st.warning('No results found. Try again!')
+            
 
             
             user_W1name = st.text_input('''Who is Witness 1? Write the name here:''')
@@ -157,8 +156,7 @@ if player_name:
                 if rows:
                     df = pd.DataFrame(data=rows, columns=column_names)
                     st.table(df)
-                else:
-                    st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+                
 
                 image = Image.open('spooky-house.jpeg')
 
@@ -267,6 +265,11 @@ if player_name:
                 else:
                     st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
+            else:
+                st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+        
+        else:
+            st.warning('No results found. Try again!')
 
 
 
