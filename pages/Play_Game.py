@@ -48,7 +48,7 @@ def load_lottieurl(url: str):
 
 lottie_coding = load_lottiefile("riddle1.json")
 
-col1,col2,col3 = st.columns([3,1,3])
+col1,col2,col3 = st.columns([2,2,2])
 
 with col1 :
     pass
