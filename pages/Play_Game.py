@@ -26,9 +26,20 @@ button_style = """
     font-size: 16px;
 """
 
-image = Image.open('detective-2.png')
+def load_lottiefile(filepath: str):
+    with open(filepath, "r") as f:
+        return json.load(f)
 
-st.image(image,width=4)
+
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+    
+
+lottie_coding = load_lottiefile("riddle1.json")
+st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
 
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
