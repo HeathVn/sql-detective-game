@@ -159,6 +159,35 @@ if player_name:
                     st.table(df)
                 else:
                     st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+
+                image = Image.open('spooky-house.jpeg')
+
+                st.image(image, caption='Crime Scene')
+
+                user_W2name = st.text_input("What letters do you see in the image? Type it here, so we can find the identity of Witness 2!")
+                user_W2name = user_W2name.strip()
+
+                if user_W2name.lower() in ['ann', 'nna']:
+
+                    cursor.execute('''
+                        SELECT * 
+                        FROM person
+                        WHERE address_street_name = 'Franklin Ave'
+                        AND LOWER(name) LIKE ?
+                    ''', ('%' + user_W2name.lower() + '%',))
+
+                    rows = cursor.fetchall()
+                    column_names = [description[0] for description in cursor.description]
+
+                    if rows:
+                        df = pd.DataFrame(data=rows, columns=column_names)
+                        st.table(df)
+
+                    elif user_W2name.lower() == 'nan':
+                        st.warning('No results found. Try again! Maybe you can try switching the order?')
+                        
+                    else:
+                        st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
 
 
