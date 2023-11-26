@@ -182,7 +182,7 @@ if player_name:
             st.image('detective-profile.png')
         with col2 :
             container3 = st.empty()
-            typewriter2([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
+            #typewriter2([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
         
         col1,col2 = st.columns([6,1])
 
