@@ -247,6 +247,7 @@ if player_name:
                                     df = pd.DataFrame(data=rows, columns=column_names)
                                     st.table(df)
                                     st.write(f'Wow, that is amazing. You did it! {user_murderer.capitalize()} is the murderer.')
+                                    time.sleep(3)
                                     st.balloons()
                                 else:
                                     st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
