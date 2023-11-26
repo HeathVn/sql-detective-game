@@ -145,7 +145,13 @@ if player_name:
         df = pd.DataFrame(data=rows, columns=column_names)
         st.table(df)
         
-        st.write(f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! ''')
+        col1,col2 = st.columns([1,8])
+
+        with col1 :
+            st.image('detective-profile.png')
+        with col2 :
+            st.write([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
+        
         col1,col2 = st.columns([6,1])
 
         with col1:
