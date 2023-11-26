@@ -228,8 +228,8 @@ if player_name:
                             st.table(df)
 
                             #typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
-                            st.write('Witness 2 submitted a photo to the case file.')
-                            st.write('Access the photo by clicking the button below.')
+                            st.write('Witness 2 submitted a photo to the case file.Access the photo by clicking the button below.')
+                            #st.write('Access the photo by clicking the button below.')
 
                             #add button
                             col1,col2 = st.columns([6,1])
