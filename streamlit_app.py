@@ -158,7 +158,7 @@ card(
    
 )
 
-st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
+#st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
 
-player_name = st.text_input('Player Name:')
+#player_name = st.text_input('Player Name:')
 
