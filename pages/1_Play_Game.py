@@ -45,6 +45,7 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+@st.cache
 def typewriter(text: [str,str], speed: int):
     
     container = st.empty()
@@ -79,7 +80,7 @@ col1,col2 = st.columns([1,8])
 with col1 :
     st.image('detective-profile.png')
 with col2 :
-    st.write('''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.''')
+    typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
 
 player_name = st.text_input('Player Name:')
 
@@ -134,7 +135,7 @@ if player_name:
         st.image('detective-profile.png')
     with col2 :
        st.write(f'''Welcome aboard, Detective {player_name}!''')
-       st.write('''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!''')
+       typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3)
 
     cursor.execute('''
         SELECT * 
@@ -157,7 +158,7 @@ if player_name:
         with col1 :
             st.image('detective-profile.png')
         with col2 :
-            st.write(f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! ''')
+            typewriter([f'''Well, Detective {player_name}, you've absorbed the details. When you're ready to plunge into the investigation, hit that button and let's unravel this mystery together! '''], 3)
         
         col1,col2 = st.columns([6,1])
 
