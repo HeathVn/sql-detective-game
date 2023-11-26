@@ -45,7 +45,7 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
-@st.cache_resource(show_spinner=False)
+@st.cache_data(show_spinner=False)
 def typewriter(text: [str,str], speed: int):
     container = st.empty()
     for i in text:
@@ -94,7 +94,7 @@ with col2 :
 with col3 :
     pass  
 
-#st.cache_resource.clear()
+
 
 col1,col2 = st.columns([1,8])
 
@@ -102,7 +102,7 @@ with col1 :
     st.image('detective-profile.png')
 with col2 :
     container = st.empty()
-    typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
+    typ = typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
 
 player_name = st.text_input('Player Name:')
 
