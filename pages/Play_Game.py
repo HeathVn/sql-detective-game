@@ -142,23 +142,23 @@ if player_name:
 
             if user_W1name.lower() in ['morty schapiro', 'morty', 'schapiro']:
 
-            cursor.execute('''
-                SELECT * 
-                FROM person
-                WHERE LOWER(address_street_name) = 'northwestern dr' 
-                ORDER BY address_number DESC
-                LIMIT 1
-            ''')
+                cursor.execute('''
+                    SELECT * 
+                    FROM person
+                    WHERE LOWER(address_street_name) = 'northwestern dr' 
+                    ORDER BY address_number DESC
+                    LIMIT 1
+                ''')
 
-            rows = cursor.fetchall()
+                rows = cursor.fetchall()
 
-            column_names = [description[0] for description in cursor.description]
+                column_names = [description[0] for description in cursor.description]
 
-            if rows:
-                df = pd.DataFrame(data=rows, columns=column_names)
-                st.table(df)
-            else:
-                st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
+                if rows:
+                    df = pd.DataFrame(data=rows, columns=column_names)
+                    st.table(df)
+                else:
+                    st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
             
 
 
