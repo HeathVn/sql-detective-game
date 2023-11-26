@@ -96,7 +96,7 @@ with col2 :
 with col3 :
     pass  
 
-st.cache_data.clear()
+
 
 col1,col2 = st.columns([1,8])
 
@@ -147,6 +147,9 @@ def time_difference(start_time, end_time):
     #global click
     #click = True
 
+if 'loaded' not in st.session_state:
+   st.cache_data.clear()
+   st.session_state.end_time = True
 
 total_time = 0
 
