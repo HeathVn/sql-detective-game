@@ -28,7 +28,7 @@ button_style = """
 
 image = Image.open('detective-2.png')
 
-st.image(image)
+st.image(image,width=4)
 
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
