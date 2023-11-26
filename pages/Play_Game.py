@@ -202,10 +202,30 @@ if player_name:
                         if rows:
                             df = pd.DataFrame(data=rows, columns=column_names)
                             st.table(df)
+
+                            st.write('Here is a list of suspects and the information collected from them. Based on the witness reports, are you able to guess the murderer?')
+
+                            cursor.execute('''
+                                SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
+                                FROM drivers_license dl
+                                INNER JOIN person p ON dl.id = p.license_id 
+                                INNER JOIN get_fit_now_member as gym
+                                ON p.id = gym.person_id 
+                                ORDER BY dl.id DESC
+                                LIMIT 20 
+                            ''')
+
+                            rows = cursor.fetchall()
+                            column_names = [description[0] for description in cursor.description]
+
+                            if rows:
+                                df = pd.DataFrame(data=rows, columns=column_names)
+                                st.table(df)
                         else:
                             st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
+
                     else:
-                        st.warning('Make sure that the ids for both Witness1 and Witness 2 are entered')
+                        st.warning('Make sure that the ids for both Witness 1 and Witness 2 are entered')
 
                 elif user_W2name.lower() == 'nan':
                     st.warning('No results found. Try again! Maybe you can try switching the order?')
