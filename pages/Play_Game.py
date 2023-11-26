@@ -10,6 +10,7 @@ from streamlit.components.v1 import html
 from streamlit_card import card
 import pandas as pd 
 import sqlite3
+from PIL import Image
 
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
@@ -24,6 +25,8 @@ button_style = """
     text-decoration: none;
     font-size: 16px;
 """
+
+
 
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
@@ -41,6 +44,11 @@ def on_button_click():
 #def clicked():
     #global click
     #click = True
+
+
+image = Image.open('detective-2.png')
+
+st.image(image)
 
 if player_name:
     st.write('''Let's view the crime scene report we have received for this''')
