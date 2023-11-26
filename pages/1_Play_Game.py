@@ -289,9 +289,9 @@ if player_name:
                 with col2 :
                     typewriter(['''Now, onto the next challenge. It seems the culprit has tampered with the identification of Witness 2. Three letters crucial to the witness's name are concealed behind the image. Can you unveil these hidden letters and reveal the identity of Witness 2? Your keen observation skills are key to solving this puzzle. Good luck!'''],3)
 
-                image = Image.open('spooky-house2.png',width=500)
+                image = Image.open('spooky-house2.png')
 
-                st.image(image, caption='Crime Scene')
+                st.image(image, caption='Crime Scene',width=500)
 
                 user_W2name = st.text_input("What letters do you see in the image? Type it here, so we can find the identity of Witness 2!")
                 user_W2name = user_W2name.strip()
