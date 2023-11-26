@@ -28,11 +28,38 @@ button_style = """
 st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
 
-click =False
 
-def clicked():
-    global click
-    click =True
+# Define a SessionState class for persisting state across interactions
+class SessionState:
+    def __init__(self, **kwargs):
+        for key, val in kwargs.items():
+            setattr(self, key, val)
+
+# Function to create or get the SessionState object
+def get_session_state():
+    ctx = get_report_ctx()
+    session_state = getattr(ctx, "_session_state", None)
+    if session_state is None:
+        session_state = ctx._session_state = SessionState()
+    return session_state
+
+# Create or get the SessionState object
+session_state = get_session_state()
+
+# Global-like variable
+if not hasattr(session_state, "global_variable"):
+    session_state.clicked = False
+
+# Function to update the global-like variable
+def update_global_variable():
+    session_state.clicked = True
+
+#click = False
+
+
+#def clicked():
+    #global click
+    #click = True
 
 if player_name:
     st.write('''Let's view the crime scene report we have received for this''')
@@ -56,7 +83,7 @@ if player_name:
         col1,col2 = st.columns([6,1])
 
         with col1:
-            finished = st.button("""Press Button if finished reading""", on_click = clicked)
+            finished = st.button("""Press Button if finished reading""", on_click = update_global_variable)
         with col2 :
             pass 
     else:
