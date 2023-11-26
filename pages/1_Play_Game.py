@@ -67,7 +67,7 @@ with col1 :
     pass
 with col2 :
     #st.markdown(f"""<div style="width: 50%; height: 50%;">{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
-    
+    pass
 with col3 :
     pass  
 
