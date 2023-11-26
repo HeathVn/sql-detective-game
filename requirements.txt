@@ -6,4 +6,4 @@ matplotlib
 streamlit_lottie
 streamlit-card
 pandas
-trubric
+"trubrics[streamlit]"==1.3.6
