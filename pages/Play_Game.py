@@ -227,8 +227,9 @@ if player_name:
                             df = pd.DataFrame(data=rows, columns=column_names)
                             st.table(df)
 
-                            typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
-                            #st.write('Witness 2 submitted a photo to the case file')
+                            #typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
+                            st.write('Witness 2 submitted a photo to the case file.')
+                            st.write('Access the photo by clicking the button below.')
 
                             #add button
                             col1,col2 = st.columns([6,1])
@@ -239,7 +240,7 @@ if player_name:
                                 pass 
 
                             #add picture
-                            if click2:
+                            if st.session_state.click2:
                                 st.image('red testla car.png')
 
                             st.write('Here is a list of suspects and the information collected from them. Based on the witness reports, are you able to guess the murderer?')
