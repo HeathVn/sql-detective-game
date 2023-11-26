@@ -257,6 +257,13 @@ if player_name:
 
             if user_W1name.lower() in ['morty schapiro', 'morty', 'schapiro']:
 
+                col1,col2 = st.columns([1,8])
+
+                with col1 :
+                    st.image('detective-profile.png')
+                with col2 :
+                    typewriter(['''Excellent work, Detective! Morty Shapiro is indeed Witness 1.'''],3)
+
                 cursor.execute('''
                     SELECT * 
                     FROM person
@@ -273,12 +280,7 @@ if player_name:
                     df = pd.DataFrame(data=rows, columns=column_names)
                     st.table(df)
                 
-                col1,col2 = st.columns([1,8])
-
-                with col1 :
-                    st.image('detective-profile.png')
-                with col2 :
-                    typewriter(['''Excellent work, Detective! Morty Shapiro is indeed Witness 1.'''],3)
+                
 
                 col1,col2 = st.columns([1,8])
 
