@@ -15,6 +15,14 @@ from PIL import Image
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
+container_style = """
+    width:100px;
+    height:100px;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+"""
+
 button_style = """
     background-color: transparent; 
     border: 2px solid white;
