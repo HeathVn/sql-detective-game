@@ -120,14 +120,14 @@ total_time = 0
 
 if player_name:
     #st.session_state.start_time = time.time()
-    st.write(f'''Welcome aboard, Detective {player_name}!''')
     
     col1,col2 = st.columns([1,8])
 
     with col1 :
         st.image('detective-profile.png')
     with col2 :
-       st.write('''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!''')
+       st.write(f'''Welcome aboard, Detective {player_name}!''')
+       typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],2.5)
 
     cursor.execute('''
         SELECT * 
