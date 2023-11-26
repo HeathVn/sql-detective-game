@@ -16,8 +16,8 @@ connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
 container_style = """
-    width:5px;
-    height:5px;
+    width:0px;
+    height:0px;
     position:relative;
     margin-left:auto;
     margin-right:auto;
@@ -97,7 +97,7 @@ if player_name:
     else:
         st.warning('No results found.')
 
-    st.write(st.session_state.click)
+    #st.write(st.session_state.click)
 
     if st.session_state.click:
  
