@@ -183,11 +183,11 @@ if player_name:
                         df = pd.DataFrame(data=rows, columns=column_names)
                         st.table(df)
 
-                    elif user_W2name.lower() == 'nan':
-                        st.warning('No results found. Try again! Maybe you can try switching the order?')
+                elif user_W2name.lower() == 'nan':
+                    st.warning('No results found. Try again! Maybe you can try switching the order?')
                         
-                    else:
-                        st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
+                else:
+                    st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
 
 
