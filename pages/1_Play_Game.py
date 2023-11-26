@@ -45,6 +45,10 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+if 'loaded' not in st.session_state:
+   st.cache_data.clear()
+   st.session_state.loaded = True
+
 @st.cache_data(show_spinner=False)
 def typewriter(text: [str,str], speed: int):
     container = st.empty()
