@@ -10,7 +10,15 @@ from streamlit.components.v1 import html
 from streamlit_card import card
 import pandas as pd 
 import sqlite3
-from streamlit.report_thread import get_report_ctx
+
+try:
+    from streamlit.script_run_context import get_script_run_ctx
+except ModuleNotFoundError:
+    # streamlit < 1.4
+    from streamlit.report_thread import (  # type: ignore
+        get_report_ctx as get_script_run_ctx,
+    )
+
 from streamlit.server.server import Server
 
 connection = sqlite3.connect('sql-murder-mystery copy.db')
@@ -39,7 +47,7 @@ class SessionState:
 
 # Function to create or get the SessionState object
 def get_session_state():
-    ctx = get_report_ctx()
+    ctx = get_script_run_ctx()
     session_state = getattr(ctx, "_session_state", None)
     if session_state is None:
         session_state = ctx._session_state = SessionState()
