@@ -61,7 +61,7 @@ def typewriter(text: [str,str], speed: int):
 
 lottie_coding = load_lottiefile("riddle1.json")
 
-col1,col2,col3 = st.columns([0,3,])
+col1,col2,col3 = st.columns([0,3,0])
 
 with col1 :
     pass
