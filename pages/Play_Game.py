@@ -213,21 +213,7 @@ if player_name:
 
                     if user_W1id and user_W2id:
 
-                        typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
-                        #st.write('Witness 2 submitted a photo to the case file')
 
-                        #add button
-                        col1,col2 = st.columns([6,1])
-
-                        with col1:
-                            finished = st.button("""View Photo""", on_click = on_button_click2 )
-                        with col2 :
-                            pass 
-
-                        #add picture
-                        if click2:
-                            st.image('red testla car.png')
-                            
                         cursor.execute('''
                             SELECT *
                             FROM interview
@@ -240,6 +226,21 @@ if player_name:
                         if rows:
                             df = pd.DataFrame(data=rows, columns=column_names)
                             st.table(df)
+
+                            typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
+                            #st.write('Witness 2 submitted a photo to the case file')
+
+                            #add button
+                            col1,col2 = st.columns([6,1])
+
+                            with col1:
+                                finished = st.button("""View Photo""", on_click = on_button_click2 )
+                            with col2 :
+                                pass 
+
+                            #add picture
+                            if click2:
+                                st.image('red testla car.png')
 
                             st.write('Here is a list of suspects and the information collected from them. Based on the witness reports, are you able to guess the murderer?')
 
