@@ -30,7 +30,7 @@ player_name = st.text_input('Player Name:')
 
 click =False
 
-def clicked:
+def clicked():
     click =True
 
 if player_name:
