@@ -78,8 +78,8 @@ col1,col2 = st.columns([1,8])
 with col1 :
     st.image('detective-profile.png')
 with col2 :
-    st.write('''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.''')
-    
+    typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
+
 player_name = st.text_input('Player Name:')
 
 
