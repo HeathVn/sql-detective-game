@@ -16,8 +16,8 @@ connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
 container_style = """
-    width:100px;
-    height:100px;
+    width:80px;
+    height:80px;
     position:relative;
     margin-left:auto;
     margin-right:auto;
