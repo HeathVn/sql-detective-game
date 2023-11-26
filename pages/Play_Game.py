@@ -224,9 +224,10 @@ if player_name:
                         with col2 :
                             pass 
 
-                    #add picture
-                    if click2:
-                        st.image('red testla car.png')
+                        #add picture
+                        if click2:
+                            st.image('red testla car.png')
+                            
                         cursor.execute('''
                             SELECT *
                             FROM interview
