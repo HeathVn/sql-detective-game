@@ -307,7 +307,7 @@ if player_name:
                                     end_time = time.time()
 
                                     total_time = time_difference(start_time,end_time)
-                                    st.divider()
+                                    #st.divider()
 
                                     st.write(f''' You took: {total_time} ''')
                                     time.sleep(1)
