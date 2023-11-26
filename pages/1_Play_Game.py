@@ -45,6 +45,7 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+@cache()
 def typewriter(text: [str,str], speed: int):
     container = st.empty()
     for i in text:
