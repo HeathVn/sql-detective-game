@@ -11,16 +11,6 @@ from streamlit_card import card
 import pandas as pd 
 import sqlite3
 
-try:
-    from streamlit.script_run_context import get_script_run_ctx
-except ModuleNotFoundError:
-    # streamlit < 1.4
-    from streamlit.report_thread import (  # type: ignore
-        get_report_ctx as get_script_run_ctx,
-    )
-
-from streamlit.server.server import Server
-
 connection = sqlite3.connect('sql-murder-mystery copy.db')
 cursor = connection.cursor()
 
@@ -39,30 +29,11 @@ st.write('''Welcome! Please enter your name to begin.''')
 player_name = st.text_input('Player Name:')
 
 
-# Define a SessionState class for persisting state across interactions
-class SessionState:
-    def __init__(self, **kwargs):
-        for key, val in kwargs.items():
-            setattr(self, key, val)
+if 'click' not in st.session_state:
+    st.session_state.click = False
 
-# Function to create or get the SessionState object
-def get_session_state():
-    ctx = get_script_run_ctx()
-    session_state = getattr(ctx, "_session_state", None)
-    if session_state is None:
-        session_state = ctx._session_state = SessionState()
-    return session_state
-
-# Create or get the SessionState object
-session_state = get_session_state()
-
-# Global-like variable
-if not hasattr(session_state, "global_variable"):
-    session_state.clicked = False
-
-# Function to update the global-like variable
-def update_global_variable():
-    session_state.clicked = True
+def on_button_click():
+    st.session_state.click = True
 
 #click = False
 
@@ -93,7 +64,7 @@ if player_name:
         col1,col2 = st.columns([6,1])
 
         with col1:
-            finished = st.button("""Press Button if finished reading""", on_click = update_global_variable)
+            finished = st.button("""Press Button if finished reading""", on_click = on_button_click )
         with col2 :
             pass 
     else:
@@ -101,7 +72,7 @@ if player_name:
 
     st.write(click)
 
-    if click == True:
+    if st.session_state.click:
  
         user_guess = st.text_input(''' Oh no! It looks like someone meddled with the crime scene reports and some of the key information are missing. Solve this secret code below to find out the missing information!''')
 
