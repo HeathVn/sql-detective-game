@@ -87,7 +87,7 @@ def typewriter2(text: [str, str], speed: int):
     """.format('", "'.join(text), speed))
 #container = st.empty()
 
-lottie_coding = load_lottiefile("riddle1.json")
+
 
 col1,col2,col3 = st.columns([1,8,1])
 
@@ -203,9 +203,9 @@ if player_name:
     #st.write(st.session_state.click)
 
     if st.session_state.click:
-
+        lottie_coding = load_lottiefile("stealing.json")
         st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
-        
+
         col1,col2 = st.columns([1,8])
 
         with col1 :
