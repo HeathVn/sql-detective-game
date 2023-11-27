@@ -436,7 +436,7 @@ if player_name:
                                     
                                     time.sleep(1)
                                     st.balloons()
-                                    
+
                                     col1,col2 = st.columns([1,8])
 
                                     with col1 :
@@ -467,7 +467,7 @@ if player_name:
                 else:
                     st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
-            else:
+            elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name == False:
                 st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
 
         
