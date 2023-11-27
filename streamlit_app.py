@@ -139,7 +139,7 @@ with col3 :
     pass
 
 
-col1, col2, col3 = st.columns([1,8,1])
+col1, col2, col3 = st.columns([0.1,8,0.1])
 
 with col1:
     pass
