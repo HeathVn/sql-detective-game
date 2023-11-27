@@ -108,7 +108,7 @@ with col5 :
 # Use st.markdown to display the HTML content
 #st.markdown(f"""<div style='{button_style}'>{st.button(label="Start Game",key="button1")}</div>""", unsafe_allow_html=True)
  
-st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
+#st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
@@ -127,6 +127,6 @@ with st.sidebar:
     st.text('Total Games Played:')
     st.text('Total Players:')
 
-st.divider()
+
 
 
