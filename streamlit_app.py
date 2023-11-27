@@ -134,7 +134,7 @@ col1, col2, col3 = st.columns([1.8,2,1])
 with col1:
     pass
 with col2:
-    st.magic(f"""<div style='margin-left:auto;margin-right:auto; position:relative;'> {st.markdown('### Get Started')} </div>""", unsafe_allow_html=True)
+    st.markdown("""<div style='margin-left:auto;margin-right:auto; position:relative;'> <h4>Get Started</h4> </div>""", unsafe_allow_html=True)
     
 with col3 :
     pass
