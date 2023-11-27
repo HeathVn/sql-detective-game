@@ -205,7 +205,7 @@ if player_name:
     if st.session_state.click:
         
         lottie_coding = load_lottiefile("running.json")
-        col1,col2,col3 = st.columns([1,2,1])
+        col1,col2,col3 = st.columns([1,1,1])
 
         with col1 :
             pass
