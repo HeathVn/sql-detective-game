@@ -128,48 +128,5 @@ with st.sidebar:
     st.text('Total Players:')
 
 st.divider()
-st.markdown("""<div style='margin-left:auto;margin-right:auto; position:relative;'> <h4>Get Started</h4> </div>""", unsafe_allow_html=True)
 
-col1, col2, col3 = st.columns([1.8,2,1])
-
-with col1:
-    pass
-with col2:
-    pass
-    
-with col3 :
-    pass
-
-card(
-    title="Game Instructions:",
-    text=["1. Start by entering your name below", "2. Each question will provide small hints. You will be required to find the information "],
-    image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
-    styles={
-        "card": {
-            "width":"200",
-            "border-radius": "60px",
-            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-            "background-color": "#fffff",
-            "border": "2px solid white"
-        },
-        "text": {
-            "font-family": "serif",
-        }
-    },
-   
-) 
-
-col1, col2, col3 = st.columns([0.1,8,0.1])
-
-with col1:
-    pass
-with col2:
-    pass
-with col3:
-    pass
-
-
-#st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
-
-#player_name = st.text_input('Player Name:')
 
