@@ -407,10 +407,10 @@ if player_name:
                                     
                                     col1,col2 = st.columns([1,8])
 
-                                        with col1 :
-                                            st.image('detective-profile.png')
-                                        with col2 :
-                                            typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
+                                    with col1 :
+                                        st.image('detective-profile.png')
+                                    with col2 :
+                                        typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
                                         
                                     cursor.execute('''
                                         SELECT p.name
