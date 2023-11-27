@@ -467,7 +467,7 @@ if player_name:
                 else:
                     st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
-            elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != False:
+            elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != "":
                 st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
 
         
