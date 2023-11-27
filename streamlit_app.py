@@ -161,9 +161,8 @@ col1, col2, col3 = st.columns([0.1,8,0.1])
 with col1:
     pass
 with col2:
-   
-
-with col3 :
+    pass
+with col3:
     pass
 
 
