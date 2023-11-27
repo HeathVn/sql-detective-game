@@ -129,7 +129,7 @@ with st.sidebar:
 
 st.divider()
 
-col1, col2, col3 = st.columns([1.8,2,1])
+col1, col2, col3 = st.columns([1,8,1])
 
 with col1:
     pass
