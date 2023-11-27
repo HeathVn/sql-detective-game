@@ -445,6 +445,15 @@ if player_name:
                                         with col2 :
                                             typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
                                         
+
+                                        col1,col2,col3 = st.columns([1,6,1])
+
+                                        with col1:
+                                            conclude = st.button("""Finish Game""", on_click = on_button_click )
+                                        with col2 :
+                                            pass
+                                        with col3:
+                                            continue_game = st.button("""Continue""", on_click = on_button_click )
                                     else:
                                         st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
 
