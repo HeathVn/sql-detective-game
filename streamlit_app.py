@@ -128,13 +128,13 @@ with st.sidebar:
     st.text('Total Players:')
 
 st.divider()
-
-col1, col2, col3 = st.columns([1,8,1])
+st.markdown('### Get Started')
+col1, col2, col3 = st.columns([1.8,2,1])
 
 with col1:
     pass
 with col2:
-    st.markdown('### Get Started')
+    pass
 with col3 :
     pass
 
