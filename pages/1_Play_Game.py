@@ -210,7 +210,9 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            st.markdown(f"""<div style='width:20px;'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
+            container4 = st.empty()
+            container4.markdown(f"""<div style='width:20px;'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
+            container4 = st.empty()
         with col3:
             pass
 
