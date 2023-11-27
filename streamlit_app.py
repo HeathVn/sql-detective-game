@@ -138,7 +138,13 @@ with col2:
 with col3 :
     pass
 
-card(
+
+col1, col2, col3 = st.columns([1,8,1])
+
+with col1:
+    pass
+with col2:
+   card(
     title="Game Instructions:",
     text=["1. Start by entering your name below", "2. Each question will provide small hints. You will be required to find the information "],
     image="https://github.com/HeathVn/streamlit-example/blob/master/detective-2.png",
@@ -156,7 +162,11 @@ card(
         }
     },
    
-)
+) 
+
+with col3 :
+    pass
+
 
 #st.markdown("<div style='height: 50px;margin-top:110px; position:relative;'></div>", unsafe_allow_html=True)
 
