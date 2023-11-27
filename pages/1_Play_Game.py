@@ -446,7 +446,7 @@ if player_name:
                                             typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
                                         
 
-                                        col1,col2,col3 = st.columns([1,6,1])
+                                        col1,col2,col3 = st.columns([2,6,2])
 
                                         with col1:
                                             conclude = st.button("""Finish Game""", on_click = on_button_click )
