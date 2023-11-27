@@ -204,6 +204,8 @@ if player_name:
 
     if st.session_state.click:
 
+        st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
+        
         col1,col2 = st.columns([1,8])
 
         with col1 :
