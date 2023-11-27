@@ -464,14 +464,13 @@ if player_name:
                 elif user_W2name.lower() == 'nan':
                     st.warning('No results found. Try again! Maybe you can try switching the order?')
                         
-                else:
+                elif user_W2name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W2name != "":
                     st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
             
             elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != "":
                 st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
 
-        
-        
+            
 
 
 
