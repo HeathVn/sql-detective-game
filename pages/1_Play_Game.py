@@ -203,7 +203,7 @@ if player_name:
     #st.write(st.session_state.click)
 
     if st.session_state.click:
-        lottie_coding = load_lottiefile("stealing.json")
+        lottie_coding = load_lottiefile("running.json")
         st.markdown(f"""<div style='{container_style}'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
 
         col1,col2 = st.columns([1,8])
