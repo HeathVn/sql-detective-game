@@ -376,82 +376,76 @@ if player_name:
 
                                 st.image(image, caption='Car photo submitted to case file')
 
-                            col1,col2 = st.columns([1,8])
+                                col1,col2 = st.columns([1,8])
 
-                            with col1 :
-                                st.image('detective-profile.png')
-                            with col2 :
-                                typewriter(['''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!'''],3)
-
-                            cursor.execute('''
-                                SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
-                                FROM drivers_license dl
-                                INNER JOIN person p ON dl.id = p.license_id 
-                                INNER JOIN get_fit_now_member as gym
-                                ON p.id = gym.person_id 
-                                ORDER BY dl.id DESC
-                                LIMIT 20 
-                            ''')
-
-                            rows = cursor.fetchall()
-                            column_names = [description[0] for description in cursor.description]
-
-                            if rows:
-                                df = pd.DataFrame(data=rows, columns=column_names)
-                                st.table(df)
-
-                            user_murderer = st.text_input('Who are you accusing of murder?')
-                            user_murderer = user_murderer.strip()
-
-                            if user_murderer.lower() in ['jeremy', 'jeremy bowers', 'bowers', 'jeremybowers']:
+                                with col1 :
+                                    st.image('detective-profile.png')
+                                with col2 :
+                                    typewriter(['''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!'''],3)
 
                                 cursor.execute('''
-                                    SELECT p.name
+                                    SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
                                     FROM drivers_license dl
-                                    INNER JOIN person p 
-                                    ON dl.id = p.license_id 
+                                    INNER JOIN person p ON dl.id = p.license_id 
                                     INNER JOIN get_fit_now_member as gym
-                                    ON p.id = gym.person_id
-                                    INNER JOIN get_fit_now_check_in as checkin
-                                    ON gym.id = checkin.membership_id
-                                    WHERE plate_number LIKE '%H42W%' 
-                                    AND membership_status = 'gold'
-                                    AND check_in_date = '20180109' 
+                                    ON p.id = gym.person_id 
+                                    ORDER BY dl.id DESC
+                                    LIMIT 20 
                                 ''')
 
                                 rows = cursor.fetchall()
-                                
                                 column_names = [description[0] for description in cursor.description]
 
                                 if rows:
                                     df = pd.DataFrame(data=rows, columns=column_names)
                                     st.table(df)
 
-                                    col1,col2 = st.columns([1,8])
+                                user_murderer = st.text_input('Who are you accusing of murder?')
+                                user_murderer = user_murderer.strip()
 
-                                    with col1 :
-                                        st.image('detective-profile.png')
-                                    with col2 :
-                                        typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
+                                if user_murderer.lower() in ['jeremy', 'jeremy bowers', 'bowers', 'jeremybowers']:
+
+                                    cursor.execute('''
+                                        SELECT p.name
+                                        FROM drivers_license dl
+                                        INNER JOIN person p 
+                                        ON dl.id = p.license_id 
+                                        INNER JOIN get_fit_now_member as gym
+                                        ON p.id = gym.person_id
+                                        INNER JOIN get_fit_now_check_in as checkin
+                                        ON gym.id = checkin.membership_id
+                                        WHERE plate_number LIKE '%H42W%' 
+                                        AND membership_status = 'gold'
+                                        AND check_in_date = '20180109' 
+                                    ''')
+
+                                    rows = cursor.fetchall()
                                     
-                                    time.sleep(1)
-                                    st.balloons()
+                                    column_names = [description[0] for description in cursor.description]
 
-                                    col1,col2 = st.columns([1,8])
+                                    if rows:
+                                        df = pd.DataFrame(data=rows, columns=column_names)
+                                        st.table(df)
 
-                                    with col1 :
-                                        st.image('detective-profile.png')
-                                    with col2 :
-                                        typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
-                                    #st.session_state.end_time = time.time()
+                                        col1,col2 = st.columns([1,8])
 
-                                    #total_time = time_difference(st.session_state.start_time,st.session_state.end_time)
-                                    #st.divider()
+                                        with col1 :
+                                            st.image('detective-profile.png')
+                                        with col2 :
+                                            typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
+                                        
+                                        time.sleep(1)
+                                        st.balloons()
 
-                                    #st.write(f''' Total Time: {total_time} ''')
-                                    
-                                else:
-                                    st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
+                                        col1,col2 = st.columns([1,8])
+
+                                        with col1 :
+                                            st.image('detective-profile.png')
+                                        with col2 :
+                                            typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
+                                        
+                                    else:
+                                        st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
 
                                 
 
