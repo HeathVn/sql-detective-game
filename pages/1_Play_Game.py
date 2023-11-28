@@ -211,10 +211,10 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            
-            with st_lottie(lottie_coding,key="lottie1"):
-                st_lottie(lottie_coding1,key="lottie2")
-                
+            i=0
+            with st_lottie(lottie_coding,key=f"lottie{i+1}"):
+                time.sleep(1)
+
                 #if lottie1:
                    # placeholder.empty()
             
