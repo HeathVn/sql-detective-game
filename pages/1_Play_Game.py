@@ -213,7 +213,7 @@ if player_name:
             
             with st.empty():
                 st_lottie(lottie_coding,key="lottie1")
-                time.sleep(1)    
+                st.markdown(f"""<div style='{container_style}'></div>""") 
             
         with col3:
             pass
