@@ -212,11 +212,19 @@ if player_name:
             pass
         with col2 :
             
-            with st.empty():
-                for i in range(6):
-                    st_lottie(lottie_coding,key=f"lottie{i}")
-                for j in range(6,10):    
-                    st_lottie(lottie_coding1,key=f"lottie{j}")
+            placeholder = st.empty()
+            with placeholder.container():
+                
+                st_lottie(lottie_coding,key="lottie1")
+            placeholder.empty()
+            
+            with placeholder.container():
+                
+                st_lottie(lottie_coding1,key="lottie2")
+            placeholder.empty()
+
+                 
+                    
             #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
             
         with col3:
