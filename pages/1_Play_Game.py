@@ -215,7 +215,7 @@ if player_name:
             with st.empty():
                 for i in range(6):
                     st_lottie(lottie_coding,key="lottie1")
-                for i in range(6):    
+                for j in range(6):    
                     st_lottie(lottie_coding1,key="lottie2")
             #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
             
