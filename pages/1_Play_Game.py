@@ -206,14 +206,16 @@ if player_name:
         
         lottie_coding = load_lottiefile("running.json")
         lottie_coding1 = load_lottiefile("detective.json")
+        
+        with st_lottie(lottie_coding,key="lottie1"):
+                time.sleep(1)
         col1,col2,col3 = st.columns([1,0.6,1])
 
         with col1 :
             pass
         with col2 :
+            pass
             
-            with st_lottie(lottie_coding):
-                time.sleep(1)
 
                 #if lottie1:
                    # placeholder.empty()
