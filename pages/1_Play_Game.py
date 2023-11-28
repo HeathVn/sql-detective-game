@@ -210,8 +210,8 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            container4 = st.empty()
-            with container4:
+            
+            with st.empty():
                 st.markdown(f"""<div style='width:20px;'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
                 
             time.sleep(1)
