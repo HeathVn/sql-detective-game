@@ -219,7 +219,7 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            lottietypewriter([st_lottie(lottie_coding,key="lottie1"),st_lottie(lottie_coding1,key="lottie2")],3)
+            st_lottie(lottie_coding,key="lottie1")
             #st_lottie(lottie_coding,key=f"lottie1")
             
         with col3:
@@ -264,108 +264,73 @@ if player_name:
             if rows:
                 df = pd.DataFrame(data=rows, columns=column_names)
                 st.table(df)
-            
-            else:
-                st.warning('No results found. Try again!')
-            
-            col1,col2 = st.columns([1,8])
-
-            with col1 :
-                st.image('detective-profile.png')
-            with col2 :
-                typewriter(['''Based on the clues found in the crime scene report, can you deduce the identity of Witness 1? Kindly enter the name below.'''],3)
-
-            user_W1name = st.text_input('''Who is Witness 1? Write the name here:''')
-            user_W1name = user_W1name.strip()
-
-            if user_W1name.lower() in ['morty schapiro', 'morty', 'schapiro']:
 
                 col1,col2 = st.columns([1,8])
 
                 with col1 :
                     st.image('detective-profile.png')
                 with col2 :
-                    typewriter(['''Excellent work, Detective! Morty Shapiro is indeed Witness 1.'''],3)
+                    typewriter(['''Based on the clues found in the crime scene report, can you deduce the identity of Witness 1? Kindly enter the name below.'''],3)
 
-                cursor.execute('''
-                    SELECT * 
-                    FROM person
-                    WHERE LOWER(address_street_name) = 'northwestern dr' 
-                    ORDER BY address_number DESC
-                    LIMIT 1
-                ''')
+                user_W1name = st.text_input('''Who is Witness 1? Write the name here:''')
+                user_W1name = user_W1name.strip()
 
-                rows = cursor.fetchall()
+                if user_W1name.lower() in ['morty schapiro', 'morty', 'schapiro']:
 
-                column_names = [description[0] for description in cursor.description]
-
-                if rows:
-                    df = pd.DataFrame(data=rows, columns=column_names)
-                    st.table(df)
-                
-                
-
-                col1,col2 = st.columns([1,8])
-
-                with col1 :
-                    st.image('detective-profile.png')
-                with col2 :
-                    typewriter(['''Now, onto the next challenge. It seems the culprit has tampered with the identification of Witness 2. Three letters crucial to the witness's name are concealed behind the image. Can you unveil these hidden letters and reveal the identity of Witness 2? Your keen observation skills are key to solving this puzzle. Good luck!'''],3)
-
-                image = Image.open('spooky-house2.png')
-
-                st.image(image, caption='Crime Scene',width=700)
-
-                user_W2name = st.text_input("What letters do you see in the image? Type it here, so we can find the identity of Witness 2!")
-                user_W2name = user_W2name.strip()
-
-                if user_W2name.lower() in ['ann', 'nna']:
-                    
                     col1,col2 = st.columns([1,8])
 
                     with col1 :
                         st.image('detective-profile.png')
                     with col2 :
-                        typewriter(['''Fantastic job, Detective! Your sharp eyes have unveiled the hidden letters, pointing us to Annabel Miller as Witness 2. Good going!'''],3)
-                
+                        typewriter(['''Excellent work, Detective! Morty Shapiro is indeed Witness 1.'''],3)
+
                     cursor.execute('''
                         SELECT * 
                         FROM person
-                        WHERE address_street_name = 'Franklin Ave'
-                        AND LOWER(name) LIKE ?
-                    ''', ('%' + user_W2name.lower() + '%',))
+                        WHERE LOWER(address_street_name) = 'northwestern dr' 
+                        ORDER BY address_number DESC
+                        LIMIT 1
+                    ''')
 
                     rows = cursor.fetchall()
+
                     column_names = [description[0] for description in cursor.description]
 
                     if rows:
                         df = pd.DataFrame(data=rows, columns=column_names)
                         st.table(df)
+                    
+                    
 
                     col1,col2 = st.columns([1,8])
 
                     with col1 :
                         st.image('detective-profile.png')
                     with col2 :
-                        typewriter(['''Building on your exceptional work, we have now gathered details from the witnesses, obtaining intriguing statements about the suspect. To proceed further, kindly input the ID numbers of both witnesses below to unlock access to their statements. We're on the verge of cracking this case wide open, Detective! '''],3)
-                    
-                    user_W1id = st.text_input("What is the ID number of Witness 1?")
-                    user_W1id = user_W1id.strip()
+                        typewriter(['''Now, onto the next challenge. It seems the culprit has tampered with the identification of Witness 2. Three letters crucial to the witness's name are concealed behind the image. Can you unveil these hidden letters and reveal the identity of Witness 2? Your keen observation skills are key to solving this puzzle. Good luck!'''],3)
 
-                    user_W2id = st.text_input("What is the ID number of Witness 2?")
-                    user_W2id = user_W2id.strip()
-                    
-                    
-                    
+                    image = Image.open('spooky-house2.png')
 
-                    if user_W1id and user_W2id:
+                    st.image(image, caption='Crime Scene',width=700)
 
+                    user_W2name = st.text_input("What letters do you see in the image? Type it here, so we can find the identity of Witness 2!")
+                    user_W2name = user_W2name.strip()
 
+                    if user_W2name.lower() in ['ann', 'nna']:
+                        
+                        col1,col2 = st.columns([1,8])
+
+                        with col1 :
+                            st.image('detective-profile.png')
+                        with col2 :
+                            typewriter(['''Fantastic job, Detective! Your sharp eyes have unveiled the hidden letters, pointing us to Annabel Miller as Witness 2. Good going!'''],3)
+                    
                         cursor.execute('''
-                            SELECT *
-                            FROM interview
-                            WHERE person_id IN (?, ?)
-                        ''', (user_W1id, user_W2id))
+                            SELECT * 
+                            FROM person
+                            WHERE address_street_name = 'Franklin Ave'
+                            AND LOWER(name) LIKE ?
+                        ''', ('%' + user_W2name.lower() + '%',))
 
                         rows = cursor.fetchall()
                         column_names = [description[0] for description in cursor.description]
@@ -374,114 +339,149 @@ if player_name:
                             df = pd.DataFrame(data=rows, columns=column_names)
                             st.table(df)
 
-                            col1,col2 = st.columns([1,8])
+                        col1,col2 = st.columns([1,8])
 
-                            with col1 :
-                                st.image('detective-profile.png')
-                            with col2 :
-                                typewriter(['''Witness 2 has submitted a photo to the case file. To view the image, please click the button below.'''],3)
+                        with col1 :
+                            st.image('detective-profile.png')
+                        with col2 :
+                            typewriter(['''Building on your exceptional work, we have now gathered details from the witnesses, obtaining intriguing statements about the suspect. To proceed further, kindly input the ID numbers of both witnesses below to unlock access to their statements. We're on the verge of cracking this case wide open, Detective! '''],3)
+                        
+                        user_W1id = st.text_input("What is the ID number of Witness 1?")
+                        user_W1id = user_W1id.strip()
 
-                            #typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
-                            
-                            #st.write('Access the photo by clicking the button below.')
+                        user_W2id = st.text_input("What is the ID number of Witness 2?")
+                        user_W2id = user_W2id.strip()
+                        
+                        
+                        
 
-                            #add button
-                            col1,col2 = st.columns([6,1])
+                        if user_W1id and user_W2id:
 
-                            with col1:
-                                finished = st.button("""View Photo""", on_click = on_button_click2 )
-                            with col2 :
-                                pass 
 
-                            #add picture
-                            if st.session_state.click2:
-                                image = Image.open('red-tesla-car.png')
+                            cursor.execute('''
+                                SELECT *
+                                FROM interview
+                                WHERE person_id IN (?, ?)
+                            ''', (user_W1id, user_W2id))
 
-                                st.image(image, caption='Car photo submitted to case file')
+                            rows = cursor.fetchall()
+                            column_names = [description[0] for description in cursor.description]
+
+                            if rows:
+                                df = pd.DataFrame(data=rows, columns=column_names)
+                                st.table(df)
 
                                 col1,col2 = st.columns([1,8])
 
                                 with col1 :
                                     st.image('detective-profile.png')
                                 with col2 :
-                                    typewriter(['''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!'''],3)
+                                    typewriter(['''Witness 2 has submitted a photo to the case file. To view the image, please click the button below.'''],3)
 
-                                cursor.execute('''
-                                    SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
-                                    FROM drivers_license dl
-                                    INNER JOIN person p ON dl.id = p.license_id 
-                                    INNER JOIN get_fit_now_member as gym
-                                    ON p.id = gym.person_id 
-                                    ORDER BY dl.id DESC
-                                    LIMIT 20 
-                                ''')
+                                #typewriter(text=["<h3 style='text-align:center;'>Witness 2 submitted a photo to the case file</h3>","<h3 style='text-align:center;'>Access the photo by clicking the button below.</h3>"], speed=3)
+                                
+                                #st.write('Access the photo by clicking the button below.')
 
-                                rows = cursor.fetchall()
-                                column_names = [description[0] for description in cursor.description]
+                                #add button
+                                col1,col2 = st.columns([6,1])
 
-                                if rows:
-                                    df = pd.DataFrame(data=rows, columns=column_names)
-                                    st.table(df)
+                                with col1:
+                                    finished = st.button("""View Photo""", on_click = on_button_click2 )
+                                with col2 :
+                                    pass 
 
-                                user_murderer = st.text_input('Who are you accusing of murder?')
-                                user_murderer = user_murderer.strip()
+                                #add picture
+                                if st.session_state.click2:
+                                    image = Image.open('red-tesla-car.png')
 
-                                if user_murderer.lower() in ['jeremy', 'jeremy bowers', 'bowers', 'jeremybowers']:
-                                    
+                                    st.image(image, caption='Car photo submitted to case file')
+
                                     col1,col2 = st.columns([1,8])
 
                                     with col1 :
                                         st.image('detective-profile.png')
                                     with col2 :
-                                        typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
-                                        
+                                        typewriter(['''Buckle up, Detective! I've got the lowdown on our suspects and all the details we've squeezed out of them. Now, armed with the witness reports, can you channel your inner detective and make a wild guess at who the murderer might be? Let the suspense unfold, Detective!'''],3)
+
                                     cursor.execute('''
-                                        SELECT p.name
+                                        SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
                                         FROM drivers_license dl
-                                        INNER JOIN person p 
-                                        ON dl.id = p.license_id 
+                                        INNER JOIN person p ON dl.id = p.license_id 
                                         INNER JOIN get_fit_now_member as gym
-                                        ON p.id = gym.person_id
-                                        INNER JOIN get_fit_now_check_in as checkin
-                                        ON gym.id = checkin.membership_id
-                                        WHERE plate_number LIKE '%H42W%' 
-                                        AND membership_status = 'gold'
-                                        AND check_in_date = '20180109' 
+                                        ON p.id = gym.person_id 
+                                        ORDER BY dl.id DESC
+                                        LIMIT 20 
                                     ''')
 
                                     rows = cursor.fetchall()
-                                    
                                     column_names = [description[0] for description in cursor.description]
 
                                     if rows:
                                         df = pd.DataFrame(data=rows, columns=column_names)
                                         st.table(df)
 
-                                        
-                                        time.sleep(1)
-                                        st.balloons()
+                                    user_murderer = st.text_input('Who are you accusing of murder?')
+                                    user_murderer = user_murderer.strip()
 
+                                    if user_murderer.lower() in ['jeremy', 'jeremy bowers', 'bowers', 'jeremybowers']:
+                                        
                                         col1,col2 = st.columns([1,8])
 
                                         with col1 :
                                             st.image('detective-profile.png')
                                         with col2 :
-                                            typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
+                                            typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
+                                            
+                                        cursor.execute('''
+                                            SELECT p.name
+                                            FROM drivers_license dl
+                                            INNER JOIN person p 
+                                            ON dl.id = p.license_id 
+                                            INNER JOIN get_fit_now_member as gym
+                                            ON p.id = gym.person_id
+                                            INNER JOIN get_fit_now_check_in as checkin
+                                            ON gym.id = checkin.membership_id
+                                            WHERE plate_number LIKE '%H42W%' 
+                                            AND membership_status = 'gold'
+                                            AND check_in_date = '20180109' 
+                                        ''')
+
+                                        rows = cursor.fetchall()
                                         
+                                        column_names = [description[0] for description in cursor.description]
 
-                                        col1,col2,col3,col4 = st.columns([2,2,2,2])
+                                        if rows:
+                                            df = pd.DataFrame(data=rows, columns=column_names)
+                                            st.table(df)
 
-                                        with col1:
-                                            pass
-                                        with col2 :
-                                            conclude = st.button("""Finish Game""", on_click = on_button_click )       
-                                        with col3:
-                                            continue_game = st.button("""Continue""", on_click = on_button_click )
-                                        with col4:
-                                            pass
-                                    else:
-                                        st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
+                                            
+                                            time.sleep(1)
+                                            st.balloons()
 
+                                            col1,col2 = st.columns([1,8])
+
+                                            with col1 :
+                                                st.image('detective-profile.png')
+                                            with col2 :
+                                                typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
+                                            
+
+                                            col1,col2,col3,col4 = st.columns([2,2,2,2])
+
+                                            with col1:
+                                                pass
+                                            with col2 :
+                                                conclude = st.button("""Finish Game""", on_click = on_button_click )       
+                                            with col3:
+                                                continue_game = st.button("""Continue""", on_click = on_button_click )
+                                            with col4:
+                                                pass
+                                        else:
+                                            st.warning(f'Oh no! Your guess does not seem to be right. {user_murderer.capitalize()} is not the murderer. Please try again!') 
+
+            
+            
+            
                                 
 
                         else:
@@ -499,7 +499,8 @@ if player_name:
             elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != "":
                 st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
 
-            
+            else:
+                st.warning('No results found. Try again!')
 
 
 
