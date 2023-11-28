@@ -211,21 +211,8 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            i=0
-            with st_lottie(lottie_coding,key=f"lottie{i++}"):
-                time.sleep(1)
-
-                #if lottie1:
-                   # placeholder.empty()
             
-            #with placeholder.container():
-                
-               # 
-           # placeholder.empty()
-
-                 
-                    
-            #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
+            st_lottie(lottie_coding,key=f"lottie1")
             
         with col3:
             pass
