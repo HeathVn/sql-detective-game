@@ -212,7 +212,7 @@ if player_name:
             pass
         with col2 :
             i=0
-            with st_lottie(lottie_coding,key=f"lottie{i+=1}"):
+            with st_lottie(lottie_coding,key=f"lottie{i++}"):
                 time.sleep(1)
 
                 #if lottie1:
