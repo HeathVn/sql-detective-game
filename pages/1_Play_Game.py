@@ -213,8 +213,10 @@ if player_name:
         with col2 :
             
             with st.empty():
-                st_lottie(lottie_coding,key="lottie1")
-                st_lottie(lottie_coding1,key="lottie2")
+                for i in range(6):
+                    st_lottie(lottie_coding,key="lottie1")
+                for i in range(6):    
+                    st_lottie(lottie_coding1,key="lottie2")
             #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
             
         with col3:
