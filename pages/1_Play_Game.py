@@ -484,21 +484,20 @@ if player_name:
             
                                 
 
+                            else:
+                                st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
+
                         else:
-                            st.warning('Oh no, that does not seem correct. Please try again! Are you sure you got the codes right?')
+                            st.warning('Make sure that the ids for both Witness 1 and Witness 2 are entered')
 
-                    else:
-                        st.warning('Make sure that the ids for both Witness 1 and Witness 2 are entered')
-
-                elif user_W2name.lower() == 'nan':
-                    st.warning('No results found. Try again! Maybe you can try switching the order?')
-                        
-                elif user_W2name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W2name != "":
-                    st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
-            
-            elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != "":
-                st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
-
+                    elif user_W2name.lower() == 'nan':
+                        st.warning('No results found. Try again! Maybe you can try switching the order?')
+                            
+                    elif user_W2name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W2name != "":
+                        st.warning("Oh no! That seems to be incorrect. Please try again! Make sure there are no spaces between each letter, and you are looking for the right clue!")
+                
+                elif user_W1name.lower() not in ['morty schapiro', 'morty', 'schapiro'] and user_W1name != "":
+                                st.warning('Oh no! That seems to be incorrect. Please try again! Make sure there are no spelling mistakes, and you are looking for the right clue!')
             else:
                 st.warning('No results found. Try again!')
 
