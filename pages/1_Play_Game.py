@@ -211,8 +211,9 @@ if player_name:
             pass
         with col2 :
             
-            st_lottie(lottie_coding,key="lottie1")
-            time.sleep(1)    
+            with st.empty():
+                st_lottie(lottie_coding,key="lottie1")
+                time.sleep(1)    
             
         with col3:
             pass
