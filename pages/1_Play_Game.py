@@ -61,12 +61,13 @@ def typewriter(text: [str,str], speed: int):
             time.sleep(0.1)
 
 @st.cache_data(show_spinner=False)
-def lottietypewriter(text: [st_lottie], speed: int):
+def lottietypewriter(_text: [st_lottie], speed: int):
 
     container = st.empty()
     for i in text:
         container.markdown(f"""<div style='{container_style}'>{i}</div>""",unsafe_allow_html=True)
         time.sleep(1)
+        container = st.empty()
 
 
 def typewriter2(text: [str, str], speed: int):
