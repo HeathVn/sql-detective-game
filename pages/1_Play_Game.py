@@ -64,7 +64,7 @@ def typewriter(text: [str,str], speed: int):
 def lottietypewriter(_text: [st_lottie], speed: int):
 
     container = st.empty()
-    for i in text:
+    for i in _text:
         container.markdown(f"""<div style='{container_style}'>{i}</div>""",unsafe_allow_html=True)
         time.sleep(1)
         container.empty()
