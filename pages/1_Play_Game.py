@@ -213,6 +213,8 @@ if player_name:
         with col2 :
             
             placeholder = st.empty()
+            
+            @st.cache_data(show_spinner=False)
             with placeholder.container():
                 
                 st_lottie(lottie_coding,key="lottie1")
