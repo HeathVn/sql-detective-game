@@ -60,6 +60,13 @@ def typewriter(text: [str,str], speed: int):
             container.markdown(curr_full_text, unsafe_allow_html=True)
             time.sleep(0.1)
 
+@st.cache_data(show_spinner=False)
+def lottietypewriter(text: [st_lottie], speed: int):
+
+    container = st.empty()
+    for i in text:
+        container.markdown(f"""<div style='{container_style}'>{i}</div>""",unsafe_allow_html=True)
+        time.sleep(1)
 
 
 def typewriter2(text: [str, str], speed: int):
@@ -211,8 +218,8 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            
-            st_lottie(lottie_coding,key=f"lottie1")
+            lottietypewriter([st_lottie(lottie_coding,key=f"lottie1"),st_lottie(lottie_coding2,key=f"lottie1")],3)
+            #st_lottie(lottie_coding,key=f"lottie1")
             
         with col3:
             pass
