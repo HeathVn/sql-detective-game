@@ -205,6 +205,7 @@ if player_name:
     if st.session_state.click:
         
         lottie_coding = load_lottiefile("running.json")
+        lottie_coding1 = load_lottiefile("detective.json")
         col1,col2,col3 = st.columns([1,0.6,1])
 
         with col1 :
@@ -213,8 +214,7 @@ if player_name:
             
             with st.empty():
                 st_lottie(lottie_coding,key="lottie1")
-            with st.empty():
-                st_lottie(lottie_coding,key="lottie2")
+                st_lottie(lottie_coding1,key="lottie2")
             #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
             
         with col3:
