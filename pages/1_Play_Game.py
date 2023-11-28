@@ -212,14 +212,11 @@ if player_name:
             pass
         with col2 :
             
-            placeholder = st.empty()
+            with st_lottie(lottie_coding,key="lottie1"):
+                time.sleep(1)
 
-            with placeholder.container():
-                
-                lottie1 = st_lottie(lottie_coding,key="lottie1")
-
-                if lottie1:
-                    placeholder.empty()
+                #if lottie1:
+                   # placeholder.empty()
             
             #with placeholder.container():
                 
