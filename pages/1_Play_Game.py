@@ -218,7 +218,7 @@ if player_name:
         with col1 :
             pass
         with col2 :
-            lottietypewriter([st_lottie(lottie_coding,key="lottie1"),st_lottie(lottie_coding1,key="lottie1")],3)
+            lottietypewriter([st_lottie(lottie_coding,key="lottie1"),st_lottie(lottie_coding1,key="lottie2")],3)
             #st_lottie(lottie_coding,key=f"lottie1")
             
         with col3:
