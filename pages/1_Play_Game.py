@@ -213,8 +213,8 @@ if player_name:
         with col2 :
             
             with st_lottie(lottie_coding,key="lottie1"):
-                time.sleep(1)
-            st_lottie(lottie_coding1,key="lottie2")
+                st_lottie(lottie_coding1,key="lottie2")
+                
                 #if lottie1:
                    # placeholder.empty()
             
