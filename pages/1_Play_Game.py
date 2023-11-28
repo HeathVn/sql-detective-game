@@ -212,9 +212,8 @@ if player_name:
         with col2 :
             container4 = st.empty()
             with container4:
-                for i in range(0,10):
-                    st.markdown(f"""<div style='width:20px;'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
-                    time.sleep(1)
+                st.markdown(f"""<div style='width:20px;'>{st_lottie(lottie_coding,key="lottie1")}</div>""",unsafe_allow_html=True)
+                time.sleep(1)
         with col3:
             pass
 
