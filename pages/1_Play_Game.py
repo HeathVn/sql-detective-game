@@ -214,7 +214,7 @@ if player_name:
             with st.empty():
                 st_lottie(lottie_coding,key="lottie1")
             with st.empty():
-                st_lottie(lottie_coding,key="lottie1")
+                st_lottie(lottie_coding,key="lottie2")
             #st.markdown("<div style=''></div>", unsafe_allow_html=True) 
             
         with col3:
