@@ -77,6 +77,22 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
 
+with st.sidebar:
+    st.title('About SQL - Mellon City Mysteria')
+    
+    st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
+    st.text('')
+    st.text('Developer: Srinidhi Manikantan')
+    st.text('Developer: Heathvonn Styles')
+    st.text('Developed: Nov 2023')
+
+    st.divider()
+
+    st.title('Game Statistics')
+    st.text('Total Games Played:')
+    st.text('Total Players:')
+
+
 col1, col2, col3 = st.columns([1,6,1])
 
 with col1:
@@ -112,20 +128,7 @@ with col5 :
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
-with st.sidebar:
-    st.title('About SQL - Mellon City Mysteria')
-    
-    st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
-    st.text('')
-    st.text('Developer: Srinidhi Manikantan')
-    st.text('Developer: Heathvonn Styles')
-    st.text('Developed: Nov 2023')
 
-    st.divider()
-
-    st.title('Game Statistics')
-    st.text('Total Games Played:')
-    st.text('Total Players:')
 
 
 
