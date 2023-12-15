@@ -171,7 +171,7 @@ if player_name:
     with col1 :
         st.image('detective-profile.png')
     with col2 :
-       st.write(f'''Welcome aboard, Detective {player_name}!''')
+       st.write(f'''Welcome aboard, Detective {player_name.capitalize()}!''')
        container2 = st.empty()
        typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3)
 
