@@ -159,7 +159,20 @@ def time_difference(start_time, end_time):
     #global click
     #click = True
 
+with st.sidebar:
+    st.title('About SQL - Mellon City Mysteria')
+    
+    st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
+    st.text('')
+    st.text('Developer: Srinidhi Manikantan')
+    st.text('Developer: Heathvonn Styles')
+    st.text('Developed: Nov 2023')
 
+    st.divider()
+
+    st.title('Game Statistics')
+    st.text('Total Games Played:')
+    st.text('Total Players:')
 
 total_time = 0
 
