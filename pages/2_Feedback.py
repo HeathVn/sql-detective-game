@@ -1,5 +1,5 @@
 import streamlit as st
-import st-star-rating as st-star-rating
+import st-star-rating 
 
 with st.form("user_feedback"):
     header = st.columns([0.8,1,0.5])
