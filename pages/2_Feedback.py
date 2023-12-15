@@ -6,7 +6,7 @@ with st.form("user_feedback"):
     header[1].subheader('Feedback Form')
 
     
-    stars = st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20, resetLabel=reset_label)
+    stars = st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
     st.text_area(label="Game Suggestions", value="", height=None, max_chars=None)
 
