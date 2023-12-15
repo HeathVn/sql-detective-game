@@ -118,7 +118,7 @@ with col2 :
     typ = typewriter(['''Hello and welcome! To kick off our mystery adventure, please enter your name below to begin.'''],3)
     
 
-player_name = st.text_input('Player Name:')
+player_name = st.text_input('Player Name:').capitalize()
 
 
 if 'click' not in st.session_state:
@@ -171,7 +171,7 @@ if player_name:
     with col1 :
         st.image('detective-profile.png')
     with col2 :
-       st.write(f'''Welcome aboard, Detective {player_name.capitalize()}!''')
+       st.write(f'''Welcome aboard, Detective {player_name}!''')
        container2 = st.empty()
        typewriter(['''We find ourselves at a critical juncture in Mellon City—a murder on January 15, 2018. The entire city is counting on your super-sleuth skills to crack the case. Before we dive into the nitty-gritty, let's snag the lowdown on the crime scene. Head on over to the police department's database and grab those crime scene reports. The city's counting on you! Good luck!'''],3)
 
