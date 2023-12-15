@@ -6,5 +6,4 @@ matplotlib
 streamlit_lottie
 streamlit-card
 pandas
-streamlit_star_rating
 st-star-rating
