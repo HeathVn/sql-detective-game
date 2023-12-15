@@ -433,7 +433,7 @@ if player_name:
                                             typewriter([f'''Incredible detective work! {user_murderer.capitalize()} is indeed the murderer. Mellon City extends its deepest gratitude; this case wouldn't have been cracked without your skillful unraveling.'''],3)
                                             
                                         cursor.execute('''
-                                            SELECT *
+                                            SELECT p.name, dl.*, gym.membership_start_date, gym.membership_status
                                             FROM drivers_license dl
                                             INNER JOIN person p 
                                             ON dl.id = p.license_id 
