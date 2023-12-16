@@ -9,6 +9,7 @@ cursor = connection.cursor()
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
+
 with st.form("user_feedback"):
     
 
@@ -25,7 +26,7 @@ with st.form("user_feedback"):
     submit = st.form_submit_button('Submit')
 
     if submit:
-        cursor.execute('''INSERT INTO Players VALUES (?,'','','',?,?)''', (name, stars,suggestion))
+        cursor.execute('''INSERT INTO Players VALUES (?,'','','',?,?,?,?)''', (name, stars,stars2,performance,suggestion))
         connection.commit()
         connection.close()
         st.success('Your feedback was successfully submitted!')

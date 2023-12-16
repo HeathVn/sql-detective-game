@@ -205,6 +205,13 @@ cursor.execute('''
 
 ratings = cursor.fetchall()
 
+cursor.execute('''
+    SELECT COUNT(games_completed)
+    FROM Games
+''')
+
+games = cursor.fetchall()
+
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
     
@@ -218,12 +225,11 @@ with st.sidebar:
 
     st.title('Game Statistics')
 
-    if rows:
-        st.text(f'Total Games Played: {rows[0][0]}')
+    if games:
+        st.text(f'Total Games Played: {games[0][0]}')
     else:
         st.text('Total Games Played: 0')
 
-    st.text('Total Players:')
     
     if rows:
         st.text(f'Total Feedback: {rows[0][0]} players')
@@ -549,7 +555,15 @@ if player_name:
                                                 conclude = st.markdown(f""" <a target='_self' href='https://detectivegame.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
                                                 #conclude = st.button("""Finish Game""", on_click = on_button_click )  
 
-                                
+                                                if conclude:
+                                                    if games:
+                                                        total_games = games + 1
+                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (games))
+                                                    else:
+                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (0))
+                                                        
+                                                    connection.commit()
+                                                    connection.close()
                                             with col3:
                                                 pass
                                                 #continue_game = st.button("""Continue""", on_click = on_button_click )
