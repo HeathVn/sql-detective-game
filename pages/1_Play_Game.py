@@ -188,7 +188,14 @@ def time_difference(start_time, end_time):
     #global click
     #click = True
 
-delete_page('HeathVn/streamlit-example/pages/','Feedback')
+#delete_page('HeathVn/streamlit-example/pages/','Feedback')
+
+cursor.execute('''
+        SELECT COUNT(*)
+        FROM Players
+''')
+
+rows = cursor.fetchall()
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
@@ -202,7 +209,12 @@ with st.sidebar:
     st.divider()
 
     st.title('Game Statistics')
-    st.text('Total Games Played:')
+
+    if rows:
+        st.text('Total Games Played: 0')
+    else:
+        st.text(f'Total Games Played: {rows[0]}')
+
     st.text('Total Players:')
 
 total_time = 0
@@ -519,12 +531,7 @@ if player_name:
                                                 conclude = st.markdown(f""" <a target='_self' href='https://detectivegames.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
                                                 #conclude = st.button("""Finish Game""", on_click = on_button_click )  
 
-                                                if conclude:
-                                                    cursor.execute('''
-                                                        INSERT INTO Players(Player Name, Date Played, Start Time, End Time, Rating, Any feedback/suugestions)
-                                                        VALUES (?,'','','',0,'') 
-                                                    ''', (player_name))
-                                         
+                                
                                             with col3:
                                                 pass
                                                 #continue_game = st.button("""Continue""", on_click = on_button_click )
