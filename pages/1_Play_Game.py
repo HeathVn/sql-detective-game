@@ -12,6 +12,26 @@ import pandas as pd
 import sqlite3
 from PIL import Image
 
+from streamlit.source_util import (
+    page_icon_and_name, 
+    calc_md5, 
+    get_pages,
+    _on_pages_changed
+)
+
+def delete_page(main_script_path_str, page_name):
+
+    current_pages = get_pages(main_script_path_str)
+    st.write(current_pages)
+
+    for key, value in current_pages.items():
+        if value['page_name'] == page_name:
+            del current_pages[key]
+            break
+        else:
+            pass
+    _on_pages_changed.send()
+
 #connection = sqlite3.connect('sql-murder-mystery copy.db')
 connection = sqlite3.connect('Modified SQL Database.db')
 
@@ -163,6 +183,8 @@ def time_difference(start_time, end_time):
 #def clicked():
     #global click
     #click = True
+    
+delete_page('HeathVn/streamlit-example/pages','pages/2_Feedback.py')
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
