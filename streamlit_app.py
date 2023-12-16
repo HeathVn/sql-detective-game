@@ -20,6 +20,7 @@ from streamlit.source_util import (
 import sqlite3
 from streamlit_star_rating import st_star_rating
 connection = sqlite3.connect('Modified SQL Database.db')
+connection.isolation_level = None 
 cursor = connection.cursor()
 
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation

@@ -34,7 +34,7 @@ def edit_page_name(main_script_path_str, page_name):
 
 #connection = sqlite3.connect('sql-murder-mystery copy.db')
 connection = sqlite3.connect('Modified SQL Database.db')
-
+connection.isolation_level = None 
 cursor = connection.cursor()
 
 container_style = """

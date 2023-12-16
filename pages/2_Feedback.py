@@ -3,6 +3,7 @@ from streamlit_star_rating import st_star_rating
 import sqlite3
 
 connection = sqlite3.connect('Modified SQL Database.db')
+connection.isolation_level = None 
 cursor = connection.cursor()
 
 cursor.execute('''
