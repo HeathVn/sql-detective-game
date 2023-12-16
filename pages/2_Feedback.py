@@ -69,7 +69,7 @@ this experience.''')
 with st.form("user_feedback"):
     
     st.text('''Please enter your name:''')
-    name = st.text_input()
+    name = st.text_input('')
 
     st.text('On a scale of 1 to 5, how would you rate your overall experience with our game ?')
     stars = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
