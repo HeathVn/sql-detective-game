@@ -9,6 +9,11 @@ from streamlit_lottie import st_lottie
 from streamlit.components.v1 import html
 from streamlit_card import card
 
+import sqlite3
+from streamlit_star_rating import st_star_rating
+connection = sqlite3.connect('Modified SQL Database.db')
+cursor = connection.cursor()
+
 # Replace 'lottie_url' with the actual URL of your Lottie JSON animation
 lottie_url = "https://lottie.host/embed/2e9086c6-9faf-451a-9880-af787469a8b1/F9hsq1ytrf.json"
 
@@ -76,6 +81,26 @@ lottie_hello = load_lottieurl("https://lottie.host/7867624f-734c-48fd-8407-94a8f
 # Display the centered Lottie animation using st.markdown
 #st.markdown(centered_lottie_html, unsafe_allow_html=True)
 
+cursor.execute('''
+        SELECT COUNT(*)
+        FROM Players 
+''')
+
+rows = cursor.fetchall()
+
+cursor.execute('''
+        SELECT AVG(rating)
+        FROM Players
+''')
+
+ratings = cursor.fetchall()
+
+cursor.execute('''
+    SELECT COUNT(games_completed)
+    FROM Games
+''')
+
+games = cursor.fetchall()
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
@@ -89,8 +114,21 @@ with st.sidebar:
     st.divider()
 
     st.title('Game Statistics')
-    st.text('Total Games Played:')
-    st.text('Total Players:')
+
+    if games:
+        st.text(f'Total Games Played: {games[0][0]}')
+    else:
+        st.text('Total Games Played: 0')
+
+    
+    if rows:
+        st.text(f'Total Feedback: {rows[0][0]} players')
+    else:
+        st.text('Total Feedback: 0 players')
+
+    if ratings:
+
+        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
 
 
 col1, col2, col3 = st.columns([1,6,1])

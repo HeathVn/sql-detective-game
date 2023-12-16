@@ -5,9 +5,58 @@ import sqlite3
 connection = sqlite3.connect('Modified SQL Database.db')
 cursor = connection.cursor()
 
+cursor.execute('''
+        SELECT COUNT(*)
+        FROM Players 
+''')
+
+rows = cursor.fetchall()
+
+cursor.execute('''
+        SELECT AVG(rating)
+        FROM Players
+''')
+
+ratings = cursor.fetchall()
+
+cursor.execute('''
+    SELECT COUNT(games_completed)
+    FROM Games
+''')
+
+games = cursor.fetchall()
+
+with st.sidebar:
+    st.title('About SQL - Mellon City Mysteria')
+    
+    st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
+    st.text('')
+    st.text('Developer: Srinidhi Manikantan')
+    st.text('Developer: Heathvonn Styles')
+    st.text('Developed: Nov 2023')
+
+    st.divider()
+
+    st.title('Game Statistics')
+
+    if games:
+        st.text(f'Total Games Played: {games[0][0]}')
+    else:
+        st.text('Total Games Played: 0')
+
+    
+    if rows:
+        st.text(f'Total Feedback: {rows[0][0]} players')
+    else:
+        st.text('Total Feedback: 0 players')
+
+    if ratings:
+
+        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
 
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
+
 
 
 with st.form("user_feedback"):
