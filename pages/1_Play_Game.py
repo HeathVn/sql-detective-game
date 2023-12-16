@@ -192,8 +192,8 @@ def time_difference(start_time, end_time):
 #delete_page('HeathVn/streamlit-example/pages/','Feedback')
 
 cursor.execute('''
-        SELECT pl.ratings
-        FROM Players pl
+        SELECT COUNT(*)
+        FROM Players 
 ''')
 
 rows = cursor.fetchall()
