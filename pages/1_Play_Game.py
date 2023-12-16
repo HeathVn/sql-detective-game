@@ -180,6 +180,8 @@ total_time = 0
 
 if player_name:
     #st.session_state.start_time = time.time()
+    if 'player_name' not in st.session_state:
+        st.session_state.player_name = player_name
     
     col1,col2 = st.columns([1,8])
 
@@ -486,9 +488,10 @@ if player_name:
                                             with col1:
                                                 pass
                                             with col2 :
-                                                conclude = st.button("""Finish Game""", on_click = on_button_click )       
+                                                conclude = st.markdown(f""" <a target='_self' href='https://detectivegames.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
+                                                #conclude = st.button("""Finish Game""", on_click = on_button_click )       
                                             with col3:
-                                                continue_game = st.button("""Continue""", on_click = on_button_click )
+                                                #continue_game = st.button("""Continue""", on_click = on_button_click )
                                             with col4:
                                                 pass
                                         else:

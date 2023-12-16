@@ -5,6 +5,8 @@ import sqlite3
 connection = sqlite3.connect('Modified SQL Database.db')
 cursor = connection.cursor()
 
+st.markdown(f'''Hi {st.session_state.player_name}, please fill out thye below feedback form. ''')
+
 with st.form("user_feedback"):
     header = st.columns([0.8,1,0.5])
     header[1].subheader('Feedback Form')
