@@ -6,7 +6,7 @@ Here's how this game came to life: In the pursuit of honing our SQL skills, we s
 
 Recognizing a lack of one-player murder mystery games online, we embarked on this journey of blending our love for programming with the excitement of murder mystery. We also took this as a challenge to seamlessly integrate two programming languages that we are familiar with - SQL and Python! Moreover, we also explored using Streamlit, an open-source Python framework used to create interactive data apps, to bring our vision to reality. 
 
-Our commitment to innovation led us to modify the original SQL game and its database to suit our vision for the SQL - Mellon City Mysteria. This venture provided an opportunity for us to showcase not just our programming skills but also our artistic and creative talent. We skillfully incorporated interactive elements such as secret codes and puzzles, transforming the gameplay into a dynamic and engaging experience through Mellon City's mysteries.
+Our commitment to innovation led us to modify the original SQL game and its database to suit our vision for the SQL - Mellon City Mysteria. This venture provided an opportunity for us to showcase not just our programming skills but also our artistic and creative talent. We skillfully incorporated interactive elements such as secret codes and puzzles, transforming the gameplay into a dynamic and engaging experience for our players.
 
 We invite you to experience our game firsthand and share any thoughts, feedback, and suggestions you may have. As active members of the data community, we value collaboration and continuous learning. 
 
