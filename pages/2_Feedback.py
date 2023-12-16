@@ -13,7 +13,10 @@ with st.form("user_feedback"):
     
 
     name = st.text_input('''Please enter your name:''')
+
     stars = st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
+
+    performance = st.text_area(label="How did you find the game? Did you enjoy the game? ", value="", height=None, max_chars=None)
 
     suggestion = st.text_area(label="Game Suggestions", value="", height=None, max_chars=None)
 
@@ -25,3 +28,4 @@ with st.form("user_feedback"):
         connection.close()
         st.success('Your feedback was successfully submitted!')
                                          
+#
