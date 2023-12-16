@@ -211,9 +211,9 @@ with st.sidebar:
     st.title('Game Statistics')
 
     if rows:
-        st.text('Total Games Played: 0')
-    else:
         st.text(f'Total Games Played: {rows[0]}')
+    else:
+        st.text('Total Games Played: 0')
 
     st.text('Total Players:')
 
