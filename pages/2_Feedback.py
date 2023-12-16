@@ -6,7 +6,7 @@ connection = sqlite3.connect('Modified SQL Database.db')
 cursor = connection.cursor()
 
 
-header = st.columns([0.8,1,0.5])
+header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
 with st.form("user_feedback"):
