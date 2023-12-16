@@ -20,7 +20,7 @@ def edit_page_name(main_script_path_str):
     _on_pages_changed.send()
 
 
- edit_page_name('HeathVn/streamlit-example/pages/')   
+edit_page_name('HeathVn/streamlit-example/pages/')   
 
 cursor.execute('''
         SELECT COUNT(*)
