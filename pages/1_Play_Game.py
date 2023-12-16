@@ -509,14 +509,7 @@ if player_name:
                                             time.sleep(1)
                                             st.balloons()
                                             
-                                            '''
-                                            col1,col2 = st.columns([1,8])
-
-                                            with col1 :
-                                                st.image('detective-profile.png')
-                                            with col2 :
-                                                typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
-                                            '''
+                                            
 
                                             col1,col2,col3,col4 = st.columns([2,2,2,2])
 
