@@ -560,9 +560,9 @@ if player_name:
                                                 if conclude:
                                                     if games:
                                                         total_games = games[0][0] + 1
-                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (total_games))
+                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (total_games,))
                                                     else:
-                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (0))
+                                                        cursor.execute('''INSERT INTO Games VALUES (?)''', (1))
 
                                                     connection.commit()
                                                     connection.close()
