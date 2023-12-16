@@ -199,7 +199,7 @@ cursor.execute('''
 rows = cursor.fetchall()
 
 cursor.execute('''
-        SELECT AVG("Ratings")
+        SELECT AVG("ratings")
         FROM Players
 ''')
 
