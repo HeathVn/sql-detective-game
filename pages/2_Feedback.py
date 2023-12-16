@@ -20,7 +20,7 @@ with st.form("user_feedback"):
 
 if submit:
     cursor.execute('''
-        INSERT INTO Players(Player Name, Date Played, Start Time, End Time, Rating, Any feedback/suugestions)
+        INSERT INTO Players('Player Name', 'Date Played', 'Start Time', 'End Time', 'Rating', 'Any feedback/suugestions')
         VALUES (?,'','','',?,?) 
     ''', (name, stars,suggestion))
                                          
