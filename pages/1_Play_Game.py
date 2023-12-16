@@ -183,8 +183,8 @@ def time_difference(start_time, end_time):
 #def clicked():
     #global click
     #click = True
-    
-delete_page('HeathVn/streamlit-example/pages','pages/2_Feedback.py')
+
+delete_page('HeathVn/streamlit-example/pages/','2_Feedback.py')
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
