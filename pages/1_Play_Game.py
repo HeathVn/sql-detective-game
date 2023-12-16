@@ -20,18 +20,13 @@ from streamlit.source_util import (
     _on_pages_changed
 )
 
-def delete_page(main_script_path_str, page_name):
+def edit_page_name(main_script_path_str, page_name):
 
     current_pages = get_pages(main_script_path_str)
-    #st.write(current_pages)
+  
 
     for key, value in current_pages.items():
-        if value['page_name'] == page_name:
-            del current_pages[key]
-            break
-        else:
-            pass
-
+        
         if value['page_name'] == "streamlit_app":
             value['page_name'] = "Mellon City Mysteria"
 
