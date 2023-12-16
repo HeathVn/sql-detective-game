@@ -5,6 +5,15 @@ import sqlite3
 connection = sqlite3.connect('Modified SQL Database.db')
 cursor = connection.cursor()
 
+cursor.execute(f'''
+                     SELECT Player Name
+                     FROM Players 
+                ''')
+
+rows = cursor.fetchall()
+
+st.write(rows)
+
 name = st.experimental_get_query_params().get("name", "Player 1")
 
 st.markdown(f'''Hi {name}, please fill out the below feedback form. ''')

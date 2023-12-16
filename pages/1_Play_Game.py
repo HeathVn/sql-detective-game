@@ -33,7 +33,7 @@ def delete_page(main_script_path_str, page_name):
 
         if value['page_name'] == "streamlit_app":
             value['page_name'] = "Mellon City Mysteria"
-            
+
     _on_pages_changed.send()
 
 #connection = sqlite3.connect('sql-murder-mystery copy.db')
@@ -212,7 +212,9 @@ if player_name:
     #if 'name' in st.session_state:
        # st.session_state.name = player_name
 
-    st.experimental_set_query_params(name=player_name)
+    #st.experimental_set_query_params(name=player_name)
+
+    
 
     
     col1,col2 = st.columns([1,8])
@@ -506,14 +508,15 @@ if player_name:
                                             
                                             time.sleep(1)
                                             st.balloons()
-
+                                            
+                                            '''
                                             col1,col2 = st.columns([1,8])
 
                                             with col1 :
                                                 st.image('detective-profile.png')
                                             with col2 :
                                                 typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
-                                            
+                                            '''
 
                                             col1,col2,col3,col4 = st.columns([2,2,2,2])
 
@@ -521,7 +524,13 @@ if player_name:
                                                 pass
                                             with col2 :
                                                 conclude = st.markdown(f""" <a target='_self' href='https://detectivegames.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
-                                                #conclude = st.button("""Finish Game""", on_click = on_button_click )       
+                                                #conclude = st.button("""Finish Game""", on_click = on_button_click )  
+
+                                                if conclude:
+                                                    cursor.execute(f'''
+                                                        INSERT INTO Players(Player Name, Date Played, Start Time, End Time, Rating, Any feedback/suugestions)
+                                                        VALUES ({player_name},'','','',0,'') 
+                                                    ''')     
                                             with col3:
                                                 pass
                                                 #continue_game = st.button("""Continue""", on_click = on_button_click )
