@@ -9,6 +9,14 @@ from streamlit_lottie import st_lottie
 from streamlit.components.v1 import html
 from streamlit_card import card
 
+from streamlit.source_util import (
+    page_icon_and_name, 
+    calc_md5, 
+    get_pages,
+    _on_pages_changed
+)
+
+
 import sqlite3
 from streamlit_star_rating import st_star_rating
 connection = sqlite3.connect('Modified SQL Database.db')
