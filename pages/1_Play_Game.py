@@ -219,20 +219,20 @@ with st.sidebar:
     st.title('Game Statistics')
 
     if rows:
-        st.text(f'Total Games Played: {rows[0]}')
+        st.text(f'Total Games Played: {rows[0][0]}')
     else:
         st.text('Total Games Played: 0')
 
     st.text('Total Players:')
     
     if rows:
-        st.text(f'Total Feedback: {rows[0]} players')
+        st.text(f'Total Feedback: {rows[0][0]} players')
     else:
         st.text('Total Feedback: 0 players')
 
     if ratings:
 
-        st_star_rating(label='' maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20, read_only = True)
+        st_star_rating(label='', maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20, read_only = True)
     
      
 total_time = 0
