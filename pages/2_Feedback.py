@@ -81,15 +81,16 @@ friends/family ?''',unsafe_allow_html=True)
 
     stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
     
-    st.markdown(f'''<p style="font-size:14px;">Were you satisfied with the overall experience? If so, we'd love to hear about 
-the specific elements or features that you particularly enjoyed ? ''',unsafe_allow_html=True)
+    #st.markdown(f'''<p style="font-size:14px;">Were you satisfied with the overall experience? If so, we'd love to hear about 
+#the specific elements or features that you particularly enjoyed ? ''',unsafe_allow_html=True)
 
-    performance = st.text_area(label="", value="", height=None, max_chars=None, key="text_area1")
+    performance = st.text_area(label=" Were you satisfied with the overall experience? If so, we'd love to hear about the specific elements or features that you particularly enjoyed ?", value="", height=None, max_chars=None, key="text_area1")
     
-    st.markdown(f'''<p style="font-size:14px;">Do you have any suggestions for improvement or features you would like to see 
-in future updates ? ''',unsafe_allow_html=True)
+    #st.markdown(f'''<p style="font-size:14px;">Do you have any suggestions for improvement or features you would like to see 
+#in future updates ? ''',unsafe_allow_html=True)
 
-    suggestion = st.text_area(label="", value="", height=None, max_chars=None, key="text_area2")
+    suggestion = st.text_area(label=" Do you have any suggestions for improvement or features you would like to see 
+in future updates ?  ", value="", height=None, max_chars=None, key="text_area2")
 
     submit = st.form_submit_button('Submit')
 
