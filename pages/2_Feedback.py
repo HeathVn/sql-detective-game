@@ -75,13 +75,12 @@ with st.form("user_feedback"):
     stars = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
     st.text('''On a scale of 1 to 5, how likely are you to recommend our game to your 
-    friends/family ?''')
+friends/family ?''')
 
     stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
     
     st.text(''' Were you satisfied with the overall experience? If so, we'd love to hear about 
-the specific elements or features that you particularly 
-enjoyed ? ''')
+the specific elements or features that you particularly enjoyed ? ''')
 
     performance = st.text_area(label="", value="", height=None, max_chars=None, key="text_area1")
     
