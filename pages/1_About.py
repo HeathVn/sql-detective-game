@@ -6,21 +6,7 @@ connection = sqlite3.connect('Modified SQL Database.db')
 connection.isolation_level = None 
 cursor = connection.cursor()
 
-
-def edit_page_name(main_script_path_str):
-
-    current_pages = get_pages(main_script_path_str)
   
-
-    for key, value in current_pages.items():
-        
-        if value['page_name'] == "streamlit_app":
-            value['page_name'] = "Mellon City Mysteria"
-
-    _on_pages_changed.send()
-
-
-edit_page_name('HeathVn/streamlit-example/pages/')   
 
 cursor.execute('''
         SELECT COUNT(*)
