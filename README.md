@@ -1,4 +1,4 @@
-Welcome to SQL - Mellon City Mysteria!
+# Welcome to SQL - Mellon City Mysteria!
 
 SQL - Mellon City Mysteria is the brainchild of two Carnegie Mellon University (CMU) graduate students with a passion for data and a shared love for mystery-solving adventures. 💻❤
  
