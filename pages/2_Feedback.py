@@ -58,20 +58,23 @@ with st.sidebar:
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
+col = st.columns([0.8, 8 ,0.8])
+col[1].text('''Welcome to our Feedback Form! 
 
+Thank you for being a part of our programming adventure. Your insights are highly valued, and we would be grateful if you could take a moment to share your thoughts with us. Your feedback will drive our continuous efforts to enhance and refine this experience.''')
 
 with st.form("user_feedback"):
     
 
     name = st.text_input('''Please enter your name:''')
 
-    stars = st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
+    stars = st_star_rating(label = "On a scale of 1 to 5, how would you rate your overall experience with our game ?", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
-    stars2 = st_star_rating(label = "How likely are you to recommend this game?", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
+    stars2 = st_star_rating(label = "On a scale of 1 to 5, how likely are you to recommend our game to your friends/family ?", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
 
-    performance = st.text_area(label="How did you find the game? Did you enjoy the game? ", value="", height=None, max_chars=None)
+    performance = st.text_area(label="Were you satisfied with the overall experience? If so, we'd love to hear about the specific elements or features that you particularly enjoyed ? ", value="", height=None, max_chars=None)
 
-    suggestion = st.text_area(label="Game Suggestions", value="", height=None, max_chars=None)
+    suggestion = st.text_area(label="Do you have any suggestions for improvement or features you would like to see in future updates ?", value="", height=None, max_chars=None)
 
     submit = st.form_submit_button('Submit')
 
