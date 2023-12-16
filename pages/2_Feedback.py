@@ -52,7 +52,7 @@ with st.sidebar:
 
     if ratings:
 
-        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
+        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating3", dark_theme = True , size=20, read_only = True)
 
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
