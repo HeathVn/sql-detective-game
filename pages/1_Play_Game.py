@@ -22,7 +22,7 @@ from streamlit.source_util import (
 def delete_page(main_script_path_str, page_name):
 
     current_pages = get_pages(main_script_path_str)
-    st.write(current_pages)
+    #st.write(current_pages)
 
     for key, value in current_pages.items():
         if value['page_name'] == page_name:
@@ -30,6 +30,10 @@ def delete_page(main_script_path_str, page_name):
             break
         else:
             pass
+
+        if value['page_name'] == "streamlit_app":
+            value['page_name'] = "Mellon City Mysteria"
+            
     _on_pages_changed.send()
 
 #connection = sqlite3.connect('sql-murder-mystery copy.db')
