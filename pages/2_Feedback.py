@@ -58,7 +58,7 @@ with st.sidebar:
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
-col = st.columns([0.8, 8 ,0.8])
+col = st.columns([0.8, 4 ,0.8])
 col[1].text('''Welcome to our Feedback Form! 
 
 Thank you for being a part of our programming adventure. Your insights are highly valued, and we would be grateful if you could take a moment to share your thoughts with us. Your feedback will drive our continuous efforts to enhance and refine this experience.''')
