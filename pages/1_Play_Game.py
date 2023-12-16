@@ -226,7 +226,7 @@ with st.sidebar:
     st.text('Total Players:')
     
     if feedback:
-     
+        st.text('Total Feedback: 0 players')
     else:
         st.text('Total Feedback: 0 players')
 
