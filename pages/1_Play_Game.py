@@ -528,7 +528,7 @@ if player_name:
                                             with col1:
                                                 pass
                                             with col2 :
-                                                conclude = st.markdown(f""" <a target='_self' href='https://detectivegames.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
+                                                conclude = st.markdown(f""" <a target='_self' href='https://detectivegame.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
                                                 #conclude = st.button("""Finish Game""", on_click = on_button_click )  
 
                                 
