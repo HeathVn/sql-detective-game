@@ -213,10 +213,7 @@ if player_name:
        # st.session_state.name = player_name
 
     #st.experimental_set_query_params(name=player_name)
-    cursor.execute(f'''
-        INSERT INTO Players(Player Name, Date Played, Start Time, End Time, Rating, Any feedback/suugestions)
-        VALUES ({player_name},'','','',0,'') 
-    ''')
+
     
 
     
@@ -522,7 +519,11 @@ if player_name:
                                                 conclude = st.markdown(f""" <a target='_self' href='https://detectivegames.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
                                                 #conclude = st.button("""Finish Game""", on_click = on_button_click )  
 
-                                                
+                                                if conclude:
+                                                    cursor.execute('''
+                                                        INSERT INTO Players(Player Name, Date Played, Start Time, End Time, Rating, Any feedback/suugestions)
+                                                        VALUES (?,'','','',0,'') 
+                                                    ''', (player_name))
                                          
                                             with col3:
                                                 pass
