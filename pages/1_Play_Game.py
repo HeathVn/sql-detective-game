@@ -554,7 +554,9 @@ if player_name:
                                             with col2 :
                                                 conclude = st.markdown(f""" <a target='_self' href='https://detectivegame.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
                                                 #conclude = st.button("""Finish Game""", on_click = on_button_click )  
-
+                                                
+                                                st.write(games)
+ 
                                                 if conclude:
                                                     if games:
                                                         total_games = games[0][0] + 1
