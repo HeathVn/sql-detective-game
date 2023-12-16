@@ -185,6 +185,8 @@ if player_name:
     #st.session_state.start_time = time.time()
     if 'name' in st.session_state:
         st.session_state.name = player_name
+        st.experimental_set_query_params(name=st.session_state.name)
+
     
     col1,col2 = st.columns([1,8])
 
