@@ -8,4 +8,6 @@ Recognizing a lack of one-player murder mystery games online, we embarked on thi
 
 Our commitment to innovation led us to modify the original SQL game and its database to suit our vision. This venture provided an opportunity for us to showcase not just our programming skills but also our artistic and creative talent. We have skillfully incorporated interactive elements such as secret codes and puzzles, with the aim of transforming the gameplay into a dynamic and engaging experience for our players.
 
-We invite you to experience our game firsthand and share any thoughts, feedback, and suggestions you may have. As active members of the data community, we value collaboration and continuous learning. Thank you for embarking on this SQL mystery adventure with us. We sincerely hope you enjoyed playing the game as much as we enjoyed creating it! 🕵️‍♂️🔍
+We invite you to experience our game firsthand and share any thoughts, feedback, and suggestions you may have. As active members of the data community, we value collaboration and continuous learning. Please click the link here to access our game: https://detectivegames.streamlit.app/ 
+
+Thank you for embarking on this SQL mystery adventure with us. We sincerely hope you enjoyed playing the game as much as we enjoyed creating it! 🕵️‍♂️🔍
