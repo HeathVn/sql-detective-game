@@ -16,6 +16,8 @@ with st.form("user_feedback"):
 
     stars = st_star_rating(label = "Please rate you experience", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
+    stars2 = st_star_rating(label = "How likely are you to recommend this game?", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
+
     performance = st.text_area(label="How did you find the game? Did you enjoy the game? ", value="", height=None, max_chars=None)
 
     suggestion = st.text_area(label="Game Suggestions", value="", height=None, max_chars=None)
