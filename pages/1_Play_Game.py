@@ -11,6 +11,7 @@ from streamlit_card import card
 import pandas as pd 
 import sqlite3
 from PIL import Image
+from streamlit_star_rating import st_star_rating
 
 from streamlit.source_util import (
     page_icon_and_name, 
@@ -192,10 +193,17 @@ def time_difference(start_time, end_time):
 
 cursor.execute('''
         SELECT COUNT(*)
-        FROM Players
+        FROM Players 
 ''')
 
 rows = cursor.fetchall()
+
+cursor.execute('''
+        SELECT AVG(rating)
+        FROM Players
+''')
+
+ratings = cursor.fetchall()
 
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
@@ -211,12 +219,22 @@ with st.sidebar:
     st.title('Game Statistics')
 
     if rows:
-        st.text(f'Total Games Played: {rows}')
+        st.text(f'Total Games Played: {rows[0][0]}')
     else:
         st.text('Total Games Played: 0')
 
     st.text('Total Players:')
+    
+    if rows:
+        st.text(f'Total Feedback: {rows[0][0]} players')
+    else:
+        st.text('Total Feedback: 0 players')
 
+    if ratings:
+
+        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
+    
+     
 total_time = 0
 
 if player_name:
