@@ -58,20 +58,23 @@ with st.sidebar:
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
-col = st.columns([0.1, 18 ,0.1])
+col = st.columns([0, 18 ,0])
 col[1].text('''Welcome to our Feedback Form! 
 
 Thank you for being a part of our programming adventure. Your insights are highly 
 valued, and we would be grateful if you could take a moment to share your thoughts 
-with us. Your feedback will drive our continuous efforts to enhance and refine this experience.''')
+with us. Your feedback will drive our continuous efforts to enhance and refine 
+this experience.''')
 
 with st.form("user_feedback"):
     
 
     name = st.text_input('''Please enter your name:''')
 
+    st.text('On a scale of 1 to 5, how would you rate your overall experience with our game ?')
     stars = st_star_rating(label = "On a scale of 1 to 5, how would you rate your overall experience with our game ?", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
+    st.text('On a scale of 1 to 5, how likely are you to recommend our game to your friends/family ?')
     stars2 = st_star_rating(label = "On a scale of 1 to 5, how likely are you to recommend our game to your friends/family ?", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
 
     performance = st.text_area(label="Were you satisfied with the overall experience? If so, we'd love to hear about the specific elements or features that you particularly enjoyed ? ", value="", height=None, max_chars=None)
