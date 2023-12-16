@@ -23,5 +23,5 @@ with st.form("user_feedback"):
         cursor.execute('''INSERT INTO Players VALUES (?,'','','',?,?)''', (name, stars,suggestion))
         connection.commit()
         connection.close()
-        st.toast('Your feedback was successfully submitted!')
+        st.success('Your feedback was successfully submitted!')
                                          
