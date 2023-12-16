@@ -232,7 +232,7 @@ with st.sidebar:
 
     if ratings:
 
-        st_star_rating( maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20, read_only = True)
+        st_star_rating(label='' maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20, read_only = True)
     
      
 total_time = 0
