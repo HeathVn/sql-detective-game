@@ -12,7 +12,9 @@ import pandas as pd
 import sqlite3
 from PIL import Image
 
-connection = sqlite3.connect('sql-murder-mystery copy.db')
+#connection = sqlite3.connect('sql-murder-mystery copy.db')
+connection = sqlite3.connect('Modified SQL Database.db')
+
 cursor = connection.cursor()
 
 container_style = """

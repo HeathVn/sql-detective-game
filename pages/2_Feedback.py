@@ -1,5 +1,9 @@
 import streamlit as st
 from streamlit_star_rating import st_star_rating
+import sqlite3
+
+connection = sqlite3.connect('Modified SQL Database.db')
+cursor = connection.cursor()
 
 with st.form("user_feedback"):
     header = st.columns([0.8,1,0.5])
@@ -10,5 +14,7 @@ with st.form("user_feedback"):
 
     st.text_area(label="Game Suggestions", value="", height=None, max_chars=None)
 
-    st.form_submit_button('Submit')
+    submit = st.form_submit_button('Submit')
+
+if submit:
     
