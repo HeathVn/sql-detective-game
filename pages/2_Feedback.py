@@ -59,7 +59,7 @@ header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
 #col = st.columns([0, 18 ,0])
-st.text('''Welcome to our Feedback Form! 
+st.markdown('''Welcome to our Feedback Form! 
 
 Thank you for being a part of our programming adventure. Your insights are highly 
 valued, and we would be grateful if you could take a moment to share your thoughts 
@@ -68,23 +68,23 @@ this experience.''')
 
 with st.form("user_feedback"):
     
-    st.text('''Please enter your name:''')
+    st.markdown('''Please enter your name:''')
     name = st.text_input('')
 
-    st.text('On a scale of 1 to 5, how would you rate your overall experience with our game ?')
+    st.markdown('On a scale of 1 to 5, how would you rate your overall experience with our game ?')
     stars = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
 
-    st.text('''On a scale of 1 to 5, how likely are you to recommend our game to your 
+    st.markdown('''On a scale of 1 to 5, how likely are you to recommend our game to your 
 friends/family ?''')
 
     stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
     
-    st.text(''' Were you satisfied with the overall experience? If so, we'd love to hear about 
+    st.markdown(''' Were you satisfied with the overall experience? If so, we'd love to hear about 
 the specific elements or features that you particularly enjoyed ? ''')
 
     performance = st.text_area(label="", value="", height=None, max_chars=None, key="text_area1")
     
-    st.text(''' Do you have any suggestions for improvement or features you would like to see 
+    st.markdown(''' Do you have any suggestions for improvement or features you would like to see 
 in future updates ? ''')
 
     suggestion = st.text_area(label="", value="", height=None, max_chars=None, key="text_area2")
