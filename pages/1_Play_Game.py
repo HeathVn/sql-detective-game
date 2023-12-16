@@ -180,8 +180,8 @@ total_time = 0
 
 if player_name:
     #st.session_state.start_time = time.time()
-    if 'player_name' not in st.session_state:
-        st.session_state.player_name = player_name
+    if 'name' not in st.session_state:
+        st.session_state.name = player_name
     
     col1,col2 = st.columns([1,8])
 
