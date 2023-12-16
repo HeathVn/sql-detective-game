@@ -47,6 +47,9 @@ def load_lottieurl(url: str):
         return None
     return r.json()
 
+if 'name' not in st.session_state:
+    st.session_state.name = None
+
 if 'loaded' not in st.session_state:
    st.cache_data.clear()
    st.session_state.loaded = True
@@ -180,7 +183,7 @@ total_time = 0
 
 if player_name:
     #st.session_state.start_time = time.time()
-    if 'name' not in st.session_state:
+    if 'name' in st.session_state:
         st.session_state.name = player_name
     
     col1,col2 = st.columns([1,8])
