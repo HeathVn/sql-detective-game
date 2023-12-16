@@ -12,7 +12,33 @@ import pandas as pd
 import sqlite3
 from PIL import Image
 
-connection = sqlite3.connect('sql-murder-mystery copy.db')
+from streamlit.source_util import (
+    page_icon_and_name, 
+    calc_md5, 
+    get_pages,
+    _on_pages_changed
+)
+
+def delete_page(main_script_path_str, page_name):
+
+    current_pages = get_pages(main_script_path_str)
+    #st.write(current_pages)
+
+    for key, value in current_pages.items():
+        if value['page_name'] == page_name:
+            del current_pages[key]
+            break
+        else:
+            pass
+
+        if value['page_name'] == "streamlit_app":
+            value['page_name'] = "Mellon City Mysteria"
+
+    _on_pages_changed.send()
+
+#connection = sqlite3.connect('sql-murder-mystery copy.db')
+connection = sqlite3.connect('Modified SQL Database.db')
+
 cursor = connection.cursor()
 
 container_style = """
@@ -44,6 +70,9 @@ def load_lottieurl(url: str):
     if r.status_code != 200:
         return None
     return r.json()
+
+if 'name' not in st.session_state:
+    st.session_state.name = None
 
 if 'loaded' not in st.session_state:
    st.cache_data.clear()
@@ -159,6 +188,15 @@ def time_difference(start_time, end_time):
     #global click
     #click = True
 
+#delete_page('HeathVn/streamlit-example/pages/','Feedback')
+
+cursor.execute('''
+        SELECT COUNT(*)
+        FROM Players
+''')
+
+rows = cursor.fetchall()
+
 with st.sidebar:
     st.title('About SQL - Mellon City Mysteria')
     
@@ -171,13 +209,25 @@ with st.sidebar:
     st.divider()
 
     st.title('Game Statistics')
-    st.text('Total Games Played:')
+
+    if rows:
+        st.text(f'Total Games Played: {rows}')
+    else:
+        st.text('Total Games Played: 0')
+
     st.text('Total Players:')
 
 total_time = 0
 
 if player_name:
     #st.session_state.start_time = time.time()
+    #if 'name' in st.session_state:
+       # st.session_state.name = player_name
+
+    #st.experimental_set_query_params(name=player_name)
+
+    
+
     
     col1,col2 = st.columns([1,8])
 
@@ -470,13 +520,7 @@ if player_name:
                                             
                                             time.sleep(1)
                                             st.balloons()
-
-                                            col1,col2 = st.columns([1,8])
-
-                                            with col1 :
-                                                st.image('detective-profile.png')
-                                            with col2 :
-                                                typewriter(['''Now, Detective, the choice is yours. Do you wish to conclude this chapter and bask in the satisfaction of solving the mystery, or are you ready to plunge into a new challenge? The city awaits your decision. '''],3)
+                                            
                                             
 
                                             col1,col2,col3,col4 = st.columns([2,2,2,2])
@@ -484,9 +528,13 @@ if player_name:
                                             with col1:
                                                 pass
                                             with col2 :
-                                                conclude = st.button("""Finish Game""", on_click = on_button_click )       
+                                                conclude = st.markdown(f""" <a target='_self' href='https://detectivegame.streamlit.app/Feedback'><button style='{button_style}'>Finish Game</button> </a>""", unsafe_allow_html=True)
+                                                #conclude = st.button("""Finish Game""", on_click = on_button_click )  
+
+                                
                                             with col3:
-                                                continue_game = st.button("""Continue""", on_click = on_button_click )
+                                                pass
+                                                #continue_game = st.button("""Continue""", on_click = on_button_click )
                                             with col4:
                                                 pass
                                         else:
