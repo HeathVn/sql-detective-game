@@ -79,13 +79,14 @@ with st.form("user_feedback"):
 
     stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
     
-    st.text(''' Were you satisfied with the overall experience? If so, we'd love
-    to hear about the specific elements or features that you particularly 
-    enjoyed ? ''')
+    st.text(''' Were you satisfied with the overall experience? If so, we'd love to hear about 
+the specific elements or features that you particularly 
+enjoyed ? ''')
 
     performance = st.text_area(label="", value="", height=None, max_chars=None, key="text_area1")
     
-    st.text(''' Do you have any suggestions for improvement or features you would like to see in future updates ? ''')
+    st.text(''' Do you have any suggestions for improvement or features you would like to see 
+in future updates ? ''')
 
     suggestion = st.text_area(label="", value="", height=None, max_chars=None, key="text_area2")
 
