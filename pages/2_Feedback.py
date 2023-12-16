@@ -68,8 +68,10 @@ this experience.''')
 
 with st.form("user_feedback"):
     
-    st.markdown('''Please enter your name:''')
-    name = st.text_input('')
+
+   # st.markdown('''Please enter your name:''')
+    name = st.text_input('Please enter your name:')
+
 
     st.markdown('On a scale of 1 to 5, how would you rate your overall experience with our game ?')
     stars = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
