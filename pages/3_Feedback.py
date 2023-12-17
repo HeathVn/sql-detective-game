@@ -99,5 +99,3 @@ friends/family ?''',unsafe_allow_html=True)
         connection.close()
         st.success('Your feedback was successfully submitted!')
                                          
-#
-#
