@@ -89,8 +89,7 @@ friends/family ?''',unsafe_allow_html=True)
     #st.markdown(f'''<p style="font-size:14px;">Do you have any suggestions for improvement or features you would like to see 
 #in future updates ? ''',unsafe_allow_html=True)
 
-    suggestion = st.text_area(label=" Do you have any suggestions for improvement or features you would like to see 
-in future updates ?  ", value="", height=None, max_chars=None, key="text_area2")
+    suggestion = st.text_area(label=" Do you have any suggestions for improvement or features you would like to see in future updates ?  ", value="", height=None, max_chars=None, key="text_area2")
 
     submit = st.form_submit_button('Submit')
 
