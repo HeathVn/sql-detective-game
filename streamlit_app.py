@@ -187,7 +187,8 @@ with col5 :
 
 #st.write("Hello! Welcome to Murder Mystery Detectives! ")
 
-
+connection.commit()
+connection.close()
 
 
 

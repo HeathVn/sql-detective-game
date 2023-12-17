@@ -77,3 +77,6 @@ We invite you to experience our game firsthand and share any thoughts, feedback,
 
 
 Thank you for embarking on this SQL mystery adventure with us. We sincerely hope you enjoyed playing the game as much as we enjoyed creating it! 🕵️‍♂️🔍''')
+
+connection.commit()
+connection.close()
