@@ -74,12 +74,12 @@ with st.form("user_feedback"):
 
 
     st.markdown(f'''<p style="font-size:14px;">On a scale of 1 to 5, how would you rate your overall experience with our game ?</p>''',unsafe_allow_html=True)
-    stars = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating", dark_theme = True , size=20)
+    stars = st_star_rating(label = "", maxValue = 5, defaultValue = 0, key = "rating", dark_theme = True , size=20)
 
     st.markdown(f'''<p style="font-size:14px;">On a scale of 1 to 5, how likely are you to recommend our game to your 
 friends/family ?''',unsafe_allow_html=True)
 
-    stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 3, key = "rating2", dark_theme = True , size=20)
+    stars2 = st_star_rating(label = "", maxValue = 5, defaultValue = 0, key = "rating2", dark_theme = True , size=20)
     
     #st.markdown(f'''<p style="font-size:14px;">Were you satisfied with the overall experience? If so, we'd love to hear about 
 #the specific elements or features that you particularly enjoyed ? ''',unsafe_allow_html=True)
