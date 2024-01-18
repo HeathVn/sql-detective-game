@@ -39,8 +39,7 @@ with st.sidebar:
     
     st.markdown('SQL - Mellon City Mysteria is an SQL based problem solver game developed by two Carnegie Mellon Graduate students.')
     st.text('')
-    st.text('Developer: Srinidhi Manikantan')
-    st.text('Developer: Heathvonn Styles')
+   
     st.text('Developed: Nov 2023')
 
     st.divider()
@@ -65,8 +64,7 @@ with st.sidebar:
 
 st.title('''Welcome to SQL - Mellon City Mysteria!''')
     
-st.markdown('''SQL - Mellon City Mysteria is the brainchild of two Carnegie Mellon University (CMU) graduate students with a passion for data and a shared love for mystery-solving adventures! 💻❤
-
+st.markdown('''
 Here's how this game came to life: In the pursuit of honing our SQL skills, we stumbled upon the SQL Murder Mystery: https://mystery.knightlab.com/, a self-directed lesson for mastering SQL commands and concepts. Captivated by the challenge, we envisioned taking this concept to the next level by making it accessible even to those unfamiliar with SQL Programming.
 
 Recognizing a lack of one-player murder mystery games online, we embarked on this journey of blending our love for programming with the excitement of murder mystery. We took this as a challenge to seamlessly integrate two programming languages that we are familiar with - SQL and Python! In addition, we also explored using Streamlit, an open-source Python framework used to create interactive data apps, to bring our vision to reality.
