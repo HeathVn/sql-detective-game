@@ -1,6 +1,4 @@
 # Welcome to SQL - Mellon City Mysteria!
-
-SQL - Mellon City Mysteria is the brainchild of two Carnegie Mellon University (CMU) graduate students with a passion for data and a shared love for mystery-solving adventures! 💻❤
  
 Here's how this game came to life: In the pursuit of honing our SQL skills, we stumbled upon the SQL Murder Mystery [(check it out here)](https://mystery.knightlab.com/), a self-directed lesson for mastering SQL commands and concepts. Captivated by the challenge, we envisioned taking this concept to the next level by making it accessible even to those unfamiliar with SQL Programming.
 
