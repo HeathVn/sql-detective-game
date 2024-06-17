@@ -37,26 +37,26 @@ with st.sidebar:
 
     st.divider()
     
-    '''
-    st.title('Game Statistics')
+    
+    # st.title('Game Statistics')
 
-    if games:
-        st.text(f'Total Games Played: {games[0][0]}')
-    else:
-        st.text('Total Games Played: 0')
+    # if games:
+    #     st.text(f'Total Games Played: {games[0][0]}')
+    # else:
+    #     st.text('Total Games Played: 0')
 
     
-    if rows:
-        st.text(f'Total Feedback: {rows[0][0]} players')
-    else:
-        st.text('Total Feedback: 0 players')
+    # if rows:
+    #     st.text(f'Total Feedback: {rows[0][0]} players')
+    # else:
+    #     st.text('Total Feedback: 0 players')
 
-    if ratings:
-        st.text('Average Rating Received:')
-        st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating3", dark_theme = True , size=20, read_only = True)
+    # if ratings:
+    #     st.text('Average Rating Received:')
+    #     st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating3", dark_theme = True , size=20, read_only = True)
    
-    '''
     
+
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 
