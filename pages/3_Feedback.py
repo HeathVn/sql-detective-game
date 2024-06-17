@@ -36,7 +36,8 @@ with st.sidebar:
     st.text('Developed: Nov 2023')
 
     st.divider()
-
+    
+    '''
     st.title('Game Statistics')
 
     if games:
@@ -53,7 +54,9 @@ with st.sidebar:
     if ratings:
         st.text('Average Rating Received:')
         st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating3", dark_theme = True , size=20, read_only = True)
-
+   
+    '''
+    
 header = st.columns([0.8,1.5,0.5])
 header[1].title('Feedback Form')
 

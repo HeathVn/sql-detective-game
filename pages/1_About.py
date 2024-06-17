@@ -43,9 +43,11 @@ with st.sidebar:
     st.text('Developed: Nov 2023')
 
     st.divider()
-
+    
+    '''
     st.title('Game Statistics')
-
+    
+    
     if games:
         st.text(f'Total Games Played: {games[0][0]}')
     else:
@@ -60,7 +62,7 @@ with st.sidebar:
     if ratings:
         st.text('Average Rating Received:')
         st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
-
+    '''
 
 st.title('''Welcome to SQL - Mellon City Mysteria!''')
     
