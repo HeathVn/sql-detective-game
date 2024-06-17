@@ -133,6 +133,7 @@ with st.sidebar:
 
     st.divider()
 
+    '''
     st.title('Game Statistics')
 
     if games:
@@ -150,7 +151,8 @@ with st.sidebar:
         st.text('Average Rating Received:')
         st_star_rating(label='', maxValue = 5, defaultValue = ratings[0][0], key = "rating", dark_theme = True , size=20, read_only = True)
 
-
+    '''
+    
 col1, col2, col3 = st.columns([1,6,1])
 
 with col1:
